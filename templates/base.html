@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    {% block meta %}
+    <meta name="description" content="13Atmosphere">
+    <meta name="keywords" content="Le blog de l'architecture !">
+    <meta name="author" content="Therese Mace">
+    {% endblock %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/votes.css">
+    {% block css %}
+    {% endblock %}
+    </head>
+    <body>
+        {% include 'header.html' %}
+        <div id="wrapper" class="row-fluid">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+        {% include 'footer.html' %}
+        <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.9.1.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js/follow_like.js"></script>
+        {% block script %}
+        {% endblock %}
+    </body>

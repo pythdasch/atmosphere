@@ -1,0 +1,9 @@
+{% load i18n %}
+{% if error %}
+        <p>{{ error|escape }}</p>
+    {% endif %}
+<form action="{% url 'newsletter.views.subscribe' newsletter.id %}" method="POST" id="form_subscribe">
+    {% csrf_token %}
+    {{ sub_form.as_p }}
+    <input type="submit" value="{% trans "S'abonner à 'la Newsletter" %}" class="btn btn-success" id="submit_subscribe">
+</form>

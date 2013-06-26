@@ -1,3 +1,25 @@
+{% extends 'base.html' %}
+{% load i18n %}
 {% block content %}
+
 <h1>Welcome ! </h1>
+{% if categories %}
+    {% for cat in categories %}
+    {% if cat.article_set.all %}
+    <div class="categories">
+        <h3>{{ cat.name }}</h3>
+        <div id="article">
+            {% for art in cat.article_set.all %}
+            <div class="articles">
+                <img src="{{ art.image.url }}" alt="">
+                {{ art.title }}
+                {{ art.author }}
+                <a href="{% url 'blog.views.article' art.slug %}">En savoir +</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}    
+{% endif %}
 {% endblock %}

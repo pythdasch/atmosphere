@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% block content %}
+{% include 'tag_html/modal.html' %}
 <h2>Subscribe to the Newsletter {{ news.title }}</h2>
 {% if error %}
         <p>{{ error|escape }}</p>

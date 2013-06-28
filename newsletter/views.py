@@ -2,21 +2,30 @@
 from django.shortcuts import render, get_object_or_404
 from models import Newsletter, Subscriber
 from forms import SubscriptionForm
-from django.http import HttpResponse, HttpRequest
+from django.http import HttpResponse
 from django.utils import simplejson
 from outils.mail_utils import subscribe_mail
+import re
 
 
 def subscribe(request, object_id):
     news = get_object_or_404(Newsletter, pk=object_id)
     if request.is_ajax():
-        import ipdb;ipdb.set_trace()
         if request.method == 'POST':
             data = request.POST
-            form = Subscriber(email=data['email'])
-            form.save()
-            # subscribe_mail(request.POST['email'], news)
-            return HttpResponse(simplejson.dumps('inscri'))
+            error = False
+            if not re.match(r"^[A-Za-z0-9\.\+_-]+@[A-Za-z0-9\._-]+\.[a-zA-Z]*$", data['email']):
+                error = "incorrect"
+            already_sub = Subscriber.objects.filter(email=data['email'])
+            if already_sub:
+                error = "already"
+            if not error:
+                form = Subscriber(email=data['email'])
+                form.save()
+                subscribe_mail(request.POST['email'], news)
+                return HttpResponse(simplejson.dumps('inscri'))
+            else:
+                return HttpResponse(simplejson.dumps(error))
     else:
         form = SubscriptionForm()
     return render(request, 'newsletter/subscribe.html', {

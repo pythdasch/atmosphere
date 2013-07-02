@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+<h2>{% trans "Se désabonner de la newsletter 13Atmosphere ?" %}</h2>
+{% if error %}
+        <p>{{ error|escape }}</p>
+    {% endif %}
+        <form action="{% url 'newsletter.views.unsubscribe' newsletter.id subscriber.id %}" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="unsub" value="yes">
+            <input type="submit" value="{% trans 'Se désabonner' %}" class="btn btn-success">
+        </form>
+{% endblock %}

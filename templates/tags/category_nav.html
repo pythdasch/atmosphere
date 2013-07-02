@@ -1,0 +1,5 @@
+{% if categories %}
+    {% for cat in categories %}
+    <li><a href="{% url 'single_category' cat.slug %}">{{ cat.name }}</a></li>
+    {% endfor %}
+{% endif %}

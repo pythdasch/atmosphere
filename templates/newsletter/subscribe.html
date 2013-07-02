@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+{% include 'tag_html/modal.html' %}
+<h2>Subscribe to the Newsletter {{ news.title }}</h2>
+{% if error %}
+        <p>{{ error|escape }}</p>
+    {% endif %}
+<form action="{% url 'newsletter.views.subscribe' newsletter.id %}" method="POST" id="form_subscribe">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="{% trans "S'abonner à 'la Newsletter" %}" class="btn btn-success" id="submit_subscribe">
+</form>
+{% endblock %}

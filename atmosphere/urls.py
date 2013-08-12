@@ -8,7 +8,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', 'atmosphere.views.index', name='index'),
+    url(r'^$', 'atmosphere.views.coming_soon', name='index'),
     url(r'^blog/', include('blog.urls')),
     # url(r'^atmosphere/', include('atmosphere.foo.urls')),
 
@@ -17,11 +17,11 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     (r'^tinymce/', include('tinymce.urls')),
-    (r'^galleries/', include('photologue.urls')),
+    (r'^galleries/', include('gallery.urls')),
     (r'^newsletter/', include('newsletter.urls')),
     url(r'^admin/', include(admin.site.urls)),
     (r'^static/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root': STATIC_ROOT}),
     (r'^media/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root': MEDIA_ROOT}),
-) + static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
+) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

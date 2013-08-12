@@ -1,6 +1,6 @@
 from django import template
 from blog.models import Category
-from photologue.models import Gallery
+from gallery.models import Gallery
 
 register = template.Library()
 

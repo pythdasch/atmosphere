@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load newsletter_tag %}
+<html>
+    <head>
+        {% block meta %}
+        <meta name="description" content="13Atmosphere">
+        <meta name="keywords" content="Le blog de l'architecture !">
+        <meta name="author" content="Therese Mace">
+        {% endblock %}
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/comingsoon.css">
+    </head>
+    <body>
+    <header>
+        <h1><img src="{{ STATIC_URL }}img/logo.png"></h1>
+        <h5>Notre site sera mis en ligne dans</h5>
+    </header>
+    <div id="coming">
+        <div id="cooldown">
+            <div class="cooldown">
+                <span id="countdown_day" >--</span><strong>-</strong>
+                <p>jours</p>
+            </div>
+            <div class="cooldown">
+                <span id="countdown_hour">--</span>
+                <p>heures</p>
+            </div>
+            <div class="cooldown">
+                <span id="countdown_min" >--</span>
+                <p>minutes</p>
+            </div>
+            <div class="cooldown">
+                <span id="countdown_sec" >--</span>
+                <p>secondes</p>
+            </div>
+        </div>
+    </div>
+    <div id="newsletter">
+        <p style="float:left;">Soyez le premier au courant !</p>
+        <div id="newsform">
+        <form action="{% url 'newsletter.views.subscribe' newsletter.id %}" method="POST" id="form_subscribe">
+        {% csrf_token %}
+        <input type="email" name="email" id="id_email" />
+        <input type="submit" id="submit_email" value="" />
+        </div>
+    </div>
+{% include 'tag_html/modal.html' %}
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/comingsoon.js"></script>
+<script language="javascript">var STATIC_URL = "{{ STATIC_URL|escapejs }}";</script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/form.js"></script>
+</body>
+</html>

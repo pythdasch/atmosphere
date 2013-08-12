@@ -9,15 +9,20 @@
               values[el.name] = $(el).val();
             });
             values['email'] = $('#id_email').val();
+            $('body').prepend('<div id="loader"><img src="'+STATIC_URL+'img/loading.gif" alt="" /></div>');
             $.ajax({
                 data: values,
                 dataType: 'json',
                 type: 'POST',
                 url: url,
+                complete: function(){
+                    $('#loader').fadeOut();
+                },
                 success:function(data){
                     if (data == 'inscri') {
                         $('#newsmodal p').html("Votre inscription a bien été pris en compte. Un email vous a été envoyé pour confirmer l'inscription")
                         $('#newsmodal').modal('show');
+                        $('#form_subscribe').fadeOut(500);
                     }
                     else if(data == 'already') {
                         $('#newsmodal p').html('Votre email est déjà inscrit à la newsletter. Veuillez en choisir un autre');

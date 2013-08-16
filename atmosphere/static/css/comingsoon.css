@@ -7,6 +7,7 @@ h1 {
 	text-align: center;
 }
 h5 {
+	line-height:1;
 	text-align: center;
 	color:#ad6c70;
 	font-size:50px;
@@ -33,12 +34,22 @@ h5 {
 #newsmodal p{
     color:#000;
 }
-#newsform {float:left;}
+#newsform {
+    float:left;
+    margin-top:20px;
+    margin-left:20px;
+}
 #submit_email {
     background:url(../img/mail.jpg) no-repeat center #fff;
     width:35px;
     border:none;
     height:30px;
+    margin-left:-5px;
+    border-radius: 0px 5px 5px 0px;
+    margin-bottom: 10px;
+}
+#id_email {
+    border-radius:5px 0px 0px 5px;
 }
 #loader {
     position:absolute;
@@ -62,7 +73,7 @@ h5 {
     color:#fff;
     font-size: 70px;
     line-height: 1.2;
-    margin-left:5px;
+    margin-left:20px;
     text-transform: uppercase;
 }
 .cooldown p {

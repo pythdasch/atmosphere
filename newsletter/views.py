@@ -10,7 +10,6 @@ import re
 
 def subscribe(request, object_id):
     news = get_object_or_404(Newsletter, pk=object_id)
-    import ipdb;ipdb.set_trace()
     if request.is_ajax():
         if request.method == 'POST':
             data = request.POST

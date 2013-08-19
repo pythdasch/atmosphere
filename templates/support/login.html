@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div id="login">
+    <h3>Accèdez à l'espace Support</h3>
+    <p>Cet espace est réservé aux propriétaires du site.</p>
+    {% if error %}
+    <p>{{ error|escape }}</p>
+    {% endif %}
+    <form action="{% url 'support.views.login_in' %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Se connecter" class="btn btn-success">
+    </form>
+</div>
+{% endblock %}

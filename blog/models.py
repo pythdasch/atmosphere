@@ -74,3 +74,19 @@ class Article(models.Model):
 
     def __unicode__(self):
         return self.title
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.EmailField(max_length=75)
+    subject = models.CharField(max_length=255)
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+
+    class Meta:
+        ordering = ['-created_at']
+        verbose_name_plural = 'contacts'
+
+    def __unicode__(self):
+        return self.name +' : '+ self.subject

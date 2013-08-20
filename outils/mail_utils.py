@@ -5,8 +5,11 @@ from django.core.urlresolvers import reverse
 from newsletter.models import Subscriber
 from atmosphere.settings import SITE_URL
 from django.template.loader import render_to_string
-from atmosphere.settings import SENDER_EMAIL
+from atmosphere.settings import SENDER_EMAIL, CONTACT_RECEIVER
 from django.core import mail
+from django.template import Context
+from django.template.loader import get_template
+from django.core.mail import EmailMessage
 
 
 class UnicodeSafePynliner(Pynliner):
@@ -38,3 +41,12 @@ def subscribe_mail(email, newsletter):
     connection.open()
     connection.send_messages(emails)
     connection.close()
+
+
+def contact_email(contact):
+    template = get_template('mail/contact_email.html')
+    context = Context({'contact': contact})
+    content = template.render(context)
+    subject = u"[CONTACT] Une personne vous a contacté"
+    email = EmailMessage(subject, content, to=[CONTACT_RECEIVER])
+    email.send()

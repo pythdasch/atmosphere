@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+
+<form method="post" action="{% url 'atmosphere.views.contact' %}">
+    {% csrf_token %}
+    {{ form }}
+    <br/>
+    <div style="text-align:right">
+        <button type="submit" class="btn btn-primary btn-large btn-index" type="button" style="margin-right:4px;">{% trans "Envoyer" %}</button>
+    </div>
+</form>
+
+{% endblock %}

@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 import os
 
 PROJ_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -121,6 +122,7 @@ INSTALLED_APPS = (
     'tagging',
     'suit',
     'django.contrib.admin',
+    'filebrowser',
     'tinymce',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
@@ -164,7 +166,7 @@ TINYMCE_DEFAULT_CONFIG = {
     'plugins' : "pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,wordcount,advlist,autosave",
 
     # Theme options
-    'theme_advanced_buttons1' : "bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,fontselect,fontsizeselect,", #fullscreen,code",
+    'theme_advanced_buttons1' : "image,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,fontselect,fontsizeselect,", #fullscreen,code",
     'theme_advanced_buttons2' : "bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,|,forecolor,backcolor",
     #'theme_advanced_buttons3' : "tablecontrols,|,hr,sub,sup,|,charmap",
 
@@ -172,6 +174,7 @@ TINYMCE_DEFAULT_CONFIG = {
     'theme_advanced_toolbar_align' : "left",
     'theme_advanced_statusbar_location' : "bottom",
     'theme_advanced_resizing' : 'true',
+    'file_browser_callback': 'filebrowser',
 
     #Example content CSS (should be your site CSS)
     #content_css : "/css/style.css",
@@ -199,6 +202,9 @@ TINYMCE_COMPRESSOR = True
 
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 SENDER_EMAIL = 'schecksdavid@gmail.com'  # Mail qui envoie les mails
+CONTACT_RECEIVER = 'schecksdavid@gmail.com' #Mail qui reçoit les contacts
+
+
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'schecksdavid@gmail.com'
 EMAIL_HOST_PASSWORD = 'superskunk'

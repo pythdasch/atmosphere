@@ -1,5 +1,5 @@
 from django.contrib import admin
-from blog.models import Article, Category
+from blog.models import Article, Category, Contact
 
 
 class ArticleAdmin(admin.ModelAdmin):
@@ -28,3 +28,10 @@ class CategoryAdmin(admin.ModelAdmin):
     search_fields = ['name', 'description', 'meta_keywords', 'meta_description']
     # sets up slug to be generated from category
 admin.site.register(Category, CategoryAdmin)
+
+
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ('name', 'created_at',)
+
+
+admin.site.register(Contact, ContactAdmin)

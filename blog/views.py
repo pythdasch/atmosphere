@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404
 from models import Article, Category
 
 
-def article(request, article_slug):
+def single_article(request, article_slug):
     article = get_object_or_404(Article, slug=article_slug)
     return render(request, 'article.html', {
         'article': article,

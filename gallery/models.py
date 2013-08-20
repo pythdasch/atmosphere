@@ -45,3 +45,7 @@ class Gallery(models.Model):
     name = models.CharField(max_length=255)
     description = HTMLField()
     photos = models.ManyToManyField(Image)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def all_galleries(self, length=20):
+        return self.objects.order_by('created_at')[:length]

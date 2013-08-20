@@ -3,7 +3,31 @@ from django.db import models
 from django.contrib.auth.models import User
 from tinymce.models import HTMLField
 import datetime
-# Create your models here.
+import random
+
+
+def all_articles():
+    return Article.objects.all()
+
+def last_articles(length=12):
+    return Article.objects.order_by('-created_at')[:length]
+
+def categories_article(category_name, length=5):
+    category = Category.objects.filter(name=category_name)
+    return Article.objects.filter(categories=category)[:length]
+
+def oneofeach():
+    categories = Category.objects.all()
+    eachlist = []
+    for category in categories:
+        article = Article.objects.order_by('-created_at')[0]
+        eachlist.append(article)
+    return eachlist
+
+def aleatoires(length=3):
+    all_articles = Article.objects.all()
+    random_articles = random.sample(set(all_articles), length)
+    return random_articles
 
 
 class ActiveCategoryManager(models.Manager):
@@ -55,7 +79,7 @@ class Article(models.Model):
     slug = models.SlugField(unique=True, max_length=50)
     content = HTMLField()
     author = models.ForeignKey(User)
-    image = models.ImageField(upload_to='article/image/')
+    image = models.ImageField(upload_to='article/image/', blank=True, null=True)
     meta_keywords = meta_keywords = models.CharField("Meta Keywords", max_length=255,
     help_text='Comma-delimited set of SEO keywords for meta tag')
     meta_description = models.CharField("Meta Description", max_length=255,
@@ -74,6 +98,8 @@ class Article(models.Model):
 
     def __unicode__(self):
         return self.title
+
+
 
 
 class Contact(models.Model):

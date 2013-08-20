@@ -9,13 +9,15 @@
     {% endblock %}
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap-responsive.min.css" />
+
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/blog.css">
     {% block css %}
     {% endblock %}
     </head>
     <body>
         {% include 'header.html' %}
-        <div id="wrapper" class="row-fluid">
+        <div id="wrapper">
             {% block content %}
 
             {% endblock %}

@@ -3,6 +3,26 @@
 {% block content %}
 
 <h1>Welcome ! </h1>
+
+<div class="slider" class="row-fluid">
+    {% for article in slider %}
+    <div class="slider_item">
+        <img src="{{ MEDIA_URL }}{{ article.image.url }}" alt="">
+        <h4>{{ article.title }}</h4>
+        <p>{{ article.content|safe|truncatewords:20 }}</p>
+        <a href="{% url 'blog.views.single_article' article.slug  %}">En savoir +</a>
+    </div>
+    {% endfor %}
+</div>
+<div class="row-fluid">
+        {% for article in last_articles %}
+        <div class="last_articles_index span1">
+            <img src="{{ MEDIA_URL }}{{ article.image.url }}" alt="">
+            <p>{{ article.title }}</p>
+            <a href="{% url 'blog.views.single_article' article.slug %}">En savoir +</a>
+        </div>
+        {% endfor %}
+</div>
 {% if categories %}
     {% for cat in categories %}
     {% if cat.article_set.all %}
@@ -20,6 +40,6 @@
         </div>
     </div>
     {% endif %}
-    {% endfor %}    
+    {% endfor %}
 {% endif %}
 {% endblock %}

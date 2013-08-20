@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 from django.shortcuts import render, get_object_or_404
-from blog.models import Article, Category
+from blog.models import Article, Category, last_articles, oneofeach
 from newsletter.models import Newsletter
 from blog.forms import ContactForm
 from outils.mail_utils import contact_email
@@ -13,11 +13,10 @@ def coming_soon(request):
         })
 
 def index(request):
-    categories = Category.objects.select_related().all()
-    articles = Article.objects.all()
     return render(request, 'index.html', {
-        'articles': articles,
-        'categories': categories,
+        'oneofeach': oneofeach(),
+        'last_articles': last_articles(20),
+        'slider': last_articles(3),
         })
 
 def contact(request):

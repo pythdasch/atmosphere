@@ -54,6 +54,7 @@ def unsubscribe(request, object_id, subscriber_id):
     if request.method == 'POST':
         if request.POST['unsub'] == 'yes':
             sub.delete()
+            return render(request, 'newsletter/unsub_success.html')
     return render(request, 'newsletter/unsubscribe.html', {
         'newsletter': news,
         'subscriber': sub,

@@ -41,3 +41,6 @@ def login_in(request):
         'form': form,
         'error': error_message,
         })
+
+def articles(request):
+    return render(request, 'support/articles.html')

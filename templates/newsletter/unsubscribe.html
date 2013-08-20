@@ -5,7 +5,7 @@
 {% if error %}
         <p>{{ error|escape }}</p>
     {% endif %}
-        <form action="{% url 'newsletter.views.unsubscribe' newsletter.id subscriber.id %}" method="POST">
+        <form action="" method="POST">
             {% csrf_token %}
             <input type="hidden" name="unsub" value="yes">
             <input type="submit" value="{% trans 'Se désabonner' %}" class="btn btn-success">

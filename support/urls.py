@@ -6,4 +6,5 @@ urlpatterns = patterns('',
         name='support_index'),
     url(r'^login/$', 'support.views.login_in', \
         name='support_login'),
+    url(r'^articles/$', 'support.views.articles'),
 )

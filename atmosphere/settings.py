@@ -11,14 +11,13 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'atmosphere',                      # Or path to database file if using sqlite3.
-        'USER': 'david',                      # Not used with sqlite3.
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'atmosphere_blog',                      # Or path to database file if using sqlite3.
+        'USER': 'atmosphere',                      # Not used with sqlite3.
         'PASSWORD': 'labrador88',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'HOST': 'postgresql1.alwaysdata.com',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
 
-# Make this unique, and don't share it with anybody.
 SECRET_KEY = 'l5q&amp;snr^scuj!^s9vlu8kbkr5$co04@_j3w@xnyu6h_j1hxvb6'

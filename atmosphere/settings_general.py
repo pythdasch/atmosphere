@@ -193,26 +193,12 @@ TINYMCE_DEFAULT_CONFIG = {
         {'title' : 'Table row 1', 'selector' : 'tr', 'classes' : 'tablerow'}
     ],
 
-    'width': '700',
+    'widthform').fadeOut(500);
+                        $('#newsletter p').text("Merci de vous être inscri à la newsletter.");: '700',
     'height': '400'
 }
 TINYMCE_SPELLCHECKER = True
 TINYMCE_COMPRESSOR = True
-
-
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-SENDER_EMAIL = 'schecksdavid@gmail.com'  # Mail qui envoie les mails
-CONTACT_RECEIVER = 'schecksdavid@gmail.com' #Mail qui reçoit les contacts
-
-
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'schecksdavid@gmail.com'
-EMAIL_HOST_PASSWORD = 'superskunk'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-
-SITE_URL = "http://localhost:8001"
-
 
 
 # Django Suit configuration example
@@ -236,9 +222,9 @@ SUIT_CONFIG = {
     # 'MENU_EXCLUDE': ('auth.group',),
     'MENU': (
         'sites',
-        {'app': 'auth', 'icon':'icon-lock', 'models': ('user', 'group')},
-        {'label': 'Settings', 'icon':'icon-cog', 'models': ('auth.user', 'auth.group')},
-        {'label': 'Support', 'icon':'icon-question-sign', 'url': '/support/'},
+       	 {'app': 'auth', 'icon':'icon-lock', 'models': ('user', 'group')},
+       	 {'label': 'Settings', 'icon':'icon-cog', 'models': ('auth.user', 'auth.group')},
+	 {'label': 'Support', 'icon':'icon-question-sign', 'url': '/support/'},
     ),
 
     # misc

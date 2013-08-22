@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-22 16:10+0200\n"
+"POT-Creation-Date: 2013-08-22 17:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,38 +18,42 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: atmosphere/settings_general.py:24
-msgid "Français"
+msgid "French"
 msgstr "French"
 
 #: atmosphere/settings_general.py:25
-msgid "Anglais"
-msgstr "English"
+msgid "English"
+msgstr ""
 
 #: templates/coming_soon.html:8
 msgid "Le blog de l'architecture !"
 msgstr "The Architecture Blog"
 
-#: templates/coming_soon.html:17
+#: templates/coming_soon.html:26
+msgid "Changer"
+msgstr "Switch"
+
+#: templates/coming_soon.html:30
 msgid "Notre site sera mis en ligne dans"
 msgstr "Our Website will be online in"
 
-#: templates/coming_soon.html:23
+#: templates/coming_soon.html:36
 msgid "jours"
 msgstr "days"
 
-#: templates/coming_soon.html:29
+#: templates/coming_soon.html:42
 msgid "heures"
 msgstr "hours"
 
-#: templates/coming_soon.html:35
+#: templates/coming_soon.html:48
 msgid "minutes"
 msgstr "minuts"
 
-#: templates/coming_soon.html:41
+#: templates/coming_soon.html:54
 msgid "secondes"
 msgstr "seconds"
 
-#: templates/coming_soon.html:46
+#: templates/coming_soon.html:59
 msgid "Soyez le premier au courant !"
 msgstr "Be the first aware !"
 
@@ -121,7 +125,10 @@ msgstr ""
 
 #: templates/newsletter/unsubscribe.html:11
 msgid "Se désabonner"
-msgstr ""
+msgstr "Unsubscribe"
 
-#~ msgid "French"
+#~ msgid "Français"
 #~ msgstr "French"
+
+#~ msgid "Anglais"
+#~ msgstr "English"

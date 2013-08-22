@@ -20,17 +20,17 @@
                 },
                 success:function(data){
                     if (data == 'inscri') {
-                        $('#newsmodal p').html("Votre inscription a bien été pris en compte. Un email vous a été envoyé pour confirmer l'inscription")
+                        $('#newsmodal p').html(gettext("Votre inscription a bien été pris en compte. Un email vous a été envoyé pour confirmer l'inscription"))
                         $('#newsmodal').modal('show');
                         $('#newsform').fadeOut(500);
-                        $('#newsletter p').text("Merci de vous être inscri à la newsletter.");
+                        $('#newsletter p').text(gettext("Merci de vous être inscri à la newsletter."));
                     }
                     else if(data == 'already') {
-                        $('#newsmodal p').html('Votre email est déjà inscrit à la newsletter. Veuillez en choisir un autre');
+                        $('#newsmodal p').html(gettext('Votre email est déjà inscrit à la newsletter. Veuillez en choisir un autre'));
                         $('#newsmodal').modal('show');
                     }
                     else if(data == 'incorrect'){
-                        $('#newsmodal p').html('Votre email est invalide');
+                        $('#newsmodal p').html(gettext('Votre email est invalide'));
                         $('#newsmodal').modal('show');
                     }
                 },

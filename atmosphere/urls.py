@@ -6,6 +6,11 @@ from django.conf.urls.static import static
 
 admin.autodiscover()
 
+js_info_dict = {
+    'domain': 'djangojs',
+    'packages': ('atmosphere',),
+}
+
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'atmosphere.views.coming_soon', name='index'),
@@ -28,4 +33,5 @@ urlpatterns = patterns('',
     (r'^media/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root': MEDIA_ROOT}),
     (r'^i18n/', include('django.conf.urls.i18n')),
+    (r'^jsi18n/$', 'django.views.i18n.javascript_catalog', js_info_dict),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,7 +1,6 @@
-var arr = "2013-09-13 00:00:00".split(/[- :]/),
 countdownManager = {
     // Configuration
-    targetTime: new Date(arr[0], arr[1]-1, arr[2], arr[3], arr[4], arr[5]), // Date cible du compte à rebours (00:00:00)
+    targetTime: new Date(2013, 08, 13, 12, 00, 00), // Date cible du compte à rebours (00:00:00)
     displayElement: { // Elements HTML où sont affichés les informations
         day:  null,
         hour: null,

@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 import os
+from django.utils.translation import ugettext as _
 
 PROJ_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -12,6 +13,18 @@ TIME_ZONE = 'Europe/Paris'
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'fr-FR'
+
+gettext = lambda s: s
+
+DEFAULT_LANGUAGE = 1
+
+LOCALE_PATHS = (
+    "locale",
+)
+LANGUAGES = (
+  ('fr', _('French')),
+  ('en', _('English')),
+)
 
 SITE_ID = 1
 
@@ -193,13 +206,11 @@ TINYMCE_DEFAULT_CONFIG = {
         {'title' : 'Table row 1', 'selector' : 'tr', 'classes' : 'tablerow'}
     ],
 
-    'widthform').fadeOut(500);
-                        $('#newsletter p').text("Merci de vous être inscri à la newsletter.");: '700',
+    'widthform': '700',
     'height': '400'
 }
 TINYMCE_SPELLCHECKER = True
 TINYMCE_COMPRESSOR = True
-
 
 # Django Suit configuration example
 SUIT_CONFIG = {

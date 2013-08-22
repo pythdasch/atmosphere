@@ -1,6 +1,5 @@
 # -*- coding:utf-8 -*-
 import os
-from django.utils.translation import ugettext as _
 
 PROJ_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -14,16 +13,16 @@ TIME_ZONE = 'Europe/Paris'
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'fr-FR'
 
-gettext = lambda s: s
+ugettext = lambda s: s
 
-DEFAULT_LANGUAGE = 1
+# DEFAULT_LANGUAGE = 1
 
 LOCALE_PATHS = (
-    "locale",
+    os.path.join(PROJ_DIR, 'locale'),
 )
 LANGUAGES = (
-  ('fr', _('French')),
-  ('en', _('English')),
+  ('fr', ugettext('French')),
+  ('en', ugettext('English')),
 )
 
 SITE_ID = 1
@@ -100,6 +99,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )

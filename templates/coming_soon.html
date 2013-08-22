@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+{% load i18n %}
 {% load newsletter_tag %}
 <html>
     <head>
         {% block meta %}
         <meta name="description" content="13Atmosphere">
-        <meta name="keywords" content="Le blog de l'architecture !">
+        <meta name="keywords" content="{% blocktrans %}Le blog de l'architecture !{% endblocktrans %}">
         <meta name="author" content="Therese Mace">
         {% endblock %}
         <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.css" />
@@ -12,37 +13,50 @@
     </head>
     <body>
     <header>
+        <div class="language">
+            <form action="/i18n/setlang/" method="post">
+                {% csrf_token %}
+                <input name="next" type="hidden" value="{{ redirect_to }}" />
+                <select name="language">
+                {% get_language_info_list for LANGUAGES as languages %}
+                {% for language in languages %}
+                <option value="{{ language.code }}">{{ language.name_local }} ({{ language.code }})</option>
+                {% endfor %}
+                </select>
+                <input type="submit" value="{% trans "Changer" %}" id="change_lan" />
+            </form>
+        </div>
         <h1><img src="{{ STATIC_URL }}img/logo.png"></h1>
-        <h5>Notre site sera mis en ligne dans</h5>
+        <h5>{% trans "Notre site sera mis en ligne dans" %}</h5>
     </header>
     <div id="coming">
         <div id="cooldown">
             <div class="cooldown">
                 <span id="countdown_day" >--</span>
-                <p>jours</p>
+                <p>{% trans "jours" %}</p>
             </div>
             <div class="cooldown">
             <strong>-</strong></div>
             <div class="cooldown">
                 <span id="countdown_hour">--</span>
-                <p>heures</p>
+                <p>{% trans "heures" %}</p>
             </div>
             <div class="cooldown">
             <strong>.</strong></div>
             <div class="cooldown">
                 <span id="countdown_min" >--</span>
-                <p>minutes</p>
+                <p>{% trans "minutes" %}</p>
             </div>
             <div class="cooldown">
             <strong>.</strong></div>
             <div class="cooldown">
                 <span id="countdown_sec" >--</span>
-                <p>secondes</p>
+                <p>{% trans "secondes" %}</p>
             </div>
         </div>
     </div>
     <div id="newsletter">
-        <p style="float:left;">Soyez le premier au courant !</p>
+        <p style="float:left;">{% trans "Soyez le premier au courant !" %}</p>
         <div id="newsform">
         <form action="{% url 'newsletter.views.subscribe' newsletter.id %}" method="POST" id="form_subscribe">
         {% csrf_token %}

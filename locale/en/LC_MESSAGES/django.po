@@ -50,7 +50,7 @@ msgstr "hours"
 #: templates/coming_soon.html:48
 #: venv/lib/python2.7/site-packages/django/utils/timesince.py:43
 msgid "minutes"
-msgstr "minuts"
+msgstr "minutes"
 
 #: templates/coming_soon.html:54
 msgid "secondes"

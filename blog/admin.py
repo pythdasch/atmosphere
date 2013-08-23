@@ -1,16 +1,22 @@
 from django.contrib import admin
 from blog.models import Article, Category, Contact
+from modeltranslation.admin import TranslationAdmin
 
 
-class ArticleAdmin(admin.ModelAdmin):
+class ArticleAdmin(TranslationAdmin):
     # sets values for how the admin site lists your products
     list_display = ('title', 'author', 'created_at', 'pub_date',)
-    list_display_links = ('title',)
+    list_display_links = ('title', 'created_at')
     list_per_page = 20
     ordering = ['-created_at']
     search_fields = ['title', 'content', 'meta_keywords', 'meta_description']
     # sets up slug to be generated from product title
     prepopulated_fields = {'slug': ('title',)}
+
+    def formfield_for_dbfield(self, db_field, **kwargs):
+        field = super(ArticleAdmin, self).formfield_for_dbfield(db_field, **kwargs)
+        self.patch_translation_field(db_field, field, **kwargs)
+        return field
 
     class Media:
         js = ('/static/tiny_mce/tiny_mce.js', )

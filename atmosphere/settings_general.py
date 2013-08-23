@@ -15,16 +15,21 @@ LANGUAGE_CODE = 'fr-FR'
 
 ugettext = lambda s: s
 
+MODELTRANSLATION_CUSTOM_FIELDS = ('HTMLField',)
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 # DEFAULT_LANGUAGE = 1
 
 LOCALE_PATHS = (
     os.path.join(PROJ_DIR, 'locale'),
 )
 LANGUAGES = (
-  ('fr', ugettext('French')),
-  ('en', ugettext('English')),
+	('fr', ugettext('French')),
+	('en', ugettext('English')),
 )
 
+MODELTRANSLATION_TRANSLATION_FILES = (
+    'blog.translation',
+)
 SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
@@ -45,7 +50,7 @@ MEDIA_ROOT = os.path.join(PROJ_DIR, 'media/')
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = 'media/'
+MEDIA_URL = '/media/'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -118,7 +123,8 @@ INSTALLED_APPS = (
     'pynliner',
     'multiupload',
     'sorl.thumbnail',
-    'support',
+    'modeltranslation',
+	'support',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',

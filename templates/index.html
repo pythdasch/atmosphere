@@ -7,7 +7,7 @@
 <div class="slider" class="row-fluid">
     {% for article in slider %}
     <div class="slider_item">
-        <img src="{{ MEDIA_URL }}{{ article.image.url }}" alt="">
+/bin/bash: q: command not found
         <h4>{{ article.title }}</h4>
         <p>{{ article.content|safe|truncatewords:20 }}</p>
         <a href="{% url 'blog.views.single_article' article.slug  %}">En savoir +</a>
@@ -17,7 +17,7 @@
 <div class="row-fluid">
         {% for article in last_articles %}
         <div class="last_articles_index span1">
-            <img src="{{ MEDIA_URL }}{{ article.image.url }}" alt="">
+            <img src="{{ article.image.url }}" alt="">
             <p>{{ article.title }}</p>
             <a href="{% url 'blog.views.single_article' article.slug %}">En savoir +</a>
         </div>

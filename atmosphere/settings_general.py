@@ -45,6 +45,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
+
 MEDIA_ROOT = os.path.join(PROJ_DIR, 'media/')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
@@ -55,6 +56,8 @@ MEDIA_URL = '/media/'
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
 STATIC_URL = '/static/'
+
+STATIC_ROOT = 'static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -133,10 +136,11 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'south',
     'tagging',
-    'suit',
-    'django.contrib.admin',
+    # 'suit',
     'filebrowser',
+    'grappelli',
     'tinymce',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
@@ -170,47 +174,6 @@ LOGGING = {
     }
 }
 
-# TINYMCE
-
-TINYMCE_DEFAULT_CONFIG = {
-    # General options
-    'mode' : "textareas",
-    'theme' : "advanced",
-    'plugins' : "pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,wordcount,advlist,autosave",
-
-    # Theme options
-    'theme_advanced_buttons1' : "image,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,fontselect,fontsizeselect,", #fullscreen,code",
-    'theme_advanced_buttons2' : "bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,|,forecolor,backcolor",
-    #'theme_advanced_buttons3' : "tablecontrols,|,hr,sub,sup,|,charmap",
-
-    'theme_advanced_toolbar_location' : "top",
-    'theme_advanced_toolbar_align' : "left",
-    'theme_advanced_statusbar_location' : "bottom",
-    'theme_advanced_resizing' : 'true',
-    'file_browser_callback': 'filebrowser',
-
-    #Example content CSS (should be your site CSS)
-    #content_css : "/css/style.css",
-
-    'template_external_list_url' : "lists/template_list.js",
-    'external_link_list_url' : "lists/link_list.js",
-    'external_image_list_url' : "lists/image_list.js",
-    'media_external_list_url' : "lists/media_list.js",
-
-    # Style formats
-    'style_formats' : [
-        {'title' : 'Bold text', 'inline' : 'strong'},
-        {'title' : 'Red text', 'inline' : 'span', 'styles' : {'color' : '#ff0000'}},
-        {'title' : 'Help', 'inline' : 'strong', 'classes' : 'help'},
-        {'title' : 'Table styles'},
-        {'title' : 'Table row 1', 'selector' : 'tr', 'classes' : 'tablerow'}
-    ],
-
-    'widthform': '700',
-    'height': '400'
-}
-TINYMCE_SPELLCHECKER = True
-TINYMCE_COMPRESSOR = True
 
 # Django Suit configuration example
 SUIT_CONFIG = {
@@ -241,3 +204,76 @@ SUIT_CONFIG = {
     # misc
     'LIST_PER_PAGE': 15
 }
+# TINYMCE
+
+TINYMCE_DEFAULT_CONFIG = {
+    # General options
+    'mode' : "textareas",
+    'theme' : "advanced",
+    'plugins' : "pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,wordcount,advlist,autosave",
+
+    # Theme options
+    'theme_advanced_buttons1' : "image,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,fontselect,fontsizeselect,", #fullscreen,code",
+    'theme_advanced_buttons2' : "bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,|,forecolor,backcolor",
+    #'theme_advanced_buttons3' : "tablecontrols,|,hr,sub,sup,|,charmap",
+
+    'theme_advanced_toolbar_location' : "top",
+    'theme_advanced_toolbar_align' : "left",
+    'theme_advanced_statusbar_location' : "bottom",
+    'theme_advanced_resizing' : 'true',
+    'file_browser_callback': 'filebrowser',
+
+
+    # Style formats
+    'style_formats' : [
+        {'title' : 'Bold text', 'inline' : 'strong'},
+        {'title' : 'Red text', 'inline' : 'span', 'styles' : {'color' : '#ff0000'}},
+        {'title' : 'Help', 'inline' : 'strong', 'classes' : 'help'},
+        {'title' : 'Table styles'},
+        {'title' : 'Table row 1', 'selector' : 'tr', 'classes' : 'tablerow'}
+    ],
+
+    'widthform': '700',
+    'height': '400'
+}
+TINYMCE_SPELLCHECKER = True
+TINYMCE_COMPRESSOR = True
+TINYMCE_FILEBROWSER = True
+# file_browser
+
+# import filebrowser
+# STATICFILES_DIRS += (os.path.join(os.path.dirname(filebrowser.__file__), 'static/'),)
+
+ADMIN_MEDIA_PREFIX = '/media/admin/'
+TINYMCE_JS_URL = ADMIN_MEDIA_PREFIX + 'tiny_mce/tiny_mce_src.js'
+URL_FILEBROWSER_MEDIA = ADMIN_MEDIA_PREFIX + 'filebrowser/'
+FILEBROWSER_URL_TINYMCE = ADMIN_MEDIA_PREFIX + 'tiny_mce/'
+
+FILEBROWSER_MEDIA_ROOT = MEDIA_ROOT
+FILEBROWSER_MEDIA_URL = MEDIA_URL
+FILEBROWSER_STATIC_ROOT = STATIC_ROOT
+FILEBROWSER_STATIC_URL = STATIC_URL
+URL_FILEBROWSER_MEDIA = STATIC_URL + 'filebrowser/'
+PATH_FILEBROWSER_MEDIA = STATIC_ROOT + 'filebrowser/'
+URL_TINYMCE = STATIC_URL + 'tiny_mce/'
+PATH_TINYMCE = STATIC_ROOT + 'tiny_mce/'
+
+
+FILEBROWSER_EXTENSIONS =  {
+    'Image': ['.jpg','.jpeg','.gif','.png','.tif','.tiff'],
+    'Video': ['.mov','.wmv','.mpeg','.mpg','.avi','.rm'],
+    'Audio': ['.mp3','.mp4','.wav','.aiff','.midi','.m4p']
+}
+
+
+FILEBROWSER_VERSIONS = {
+    'fb_thumb': {'verbose_name': 'Admin Thumbnail', 'width': 60, 'height': 60, 'opts': 'crop upscale'},
+    'thumbnail': {'verbose_name': 'Thumbnail (140px)', 'width': 140, 'height': '', 'opts': ''},
+    'small': {'verbose_name': 'Small (300px)', 'width': 300, 'height': '', 'opts': ''},
+    'medium': {'verbose_name': 'Medium (460px)', 'width': 460, 'height': '', 'opts': ''},
+    'big': {'verbose_name': 'Big (620px)', 'width': 620, 'height': '', 'opts': ''},
+    'cropped': {'verbose_name': 'Cropped (60x60px)', 'width': 60, 'height': 60, 'opts': 'crop'},
+    'croppedthumbnail': {'verbose_name': 'Cropped Thumbnail (140x140px)', 'width': 140, 'height': 140, 'opts': 'crop'},
+}
+FILEBROWSER_ADMIN_VERSIONS = ['thumbnail','small', 'medium','big']
+FILEBROWSER_ADMIN_THUMBNAIL = ('fb_thumb')

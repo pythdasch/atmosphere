@@ -3,6 +3,7 @@ from settings import STATIC_ROOT, MEDIA_ROOT
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
+from filebrowser.sites import site
 
 admin.autodiscover()
 
@@ -18,6 +19,7 @@ urlpatterns = patterns('',
     url(r'^contact/$', 'atmosphere.views.contact',),
     url(r'^blog/', include('blog.urls')),
     url(r'^support/', include('support.urls')),
+    url(r'^admin/filebrowser/', include(site.urls)),
     # url(r'^atmosphere/', include('atmosphere.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
@@ -25,6 +27,7 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     (r'^tinymce/', include('tinymce.urls')),
+    (r'^grappelli/', include('grappelli.urls')),
     (r'^galleries/', include('gallery.urls')),
     (r'^newsletter/', include('newsletter.urls')),
     url(r'^admin/', include(admin.site.urls)),

@@ -124,6 +124,7 @@ INSTALLED_APPS = (
     'atmosphere',
     'newsletter',
     'pynliner',
+    'multiupload',
     'sorl.thumbnail',
     'modeltranslation',
 	'support',

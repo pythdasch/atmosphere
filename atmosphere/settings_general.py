@@ -30,6 +30,7 @@ LANGUAGES = (
 MODELTRANSLATION_TRANSLATION_FILES = (
     'blog.translation',
 )
+
 SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
@@ -58,6 +59,13 @@ MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
 
 STATIC_ROOT = 'static/'
+
+#deployment
+SEND_BROKEN_LINK_EMAILS = True
+MANAGERS = (
+        ('webmaster', 'webmaster@13atmosphere.com'),
+        ('david scheck', 'schecksdavid@gmail.com'),
+    )
 
 # Additional locations of static files
 STATICFILES_DIRS = (

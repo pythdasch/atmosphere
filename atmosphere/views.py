@@ -31,3 +31,9 @@ def contact(request):
     return render(request, 'contact.html', {
         'form': form,
         })
+
+def custom404(request):
+    return render(request, '404.html')
+
+def custom500(request):
+    return render(request, '500.html')

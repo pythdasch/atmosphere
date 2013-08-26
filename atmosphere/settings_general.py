@@ -23,8 +23,8 @@ LOCALE_PATHS = (
     os.path.join(PROJ_DIR, 'locale'),
 )
 LANGUAGES = (
-	('fr', ugettext('French')),
-	('en', ugettext('English')),
+	('fr', ugettext('Français')),
+	('en', ugettext('Anglais')),
 )
 
 MODELTRANSLATION_TRANSLATION_FILES = (

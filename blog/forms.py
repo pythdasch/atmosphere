@@ -15,7 +15,3 @@ class ArticleForm(forms.ModelForm):
     class Meta:
         model = Article
 
-    def save(self, *args, **kwargs):
-        import ipdb;ipdb.set_trace()
-        article = []
-        return article

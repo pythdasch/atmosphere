@@ -20,10 +20,16 @@ def subscribe(request, object_id):
             if already_sub:
                 error = "already"
             if not error:
-                form = Subscriber(email=data['email'])
-                form.save()
-                subscribe_mail(request.POST['email'], news)
-                return HttpResponse(simplejson.dumps('inscri'))
+                if request.LANGUAGE_CODE == 'en':
+                    form = Subscriber(email=data['email'], language="en")
+                    form.save()
+                    subscribe_mail(request.POST['email'], news, language="en")
+                    return HttpResponse(simplejson.dumps('inscri'))
+                else:
+                    form = Subscriber(email=data['email'], language="fr")
+                    form.save()
+                    subscribe_mail(request.POST['email'], news, language="fr")
+                    return HttpResponse(simplejson.dumps('inscri'))
             else:
                 return HttpResponse(simplejson.dumps(error))
     else:

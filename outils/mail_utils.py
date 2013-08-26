@@ -18,18 +18,25 @@ class UnicodeSafePynliner(Pynliner):
         return self.output
 
 
-def subscribe_mail(email, newsletter):
+def subscribe_mail(email, newsletter, language="fr"):
     emails = []
     subscriber = get_object_or_404(Subscriber, email=email)
     unsub_url = reverse('newsletter.views.unsubscribe', \
         kwargs={'object_id': newsletter.id, 'subscriber_id': subscriber.id})
     path = SITE_URL + unsub_url
     subject = u"[13Atmosphere] Inscription à la newsletter"
-    message_html = UnicodeSafePynliner().from_string(render_to_string(
-            'mail/subscribe_mail.html', {
-            'unsub_url': path,
-    }
-    )).run()
+    if language =='en':
+        message_html = UnicodeSafePynliner().from_string(render_to_string(
+                'mail/subscribe_mail_en.html', {
+                'unsub_url': path,
+            }
+        )).run()
+    else:
+        message_html = UnicodeSafePynliner().from_string(render_to_string(
+                'mail/subscribe_mail.html', {
+                'unsub_url': path,
+            }
+        )).run()
     from_ = SENDER_EMAIL
     # to_ = [teacher.email]
     to_ = [subscriber.email]

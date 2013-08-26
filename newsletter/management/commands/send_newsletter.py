@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 from django.core.management.base import BaseCommand
 from outils.mail_utils import UnicodeSafePynliner
 from django.template.loader import render_to_string

@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 from django.conf.urls import patterns, include, url
 from settings import STATIC_ROOT, MEDIA_ROOT
 from django.contrib import admin

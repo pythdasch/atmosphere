@@ -1,4 +1,4 @@
-
+# -*- coding:utf-8 -*-
 from modeltranslation.translator import translator, TranslationOptions
 from blog.models import Article, Category
 

@@ -3,3 +3,4 @@ venv/
 atmosphere/settings.py
 public/
 .gitignore
+log/

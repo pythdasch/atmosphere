@@ -22,8 +22,6 @@
                     if (data == 'inscri') {
                         $('#newsmodal p').html(gettext("Votre inscription a bien été pris en compte. Un email vous a été envoyé pour confirmer l'inscription"))
                         $('#newsmodal').modal('show');
-                        $('#newsform').fadeOut(500);
-                        $('#newsletter p').text(gettext("Merci de vous être inscri à la newsletter."));
                     }
                     else if(data == 'already') {
                         $('#newsmodal p').html(gettext('Votre email est déjà inscrit à la newsletter. Veuillez en choisir un autre'));

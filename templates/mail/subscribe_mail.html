@@ -1,12 +1,14 @@
-{% load i18n %}
-<h1>{% trans 'Vous venez de vous inscrire à la newsletter 13Atmosphere' %}</h1>
 <table style="background:#ccc;">
     <tr>
-        <td>{% trans "La newsletter c'est tous les articles publié dans le mois" %}</td>
+        <h2>Vous venez de vous inscrire à la newsletter 13Atmosphere, nous vous remercions,
+vous recevrez les nouveaux articles chaque 13 du mois.</h2>
+    </tr>
+    <tr>
+        <img src="{{ logo_path }}" alt="">
     </tr>
     <tfoot>
-        <tr>
-            <td style="font-size:9px;"><a href="{{ unsub_url }}">{% trans "Se désinscrire ?" %}</a></td>
+        <tr style="background:#fff;">
+            <td style="font-size:9px;"><a href="{{ unsub_url }}">Se désinscrire ?</a></td>
         </tr>
     </tfoot>
 </table>

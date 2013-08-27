@@ -1,12 +1,13 @@
-{% load i18n %}
-<h1>You just subscribed to the 13Atmosphere Newsletter !</h1>
 <table style="background:#ccc;">
     <tr>
-        <td>The 13Atmosphere newsletter is a selection of articles, every months about architectural environment.</td>
+        <h2>Thank you to for registering at 13atmosphere newsletter, you will receive new articles every 13th of the month.</h2>
+    </tr>
+    <tr>
+        <img src="{{ logo_path }}" alt="">
     </tr>
     <tfoot>
-        <tr>
-            <td style="font-size:9px;"><a href="{{ unsub_url }}">{% trans "Unsubscribe ?" %}</a></td>
+        <tr style="background:#fff;">
+            <td style="font-size:9px;"><a href="{{ unsub_url }}">Unsubscribe ?</a></td>
         </tr>
     </tfoot>
 </table>

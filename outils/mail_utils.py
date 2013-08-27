@@ -3,7 +3,7 @@ from pynliner import Pynliner
 from django.shortcuts import get_object_or_404
 from django.core.urlresolvers import reverse
 from newsletter.models import Subscriber
-from atmosphere.settings import SITE_URL
+from atmosphere.settings import SITE_URL, STATIC_URL
 from django.template.loader import render_to_string
 from atmosphere.settings import SENDER_EMAIL, CONTACT_RECEIVER
 from django.core import mail
@@ -20,6 +20,7 @@ class UnicodeSafePynliner(Pynliner):
 
 def subscribe_mail(email, newsletter, language="fr"):
     emails = []
+    img_path = SITE_URL + STATIC_URL + "img/logo.png"
     subscriber = get_object_or_404(Subscriber, email=email)
     unsub_url = reverse('newsletter.views.unsubscribe', \
         kwargs={'object_id': newsletter.id, 'subscriber_id': subscriber.id})
@@ -29,12 +30,14 @@ def subscribe_mail(email, newsletter, language="fr"):
         message_html = UnicodeSafePynliner().from_string(render_to_string(
                 'mail/subscribe_mail_en.html', {
                 'unsub_url': path,
+                'logo_path': img_path,
             }
         )).run()
     else:
         message_html = UnicodeSafePynliner().from_string(render_to_string(
                 'mail/subscribe_mail.html', {
                 'unsub_url': path,
+                'logo_path': img_path,
             }
         )).run()
     from_ = SENDER_EMAIL

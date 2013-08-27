@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-26 14:17+0200\n"
+"POT-Creation-Date: 2013-08-27 14:21+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,6 +32,24 @@ msgstr "French"
 
 #: build/lib.linux-i686-2.7/atmosphere/settings_general.py:27
 msgid "English"
+msgstr ""
+
+#: templates/404.html:5
+msgid "La page demandée n'existe pas. Veuillez essayer autre chose."
+msgstr "Url does not match. Please try another one."
+
+#: templates/500.html:4
+msgid ""
+"Le serveur rencontre une erreur interne. Veuillez nous excuser de la gêne "
+"occasionnée"
+msgstr ""
+
+#: templates/500.html:5
+msgid "Nous faisons notre possible pour que le site soit opérationnel"
+msgstr ""
+
+#: templates/500.html:6
+msgid "Merci de votre compréhension"
 msgstr ""
 
 #: templates/coming_soon.html:8
@@ -82,18 +100,6 @@ msgstr "Doc / highlights"
 msgid "Artistes & photographes"
 msgstr "Artists & photographies"
 
-#: templates/mail/subscribe_mail.html:2
-msgid "Vous venez de vous inscrire à la newsletter 13Atmosphere"
-msgstr "You just subscribed at the 13atmosphere newsletter"
-
-#: templates/mail/subscribe_mail.html:5
-msgid "La newsletter c'est tous les articles publié dans le mois"
-msgstr ""
-
-#: templates/mail/subscribe_mail.html:9
-msgid "Se désinscrire ?"
-msgstr ""
-
 #: templates/newsletter/sub_success.html:4
 msgid "Vous venez de souscrire à la newsletter"
 msgstr ""
@@ -113,6 +119,9 @@ msgstr "Unsubscribe from 13Atmosphere Newsletter ?"
 #: templates/newsletter/unsubscribe.html:11
 msgid "Se désabonner"
 msgstr "Unsubscribe"
+
+#~ msgid "Vous venez de vous inscrire à la newsletter 13Atmosphere"
+#~ msgstr "You just subscribed at the 13atmosphere newsletter"
 
 #~ msgid "Log in"
 #~ msgstr "Logging in"

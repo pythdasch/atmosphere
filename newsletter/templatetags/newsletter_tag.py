@@ -1,4 +1,3 @@
-# -*- coding:utf-8 -*-
 from django import template
 from newsletter.forms import SubscriptionForm
 from newsletter.models import Newsletter

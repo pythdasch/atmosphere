@@ -1,4 +1,3 @@
-# -*- coding:utf-8 -*-
 from django import template
 from blog.models import Category
 from gallery.models import Gallery

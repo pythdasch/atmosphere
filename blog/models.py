@@ -10,7 +10,11 @@ def all_articles():
     return Article.objects.all()
 
 def last_articles(length=12):
-    return Article.objects.order_by('-created_at')[:length]
+    try:
+        articles = Article.objects.order_by('-created_at')[:length]
+    except:
+        raise Exception('Not enough articles for this query')
+    return articles
 
 def categories_article(category_name, length=5):
     category = Category.objects.filter(name=category_name)

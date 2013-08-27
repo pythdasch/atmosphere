@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 from django.contrib import admin
 from blog.models import Article, Category, Contact
 from modeltranslation.admin import TranslationAdmin
@@ -12,15 +13,14 @@ class ArticleAdmin(admin.ModelAdmin):
     search_fields = [u'title', u'content', u'meta_keywords', u'meta_description']
     # sets up slug to be generated from product title
     prepopulated_fields = {u'slug': (u'title',)}
-
     class Media:
-		js = (
-			u'/static/tiny_mce/tiny_mce.js',
-		 	u'modeltranslation/js/force_jquery.js',
-         	u'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js',
-			u'modeltranslation/js/tabbed_translation_fields.js',
+        js = (
+        	'/static/tiny_mce/tiny_mce.js',
+         	'modeltranslation/js/force_jquery.js',
+         	'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js',
+        	'modeltranslation/js/tabbed_translation_fields.js',
         )
-		css = {'screen': ('modeltranslation/css/tabbed_translation_fields.css',),}
+        css = {'screen': ('modeltranslation/css/tabbed_translation_fields.css',),}
 
 
 class MyTranslatedArticleAdmin(ArticleAdmin, TranslationAdmin):

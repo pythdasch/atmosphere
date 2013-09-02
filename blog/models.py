@@ -1,9 +1,9 @@
 # -*- coding:utf-8 -*-
 from django.db import models
 from django.contrib.auth.models import User
-from tinymce.models import HTMLField
 import datetime
 import random
+import tagging
 
 
 def all_articles():
@@ -21,11 +21,17 @@ def categories_article(category_name, length=5):
     return Article.objects.filter(categories=category)[:length]
 
 def oneofeach():
-    categories = Category.objects.all()
-    eachlist = []
-    for category in categories:
-        article = Article.objects.order_by('-created_at')[0]
-        eachlist.append(article)
+    try:
+        categories = Category.objects.all()
+        eachlist = []
+        for category in categories:
+            try:
+                article = Article.objects.order_by('-created_at')[0]
+                eachlist.append(article)
+            except:
+                pass
+    except:
+        raise Exception('There is no articles for this query')
     return eachlist
 
 def aleatoires(length=3):
@@ -40,13 +46,13 @@ class ActiveCategoryManager(models.Manager):
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField("Nom de la catégorie", max_length=50, help_text="le nom est affiché dans le site comme tel. Faites attention")
     slug = models.SlugField(max_length=50, unique=True,
     help_text='Unique value for product page URL, created from name.')
-    description = models.TextField()
+    description = models.TextField("Description de la catégorie.")
     is_active = models.BooleanField(default=True)
     meta_keywords = models.CharField("Meta Keywords", max_length=255,
-    help_text='Comma-delimited set of SEO keywords for meta tag')
+    help_text='Mots séparés de virgules pour le référencement')
     meta_description = models.CharField("Meta Description", max_length=255,
     help_text='Content for description meta tag')
     created_at = models.DateTimeField(auto_now_add=True)
@@ -80,16 +86,16 @@ class ArticleManager(models.Manager):
 
 class Article(models.Model):
     title = models.CharField(max_length=255)
-    slug = models.SlugField(unique=True, max_length=50)
-    content = HTMLField()
-    author = models.ForeignKey(User)
+    slug = models.SlugField(unique=True, max_length=50, help_text="Cet élèment n'est pas à modifier. Il permet de passer de page en page.")
+    content = models.TextField()
+    author = models.ForeignKey(User, help_text="Veuillez choisir votre auteur")
     image = models.ImageField(upload_to='article/image/', blank=True, null=True)
     meta_keywords = meta_keywords = models.CharField("Meta Keywords", max_length=255,
     help_text='Comma-delimited set of SEO keywords for meta tag')
     meta_description = models.CharField("Meta Description", max_length=255,
     help_text='Content for description meta tag')
-    is_active = models.BooleanField()
-    pub_date = models.DateField()
+    is_active = models.BooleanField("est actif ?", help_text="Ce bouton vous permet d'activer la publication tout de suite ou alors de désactiver un article.")
+    pub_date = models.DateField("Date de publication", help_text="Veuillez choisir la date à laquelle l'article sera publié")
     created_at = models.DateField(auto_now_add=True)
     categories = models.ManyToManyField(Category)
 
@@ -98,12 +104,10 @@ class Article(models.Model):
 
     class Meta:
         ordering = ['-created_at']
-        verbose_name_plural = 'Articles'
+        verbose_name_plural = u'Articles'
 
     def __unicode__(self):
         return self.title
-
-
 
 
 class Contact(models.Model):
@@ -120,3 +124,16 @@ class Contact(models.Model):
 
     def __unicode__(self):
         return self.name +' : '+ self.subject
+
+
+class Metakeys(models.Model):
+    titre = models.CharField(max_length=100, help_text="Le titre correspond à ce que l'on verra sur l'onglet du site. Le titre du site doit être court.")
+    meta_keys = models.CharField(max_length=255, help_text="Les Meta-Keys sont des clefs utilisés par google pour définir un site\
+        Il faut séparé chaque mot par une virgule.")
+    meta_descriptions = models.CharField(max_length=255)
+
+    class Meta:
+        verbose_name_plural = 'Metakeys'
+
+#Django-tagging
+tagging.register(Article)

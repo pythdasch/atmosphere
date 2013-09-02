@@ -20,13 +20,13 @@ urlpatterns = patterns('',
     url(r'^blog/', include('blog.urls')),
     url(r'^support/', include('support.urls')),
     url(r'^admin/filebrowser/', include(site.urls)),
+    (r'^search/', include('search.urls')),
     # url(r'^atmosphere/', include('atmosphere.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    (r'^tinymce/', include('tinymce.urls')),
     (r'^grappelli/', include('grappelli.urls')),
     (r'^galleries/', include('gallery.urls')),
     (r'^newsletter/', include('newsletter.urls')),

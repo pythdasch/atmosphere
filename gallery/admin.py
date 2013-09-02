@@ -34,11 +34,10 @@ class ImageAdmin(AdminImageMixin, MultiUploadAdmin):
     )
 
     def process_uploaded_file(self, uploaded, object, request):
-
         # example:
         title = request.POST.get('title', '') or uploaded.name
 
-        f = Image(image=uploaded, nome=title)
+        f = Image(image=uploaded, name=title)
         f.save()
         return {
             'url': f.imagem(),
@@ -65,6 +64,6 @@ class PhotoGallery(admin.StackedInline):
 
 class GalleryAdmin(admin.ModelAdmin):
     model = Gallery
-
+    prepopulated_fields = {u'slug': (u'name',)}
 
 admin.site.register(Gallery, GalleryAdmin)

@@ -17,6 +17,7 @@ ugettext = lambda s: s
 
 MODELTRANSLATION_CUSTOM_FIELDS = ('HTMLField',)
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
+MODELTRANSLATION_DEBUG = True
 # DEFAULT_LANGUAGE = 1
 
 LOCALE_PATHS = (
@@ -30,6 +31,9 @@ LANGUAGES = (
 MODELTRANSLATION_TRANSLATION_FILES = (
     'blog.translation',
 )
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'fr'
+MODELTRANSLATION_PREPOPULATE_LANGUAGE = 'en'
 
 SITE_ID = 1
 
@@ -52,7 +56,7 @@ MEDIA_ROOT = os.path.join(PROJ_DIR, 'media/')
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = '/media/'
+MEDIA_URL = os.path.join(PROJ_DIR, 'media/')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -62,6 +66,7 @@ STATIC_ROOT = 'static/'
 
 #deployment
 SEND_BROKEN_LINK_EMAILS = True
+
 MANAGERS = (
         ('webmaster', 'webmaster@13atmosphere.com'),
         ('david scheck', 'schecksdavid@gmail.com'),
@@ -135,7 +140,13 @@ INSTALLED_APPS = (
     'multiupload',
     'sorl.thumbnail',
     'modeltranslation',
-	'support',
+    'grappelli',
+    'grappelli_modeltranslation',
+    'grappelli.dashboard',
+    'filebrowser',
+    'support',
+    'tagging',
+    'search',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -143,12 +154,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'south',
-    'tagging',
-    # 'suit',
-    'filebrowser',
-    'grappelli',
-    'grappelli.dashboard',
-    'tinymce',
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
@@ -161,76 +166,51 @@ INSTALLED_APPS = (
 # more details on how to customize your logging configuration.
 LOGGING = {
     'version': 1,
-    'disable_existing_loggers': False,
-    'filters': {
-        'require_debug_false': {
-            '()': 'django.utils.log.RequireDebugFalse'
-        }
-    },
-    'handlers': {
-        'mail_admins': {
-            'level': 'ERROR',
-            'filters': ['require_debug_false'],
-            'class': 'django.utils.log.AdminEmailHandler'
-        }
+    'disable_existing_loggers': True,
+        'filters': {
+                'require_debug_false': {
+                '()': 'django.utils.log.RequireDebugFalse'
+                }
+         },
+         'handlers': {
+                 'mail_admins': {
+                        'level': 'ERROR',
+                        'filters': ['require_debug_false'],
+                        'class': 'django.utils.log.AdminEmailHandler'
+                },
+         'logfile': {
+                 'class': 'logging.handlers.WatchedFileHandler',
+                 'filename': '/home/david/src/atmosphere/log/django/error.log'
+         },
     },
     'loggers': {
         'django.request': {
             'handlers': ['mail_admins'],
-            'level': 'ERROR',
+            'level': 'DEBUG',
             'propagate': True,
         },
     }
 }
 
-
-#Django-grapelli
+POST_PER_PAGE = 10
 
 GRAPPELLI_ADMIN_TITLE = "13Atmosphere"
-# TINYMCE
 
-TINYMCE_DEFAULT_CONFIG = {
-    # General options
-    'mode' : "textareas",
-    'theme' : "advanced",
-    'plugins' : "pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,wordcount,advlist,autosave",
+TINYMCE_JS_URL = STATIC_URL +'grappelli/tinymce/jscripts/tiny_mce/'
+TINYMCE_JS_ROOT = os.path.join(MEDIA_ROOT, "grappelli/tiny_mce/jscripts/tiny_mce/")
 
-    # Theme options
-    'theme_advanced_buttons1' : "image,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,fontselect,fontsizeselect,", #fullscreen,code",
-    'theme_advanced_buttons2' : "bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,|,forecolor,backcolor",
-    #'theme_advanced_buttons3' : "tablecontrols,|,hr,sub,sup,|,charmap",
-
-    'theme_advanced_toolbar_location' : "top",
-    'theme_advanced_toolbar_align' : "left",
-    'theme_advanced_statusbar_location' : "bottom",
-    'theme_advanced_resizing' : 'true',
-    'file_browser_callback': 'filebrowser',
-
-
-    # Style formats
-    'style_formats' : [
-        {'title' : 'Bold text', 'inline' : 'strong'},
-        {'title' : 'Red text', 'inline' : 'span', 'styles' : {'color' : '#ff0000'}},
-        {'title' : 'Help', 'inline' : 'strong', 'classes' : 'help'},
-        {'title' : 'Table styles'},
-        {'title' : 'Table row 1', 'selector' : 'tr', 'classes' : 'tablerow'}
-    ],
-
-    'widthform': '700',
-    'height': '400'
-}
 TINYMCE_SPELLCHECKER = True
-TINYMCE_COMPRESSOR = True
+TINYMCE_COMPRESSOR = False
 TINYMCE_FILEBROWSER = True
 # file_browser
 
-# import filebrowser
-# STATICFILES_DIRS += (os.path.join(os.path.dirname(filebrowser.__file__), 'static/'),)
+import filebrowser
+STATICFILES_DIRS += (os.path.join(os.path.dirname(filebrowser.__file__), 'static/'),)
 
 ADMIN_MEDIA_PREFIX = '/media/admin/'
-TINYMCE_JS_URL = ADMIN_MEDIA_PREFIX + 'tiny_mce/tiny_mce_src.js'
-URL_FILEBROWSER_MEDIA = ADMIN_MEDIA_PREFIX + 'filebrowser/'
-FILEBROWSER_URL_TINYMCE = ADMIN_MEDIA_PREFIX + 'tiny_mce/'
+
+# URL_FILEBROWSER_MEDIA = ADMIN_MEDIA_PREFIX + 'filebrowser/'
+FILEBROWSER_URL_TINYMCE = TINYMCE_JS_URL
 
 FILEBROWSER_MEDIA_ROOT = MEDIA_ROOT
 FILEBROWSER_MEDIA_URL = MEDIA_URL
@@ -238,8 +218,9 @@ FILEBROWSER_STATIC_ROOT = STATIC_ROOT
 FILEBROWSER_STATIC_URL = STATIC_URL
 URL_FILEBROWSER_MEDIA = STATIC_URL + 'filebrowser/'
 PATH_FILEBROWSER_MEDIA = STATIC_ROOT + 'filebrowser/'
-URL_TINYMCE = STATIC_URL + 'tiny_mce/'
-PATH_TINYMCE = STATIC_ROOT + 'tiny_mce/'
+
+URL_TINYMCE = STATIC_URL + 'grappelli/jscripts/tiny_mce/'
+PATH_TINYMCE = STATIC_ROOT + 'grappelli/jscripts/tiny_mce/'
 
 
 FILEBROWSER_EXTENSIONS =  {

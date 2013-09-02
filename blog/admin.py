@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 from django.contrib import admin
-from blog.models import Article, Category, Contact
+from blog.models import Article, Category, Contact, Metakeys
 from modeltranslation.admin import TranslationAdmin
 
 
@@ -13,22 +13,30 @@ class ArticleAdmin(admin.ModelAdmin):
     search_fields = [u'title', u'content', u'meta_keywords', u'meta_description']
     # sets up slug to be generated from product title
     prepopulated_fields = {u'slug': (u'title',)}
+
     class Media:
         js = (
-        	'/static/tiny_mce/tiny_mce.js',
-         	'modeltranslation/js/force_jquery.js',
-         	'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js',
-        	'modeltranslation/js/tabbed_translation_fields.js',
+            '/static/grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js',
+            '/static/js/jquery-1.9.1.js',
+            '/static/js/textarea.js',
+            'modeltranslation/js/force_jquery.js',
+            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js',
+            'modeltranslation/js/tabbed_translation_fields.js',
+            'filebrowser/js/TinyMCEAdmin.js',
+
         )
         css = {'screen': ('modeltranslation/css/tabbed_translation_fields.css',),}
 
 
+
 class MyTranslatedArticleAdmin(ArticleAdmin, TranslationAdmin):
     def formfield_for_dbfield(self, db_field, **kwargs):
-        field = super(MyTranslatedArticleAdmin, self).formfield_for_dbfield(db_field, **kwargs)
+        field = super(MyTranslatedArticleAdmin,
+        self).formfield_for_dbfield(db_field, **kwargs)
         self.patch_translation_field(db_field, field, **kwargs)
+        # override the TinyMCE language settings for this field's widget
         return field
-    # registers your product model with the admin site
+
 admin.site.register(Article, MyTranslatedArticleAdmin)
 
 
@@ -49,3 +57,8 @@ class ContactAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Contact, ContactAdmin)
+
+class MetakeysAdmin(admin.ModelAdmin):
+    list_display = ('titre', 'meta_keys')
+
+admin.site.register(Metakeys, MetakeysAdmin)

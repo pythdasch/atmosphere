@@ -3,6 +3,8 @@
     {% load category_tag %}
     {% load newsletter_tag %}
     {% subscribe_news request %}
+    {% load search_tags %}
+    {% search_box request %}
     <nav>
         <ul>
             <li><a href="{% url 'atmosphere.views.coming_soon' %}">{% trans 'Accueil' %}</a></li>

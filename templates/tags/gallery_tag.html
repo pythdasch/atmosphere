@@ -1,5 +1,5 @@
 <ul>
     {% for gallery in galleries %}
-    <li><a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a></li>
+    <li><a href="{% url 'gallery.views.single_gallery' gallery.slug %}">{{ gallery.title }}</a></li>
     {% endfor %}
 </ul>

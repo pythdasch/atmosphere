@@ -1,12 +1,14 @@
+# -*- coding: utf-8 -*-
 from django.db import models
 from django.core.urlresolvers import reverse
-from tinymce.models import HTMLField
+
 
 
 class Image(models.Model):
     """ Simple model for image file metadata """
     name = models.CharField(max_length=255)
     image = models.ImageField(upload_to='images/')
+    thumbnail = models.ImageField(upload_to='images/thumbnail/', blank=True, null=True)
 
     def imagemAdmin(self):
         from sorl.thumbnail import get_thumbnail
@@ -17,17 +19,16 @@ class Image(models.Model):
             except:
                 return ''
         return ''
+
     imagemAdmin.is_safe = True
     imagemAdmin.allow_tags = True
     imagemAdmin.short_description = u'Imagem'
 
     def imagem(self):
-        from django.conf import settings
         from sorl.thumbnail import get_thumbnail
-
-        if self.img:
+        if self.image:
             try:
-                im = get_thumbnail(self.img, '80x45', quality=80)
+                im = get_thumbnail(self.image, '80x45', quality=80)
                 return im.url
             except:
                 return ''
@@ -43,9 +44,13 @@ class Image(models.Model):
 
 class Gallery(models.Model):
     name = models.CharField(max_length=255)
-    description = HTMLField()
+    slug = models.SlugField(unique=True, max_length=50, help_text="Cet élèment n'est pas à modifier. Il permet de passer de page en page.")
+    description = models.TextField()
     photos = models.ManyToManyField(Image)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def all_galleries(self, length=20):
         return self.objects.order_by('created_at')[:length]
+
+    def __unicode__(self):
+        return 'Gallerie : ' + self.name

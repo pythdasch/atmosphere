@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load search_tags %}
+{% load i18n %}
+{% block content %}
+<h1>{% trans 'Résultat de recherche pour :'%} '{{ q }}'</h1>
+{% for p in results %}
+{% empty %}
+{% trans 'Aucun article ne correspond à votre recherche' %}
+{% endfor %}
+<div class="cb">&nbsp;</div>
+{% pagination_links request paginator %}
+{% endblock %}

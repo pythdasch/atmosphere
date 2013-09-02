@@ -1,0 +1,10 @@
+{% load i18n %}
+<form id="search" action="{% url 'search_results' %}" method="get">
+    {% csrf_token %}
+<h3><label for="id_q">Search</label></h3>
+<div style="text-align:right;">
+{{ form.q }}
+<input type="submit" value="{% trans 'Search' %}" />
+<i class="icon-search"></i>
+</div>
+</form>

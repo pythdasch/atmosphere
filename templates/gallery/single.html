@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load thumbnail %}
 {% block content %}
+<h2>{{ gallery.title }}</h2>
 {% for image in gallery.photos.all %}
     <div class="photo">
         {% thumbnail image.image "200x100" as img %}

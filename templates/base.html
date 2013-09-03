@@ -27,6 +27,7 @@
         <script language="javascript">var STATIC_URL = "{{ STATIC_URL|escapejs }}";</script>
         <script type="text/javascript" src="{{ STATIC_URL }}js/form.js"></script>
 	<script type="text/javascript" src="{% url 'django.views.i18n.javascript_catalog' %}"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/ga_def.js"></script>
         {% block script %}
         {% endblock %}
     </body>

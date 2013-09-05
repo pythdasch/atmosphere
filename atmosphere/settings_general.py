@@ -96,6 +96,7 @@ TEMPLATE_CONTEXT_PROCESSORS = TCP + (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
@@ -144,6 +145,7 @@ INSTALLED_APPS = (
     'grappelli_modeltranslation',
     'grappelli.dashboard',
     'filebrowser',
+    'compressor',
     'support',
     'tagging',
     'search',
@@ -164,7 +166,7 @@ INSTALLED_APPS = (
 # the site admins on every HTTP 500 error when DEBUG=False.
 # See http://docs.djangoproject.com/en/dev/topics/logging for
 # more details on how to customize your logging configuration.
-LOGGING ={ 
+LOGGING ={
         'version': 1,
         'disable_existing_loggers': True,
    	'filters': {
@@ -180,7 +182,7 @@ LOGGING ={
         	},
        	 'logfile': {
            	 'class': 'logging.handlers.WatchedFileHandler',
-           	 'filename': '/home/atmosphere/log/django/error.log'
+           	 'filename': '/home/david/src/atmosphere/log/django/error.log'
        	 },
     },
     	'loggers': {
@@ -247,3 +249,8 @@ FILEBROWSER_VERSIONS = {
 }
 FILEBROWSER_ADMIN_VERSIONS = ['thumbnail','small', 'medium','big']
 FILEBROWSER_ADMIN_THUMBNAIL = ('fb_thumb')
+
+
+#compress
+COMPRESS_OFFLINE = True
+COMPRESS_ENABLED = True

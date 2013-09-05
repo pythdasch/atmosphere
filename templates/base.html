@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-
+    {% load static %}
+    {% load compress %}
 <html>
     <head>
     {% block meta %}
@@ -7,12 +8,13 @@
     <meta name="keywords" content="Le blog de l'architecture !">
     <meta name="author" content="Therese Mace">
     {% endblock %}
-    {% load static %}
+    {% compress css %}
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap-responsive.min.css" />
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/blog.css">
     {% block css %}
     {% endblock %}
+    {% endcompress %}
     </head>
     <body>
         {% include 'header.html' %}
@@ -22,12 +24,14 @@
             {% endblock %}
         </div>
         {% include 'footer.html' %}
+        {% compress js %}
         <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.9.1.js"></script>
         <script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
         <script language="javascript">var STATIC_URL = "{{ STATIC_URL|escapejs }}";</script>
         <script type="text/javascript" src="{{ STATIC_URL }}js/form.js"></script>
-	<script type="text/javascript" src="{% url 'django.views.i18n.javascript_catalog' %}"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}js/ga_def.js"></script>
+    {% endcompress %}
+        <script type="text/javascript" src="{{ STATIC_URL }}js/ga_def.js"></script>
         {% block script %}
+            <script type="text/javascript" src="{% url 'django.views.i18n.javascript_catalog' %}"></script>
         {% endblock %}
     </body>

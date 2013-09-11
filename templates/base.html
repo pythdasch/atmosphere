@@ -12,25 +12,28 @@
     {% load compress %}
 <html>
     <head>
+    <meta http-equiv="content-script-type" content="text/javascript">
     {% block meta %}
     <meta name="description" content="13Atmosphere">
     <meta name="keywords" content="Le blog de l'architecture !">
     <meta name="author" content="Therese Mace">
     {% endblock %}
     {% compress css %}
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css">
-<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.css">
+<!--     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/a-common.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/b-header.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/c-home.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/c-invite-du-13.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.css">
     {% block css %}
     {% endblock %}
     {% endcompress %}
     </head>
     <body>
         {% include 'header.html' %}
-        <div id="wrapper">
             {% block content %}
 
             {% endblock %}
-        </div>
         {% include 'footer.html' %}
         {% compress js %}
         <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.min.js"></script>

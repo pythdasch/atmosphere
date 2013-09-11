@@ -1,0 +1,238 @@
+@charset "UTF-8";
+
+/*  ==================================================
+	RESET
+	==================================================  */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	text-decoration: none;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+button {
+    border: 0;
+    text-indent: -9999px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/*  ==================================================
+	FONTS
+	==================================================  */
+
+@font-face {
+    font-family: 'Futura BT Bold';
+    src: url('../fonts/futura_bold_bt-webfont.eot');
+    src: url('../fonts/futura_bold_bt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/futura_bold_bt-webfont.woff') format('woff'),
+         url('../fonts/futura_bold_bt-webfont.ttf') format('truetype'),
+         url('../fonts/futura_bold_bt-webfont.svg#futura_md_btbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Futura BT Book';
+    src: url('../fonts/futura_book_bt-webfont.eot');
+    src: url('../fonts/futura_book_bt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/futura_book_bt-webfont.woff') format('woff'),
+         url('../fonts/futura_book_bt-webfont.ttf') format('truetype'),
+         url('../fonts/futura_book_bt-webfont.svg#futura_bk_btbook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Futura MD BTMedium';
+    src: url('../fonts/futura_md_bt_medium-webfont.eot');
+    src: url('../fonts/futura_md_bt_medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/futura_md_bt_medium-webfont.woff') format('woff'),
+         url('../fonts/futura_md_bt_medium-webfont.ttf') format('truetype'),
+         url('../fonts/futura_md_bt_medium-webfont.svg#futura_md_btmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Futura LT BTLight';
+    src: url('../fonts/futura_light_bt-webfont.eot');
+    src: url('../fonts/futura_light_bt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/futura_light_bt-webfont.woff') format('woff'),
+         url('../fonts/futura_light_bt-webfont.ttf') format('truetype'),
+         url('../fonts/futura_light_bt-webfont.svg#futura_lt_btlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*  ==================================================
+	COMMON
+	==================================================  */
+
+.wrapper,
+.main,
+.inner-wrapper {
+	width: 960px;
+	margin: 0 auto;
+}
+
+.display {
+	position: absolute;
+	left: -9999px;
+}
+
+.l-100 {
+	clear: both;
+}
+
+.l-100.clear {
+	overflow: hidden;
+}
+
+.content-text {
+	font-family: 'Futura BT Book', sans-serif;
+	font-size: 14px;
+	color: #7b7b7b;
+	line-height: 17px;
+}
+
+.btn-container {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	padding: 2px 3px;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	background: #b23747;
+	background: -webkit-linear-gradient(top,  #b23747 0%,#ce3e4f 100%);
+	background: -o-linear-gradient(top,  #b23747 0%,#ce3e4f 100%);
+	background: -ms-linear-gradient(top,  #b23747 0%,#ce3e4f 100%);
+	background: linear-gradient(to bottom,  #b23747 0%,#ce3e4f 100%);
+	-webkit-box-shadow: -1px -1px 0px rgba(106, 64, 70, 1);
+	-moz-box-shadow:    -1px -1px 0px rgba(106, 64, 70, 1);
+	box-shadow:         -1px -1px 0px rgba(106, 64, 70, 1);
+}
+
+.btn {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	padding: 15px 32px;
+	font-family: 'Futura LT BTLight';
+	font-size: 23px;
+	color: #fff;
+	border: 2px solid #da707e;
+	background: #c83443;
+	background: -webkit-linear-gradient(top,  #c83443 0%,#9b2a35 100%);
+	background: -o-linear-gradient(top,  #c83443 0%,#9b2a35 100%);
+	background: -ms-linear-gradient(top,  #c83443 0%,#9b2a35 100%);
+	background: linear-gradient(to bottom,  #c83443 0%,#9b2a35 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c83443', endColorstr='#9b2a35',GradientType=0 );
+}
+
+/*  Formulaire
+	==================================================  */
+
+.atmosphere-form input {
+	border: 2px solid #bcb9bd;
+	background-color: #fbf4f5;
+}
+
+/*  Transitions
+	==================================================  */
+
+a {
+	-webkit-transition: color 0.2s ease;
+	-moz-transition: color 0.2s ease;
+	-ms-transition: color 0.2s ease;
+	-o-transition: color 0.2s ease;
+	transition: color 0.2s ease;
+}
+
+.main-nav li a,
+.show-arrow,
+.s-menu,
+.main-nav > li.show-arrow:after,
+.read-more-btn {
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-ms-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+}
+
+a img,
+.copyright-container .top a,
+.footer-link,
+.lang-container a,
+.sidebar .follow-links-list a {
+	-webkit-transition: opacity 0.3s ease;
+	-moz-transition: opacity 0.3s ease;
+	-ms-transition: opacity 0.3s ease;
+	-o-transition: opacity 0.3s ease;
+	transition: opacity 0.3s ease;
+}
+
+a:hover img,
+.footer-link:hover,
+.copyright-container .top a:hover,
+.lang-container a:hover,
+.sidebar .follow-links-list a:hover {
+	opacity: 0.8;
+	filter:alpha(opacity=80);
+}
+
+.color-overlay {
+	-webkit-transition: background-color 0.3s ease;
+	-moz-transition: background-color 0.3s ease;
+	-ms-transition: background-color 0.3s ease;
+	-o-transition: background-color 0.3s ease;
+	transition: background-color 0.3s ease;
+}

@@ -4,6 +4,7 @@ from blog.models import Article, Category, last_articles, oneofeach
 from newsletter.models import Newsletter
 from blog.forms import ContactForm
 from outils.mail_utils import contact_email
+from gallery.models import Gallery, first_photos
 
 
 def coming_soon(request):
@@ -13,7 +14,11 @@ def coming_soon(request):
         })
 
 def index(request):
+    gallery = Gallery.objects.order_by('-created_at')[0]
+    gallery_photos = first_photos(gallery, 12)
     return render(request, 'index.html', {
+        'gallery ': gallery,
+        'gallery_photos': gallery_photos,
         'oneofeach': oneofeach(),
         'last_articles': last_articles(20),
         'slider': last_articles(3),

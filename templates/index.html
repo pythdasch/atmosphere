@@ -1,44 +1,134 @@
 {% extends 'base.html' %}
 {% load i18n %}
+{% load thumbnail %}
+{% load newsletter_tag %}
 {% block content %}
+    <div class="l-100">
+        <div class="main home-page">
+            <div class="main-slider-container">
+                <div class="slides-container">
+                    <ul class="slides-list">
+                        {% for article in slider %}
+                            {% thumbnail article.image "932x418" as img %}
+                        <li><a href="#"><img src="{{ img.url }}" alt="" /></a></li>
+                        {% endthumbnail %}
+                        {% endfor %}
+                    </ul>
+                    <div class="slider-arrows-container">
+                        <div class="slider-arrows prev"></div>
+                        <div class="slider-arrows next"></div>
+                    </div>
+                </div>
+                <ul class="bullets-list">
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </div> <!-- end of slider -->
 
-<h1>Welcome ! </h1>
-
-<div class="slider" class="row-fluid">
-    {% for article in slider %}
-    <div class="slider_item">
-        <h4>{{ article.title }}</h4>
-        <p>{{ article.content|safe|truncatewords:20 }}</p>
-        <a href="{% url 'blog.views.single_article' article.slug  %}">En savoir +</a>
-    </div>
-    {% endfor %}
-</div>
-<div class="row-fluid">
-        {% for article in last_articles %}
-        <div class="last_articles_index span1">
-            <img src="{{ article.image.url }}" alt="">
-            <p>{{ article.title }}</p>
-            <a href="{% url 'blog.views.single_article' article.slug %}">En savoir +</a>
-        </div>
-        {% endfor %}
-</div>
-{% if categories %}
-    {% for cat in categories %}
-    {% if cat.article_set.all %}
-    <div class="categories">
-        <h3>{{ cat.name }}</h3>
-        <div id="article">
-            {% for art in cat.article_set.all %}
-            <div class="articles">
-                <img src="{{ art.image.url }}" alt="">
-                {{ art.title }}
-                {{ art.author }}
-                <a href="{% url 'blog.views.article' art.slug %}">En savoir +</a>
+            <div class="l-100 clear aboutNnl-container">
+                <div class="hp-about-container">
+                    <h2 class="middle-title">Edito</h2>
+                    <div class="content-text">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis suscipit tortor. Nulla sed urna eget risus mollis mattis. Curabitur cursus feugiat libero pellentesque consequat. Proin eget auctor mi. Proin quis risus ante. Fusce est mauris, tincidunt eget ipsum et, rutrum consequat augue. Sed eleifend egestas lorem, vitae ornare augue. Fusce sed elit ac justo vehicula luctus. Mauris urna quam, tincidunt id sodales vel, sagittis semper enim.
+                        </p>
+                        <div class="btn-container"><a href="#" class="btn">Contactez-nous</a></div>
+                    </div>
+                </div>
+                {% subscribe_news request %}
             </div>
-            {% endfor %}
         </div>
-    </div>
-    {% endif %}
-    {% endfor %}
-{% endif %}
+
+        <div class="l-100">
+            <div class="hp-articles-container">
+                <div class="banner"><h3 class="banner-title">Derniers articles publiés</h3></div>
+                <div class="inner-wrapper">
+                    <ul class="hp-article-list l-100 clear">
+                        <li>
+                            <ul>
+                                {% for article in last_articles %}
+                                <li>
+                                    <article>
+                                        <header class="article-header">
+                                            Posté le <span class="article-date">{{ article.created_at }}</span>
+                                            <span class="article-category">{{ article.cateogory }}</span>
+                                        </header>
+                                        {% thumbnail article.image "218x166" as img %}
+                                        <a class="article-visual-link" href="#"><img src="{{ img.url }}" alt="" /></a>
+                                        {% endthumbnail %}
+                                        <h4 class="article-title"><a href="#">{{ article.title }}</a></h4>
+                                        <div class="content-text">
+                                            {{ article.content|truncatewords:20 }}
+                                        </div>
+                                        <a href="{% url 'blog.views.single_article' article.slug %}" class="read-more-btn" title="Lire plus de l'article Lorem Ipsum">+</a>
+                                    </article>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <?php for($i = 0; $i < 12; $i++ ) { ?>
+                                <li>
+                                    <article>
+                                        <header class="article-header">
+                                            Posté le <span class="article-date">21.02.13</span>
+                                            <span class="article-category">Architecture</span>
+                                        </header>
+                                        <a class="article-visual-link" href="#"><img src="images/home/article-visual.jpg" alt="" /></a>
+                                        <h4 class="article-title"><a href="#">Lorem Ipsum sit amet dolor</a></h4>
+                                        <div class="content-text">
+                                            Integer metus leo, pharetra eget comodo eget, eleifend pellentesque orci. Quisque eget augue purus, at consectelur velit. Morbi iaculis est nec dui luctus congus.
+                                        </div>
+                                        <a href="#" class="read-more-btn" title="Lire plus de l'article Lorem Ipsum">+</a>
+                                    </article>
+                                </li>
+                                <?php }; ?>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="slider-arrow-container">
+                        <div class="slider-arrow prev"></div>
+                        <div class="slider-arrow next"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hp-gallery-containter">
+            <div class="banner"><h3 class="banner-title">Galerie</h3></div>
+            <div class="inner-wrapper">
+                <div class="hp-images-list-container">
+                    <ul class="hp-images-list">
+                        {% for image in gallery_photos %}
+                        <li>
+                            {% thumbnail image.image "200x100" as img %}
+                            <img src="{{ img.url }}" alt="" />
+                            {% endthumbnail %}
+                            <div class="color-overlay"></div>
+                            <a class="image-link" href="#">
+                                <div class="image-overlay">
+                                    <span class="image-title">{{ image.title }}</span>
+                                    <a class="hover-like" href="#"></a>
+                                </div>
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <footer>
+                        <div class="gallery-details">
+                            <div class="gallery-avatar"><img src="{{ gallery.author.image.url }}" alt="" /></div><span class="gallery-author">{{ gallery.author.name }} -</span>
+                            <span class="gallery-title"> {{ gallery.name }}</span>
+                        </div>
+                        <div class="gallery-socials">
+                            <span class="gallery-comments"><a href="#">8</a></span>
+                            <span class="gallery-likes"><a href="#">3</a></span>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+
+    </div> <!-- end of 1-100 -->
 {% endblock %}

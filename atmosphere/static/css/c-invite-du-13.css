@@ -1,0 +1,277 @@
+@charset "UTF-8";
+
+/*  ==================================================
+	INVITÉ DU 13
+	==================================================  */
+
+.invite-du-13-page .l-100 {
+	clear: both;
+	overflow: hidden;
+}
+
+.l-685 {
+	float: left;
+	width: 685px;
+}
+
+/*  Left Colomn
+	==================================================  */
+
+.invite-du-13-page .head-presentation {
+	margin-bottom: 35px;
+}
+
+.invite-du-13-page .presentation-content {
+    padding: 30px 35px;
+    border: 2px solid #bfc1c3;
+    border-top: 0;
+}
+
+.invite-du-13-page .head-presentation .title {
+    height: 40px;
+    border-top: 1px solid #66313a;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Futura BT Book';
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 40px;
+    color: #fff;
+    background: #cb3544;
+    background: -webkit-linear-gradient(top,#cb3544 0,#972934 100%);
+    background: -o-linear-gradient(top,#cb3544 0,#972934 100%);
+    background: -ms-linear-gradient(top,#cb3544 0,#972934 100%);
+    background: linear-gradient(to bottom,#cb3544 0,#972934 100%);
+}
+
+.invite-du-13-page .presentation-name {
+    font-family: 'Futura BT Book';
+    font-size: 22px;
+    color: #444;
+}
+
+.invite-du-13-page .presentation-date {
+    float: right;
+    padding-top: 5px;
+    font-family: 'Futura LT BTLight';
+    font-size: 16px;
+    color: #999;
+}
+
+.content-page .content-text {
+	margin-bottom: 40px;
+	font-family: 'Futura BT Book';
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: bold;
+	color: #444;
+	-webkit-font-smoothing:antialiased;
+}
+
+.content-page .content-text p + p {
+	margin-top: 18px;
+}
+
+/*  Mini Gallery
+	==================================================  */
+
+.invite-du-13-page .invite-gallery {
+	position: relative;
+	margin-bottom: 40px;
+	padding: 7px;
+	overflow: hidden;
+	border: 2px solid #c0c1c3;
+}
+
+.invite-gallery-header {
+	height: 85px;
+	line-height: 85px;
+}
+
+.invite-du-13-page .invite-gallery .min-logo {
+	float: left;
+	padding: 0 30px 0 15px;
+	width: 55px;
+	height: 56px;
+	background: url(../images/pages/logo-gallery.png) center center no-repeat;
+}
+
+.invite-gallery-name {
+	float: left;
+	width: 440px;
+	padding-top: 20px;
+	font-family: 'Futura BT Book';
+	font-size: 21px;
+	color: #333;
+	font-weight: bold;
+	line-height: 1.2;
+}
+
+.invite-du-13-page .gallery-socials {
+	position: absolute;
+	right: 18px;
+	top: 0px;
+}
+
+.invite-du-13-page .gallery-list {
+	margin-left : -8px;
+}
+
+.invite-du-13-page .gallery-list li {
+	margin-left : 10px;
+}
+
+
+/*  Gallery's Author
+	==================================================  */
+
+.invite-du-13-page .invite-13-focus {
+	overflow: hidden;
+	padding: 26px 45px 10px 20px;
+	border: 2px solid #bfc1c3;
+}
+
+.invite-13-focus .content-text {
+	margin-bottom: 0px;
+	width: 400px;
+	padding-top: 13px;
+	border-top: 2px solid #848484;
+}
+
+.invite-13-focus .content-text p {
+	line-height: 16px;
+}
+
+.invite-13-focus .gallery-avatar,
+.invite-13-focus .invite-details {
+	float: left;
+}
+
+.invite-13-focus .gallery-avatar {
+	margin-right: 37px;
+}
+
+.invite-13-focus .gallery-avatar img {
+	max-width: 167px;
+	max-height: 169px;
+	border: 2px solid #fcfdfd;
+	border-radius: 100px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	-webkit-box-shadow: 0px 0px 2px rgba(197, 198, 200, 1);
+	-moz-box-shadow:    0px 0px 2px rgba(197, 198, 200, 1);
+	box-shadow:         0px 0px 2px rgba(197, 198, 200, 1);
+}
+
+.invite-details .invite-13-name,
+.invite-details .invite-13-profession {
+	margin-bottom: 10px;
+	font-size: 23px;
+	font-family: 'Futura BT Book', sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #333;
+}
+
+.invite-details .localisation {
+	float: right;
+	text-transform: none;
+}
+
+.invite-details .invite-13-profession {
+	color: #b73443;
+	text-transform: none;
+}
+
+/*  ==================================================
+	SIDEBAR
+	==================================================  */
+
+.l-260 {
+	float: left;
+	width: 260px;
+	margin-left: 9px;
+	border: 2px solid #c0c1c3;
+}
+
+.sidebar .atmosphere-presentation {
+	width: 215px;
+	margin: 0 auto 15px auto;
+	text-align: center;
+	border-bottom: 1px dotted #666;
+}
+
+.sidebar-logo {
+	padding: 20px 0;
+}
+
+.atmosphere-presentation .content-text {
+	margin-bottom: 20px;
+}
+
+/* -- Suivez-nous -- */
+
+.sidebar .follow-links-container {
+	padding-bottom: 14px;
+	border-bottom: 2px solid #c0c1c3;
+	font-weight: bold;
+	font-size: 15px;
+	color: #666;
+	font-family: 'Futura BT Book', sans-serif;
+	text-align: center;
+}
+
+.sidebar .follow-links-list {
+	margin-top: 14px;
+}
+
+.sidebar .follow-links-list li,
+.sidebar-logo img {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+.sidebar .follow-links-list li + li {
+	margin-left: 23px;
+}
+
+.sidebar .follow-links-list a {
+	display: block;
+	width: 46px;
+	height: 46px;
+	background-image: url(../images/pages/follow-logos.png);
+	background-repeat: no-repeat;
+}
+
+.sidebar .follow-links-list .linkedin a {
+	background-position: top center;
+}
+
+.sidebar .follow-links-list .viadeo a {
+	background-position: center center;
+}
+
+.sidebar .follow-links-list .google a {
+	background-position: bottom center;
+}
+
+.sidebar-title {
+	font-family: 'Futura BT Book', sans-serif;
+	font-size: 18px;
+	color: #444;
+	font-weight: bold;
+}
+
+/* -- Newsletter -- */
+
+.sidebar-newsletter input {
+	width: 190px;
+	height: 37px;
+	line-height: 37px;
+	background-color: #fff;
+}
+
+
+
+

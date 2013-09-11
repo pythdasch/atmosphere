@@ -3,12 +3,48 @@ from django.db import models
 from django.core.urlresolvers import reverse
 
 
+class Author(models.Model):
+    name = models.CharField(max_length=100)
+    biography = models.TextField()
+    image = models.ImageField(upload_to="gallery/author/")
+
+    def __unicode__(self):
+        return 'Auteur : ' + self.name
+
+
+class Gallery(models.Model):
+    name = models.CharField(max_length=255)
+    slug = models.SlugField(unique=True, max_length=50, help_text="Cet élèment n'est pas à modifier. Il permet de passer de page en page.")
+    description = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField(upload_to='gallery/', blank=True, null=True)
+    author = models.ForeignKey(Author)
+
+    def all_galleries(self, length=20):
+        return self.objects.order_by('created_at')[:length]
+
+    def __unicode__(self):
+        return 'Gallerie : ' + self.name
+
+def first_photos(gallery, num_photo=1):
+    gallery = Gallery.objects.get(pk=gallery.id)
+    photos = gallery.photos.all()[:num_photo]
+    return photos
+
+def last_galleries(num_galleries=12):
+    try:
+        galleries = Gallery.objects.order_by('-created_at')[:num_galleries]
+    except:
+        raise Exception('Veuillez créer une gallerie au minimum')
+    return galleries
+
 
 class Image(models.Model):
     """ Simple model for image file metadata """
     name = models.CharField(max_length=255)
     image = models.ImageField(upload_to='images/')
     thumbnail = models.ImageField(upload_to='images/thumbnail/', blank=True, null=True)
+    gallery = models.ForeignKey(Gallery, related_name="photos")
 
     def imagemAdmin(self):
         from sorl.thumbnail import get_thumbnail
@@ -40,17 +76,3 @@ class Image(models.Model):
 
     def url(self):
         return reverse('imagem', args=(self.slug,))
-
-
-class Gallery(models.Model):
-    name = models.CharField(max_length=255)
-    slug = models.SlugField(unique=True, max_length=50, help_text="Cet élèment n'est pas à modifier. Il permet de passer de page en page.")
-    description = models.TextField()
-    photos = models.ManyToManyField(Image)
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    def all_galleries(self, length=20):
-        return self.objects.order_by('created_at')[:length]
-
-    def __unicode__(self):
-        return 'Gallerie : ' + self.name

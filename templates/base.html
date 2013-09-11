@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<!--[if lt IE 7 ]><html lang="fr" class="is_ie6 lt_ie7 lt_ie8 lt_ie9 lt_ie10"><![endif]-->
+<!--[if IE 7 ]><html lang="fr" class="is_ie7 lt_ie8 lt_ie9 lt_ie10"><![endif]-->
+<!--[if IE 8 ]><html lang="fr" class="is_ie8 lt_ie9 lt_ie10"><![endif]-->
+<!--[if IE 9 ]><html lang="fr" class="is_ie8 lt_ie9 lt_ie10"><![endif]-->
+<!--[if gt IE 9]><html lang="fr" class="is_ie10"><![endif]-->
+<!--[if lte IE 8]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!--[if !IE]><!--> <html lang="fr"><!--<![endif]-->
     {% load static %}
     {% load compress %}
 <html>
@@ -9,9 +18,8 @@
     <meta name="author" content="Therese Mace">
     {% endblock %}
     {% compress css %}
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap-responsive.min.css" />
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/blog.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css">
+<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.css">
     {% block css %}
     {% endblock %}
     {% endcompress %}
@@ -25,8 +33,12 @@
         </div>
         {% include 'footer.html' %}
         {% compress js %}
-        <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.9.1.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.min.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js/selectivizr-min.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.bxslider.min.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js/code.js"></script>
         <script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="{{ STATIC_URL }}js/newsletter.js"></script>
         <script language="javascript">var STATIC_URL = "{{ STATIC_URL|escapejs }}";</script>
         <script type="text/javascript" src="{{ STATIC_URL }}js/form.js"></script>
     {% endcompress %}

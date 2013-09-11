@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 from django import template
-from blog.models import Category, last_articles
+from blog.models import Category, articles_aleatoires
 from gallery.models import Gallery
 
 register = template.Library()
@@ -8,9 +8,9 @@ register = template.Library()
 
 @register.inclusion_tag("tags/footer_slider.html")
 def footer_slider(request):
-
+    slider_article = articles_aleatoires(length=8)
     return {
-    'categories': categories,
+    'slider_article': slider_article,
     }
 
 

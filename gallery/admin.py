@@ -2,7 +2,7 @@
 from django.contrib import admin
 from multiupload.admin import MultiUploadAdmin
 from sorl.thumbnail.admin import AdminImageMixin
-from models import Image, Gallery
+from models import Image, Gallery, Author
 from django.shortcuts import get_object_or_404
 
 
@@ -63,7 +63,9 @@ class PhotoGallery(admin.StackedInline):
 
 
 class GalleryAdmin(admin.ModelAdmin):
-    model = Gallery
     prepopulated_fields = {u'slug': (u'name',)}
+    inlines = [PhotoGallery]
+
 
 admin.site.register(Gallery, GalleryAdmin)
+admin.site.register(Author)

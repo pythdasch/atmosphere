@@ -1,0 +1,23 @@
+    <div class="footer-slider-container">
+        {% load thumbnail %}
+        <ul class="slides-list">
+            {% for slider in slider_article %}
+            <li>
+                {% thumbnail slider.image "180x120" as img %}
+                <img src="{{ img.url }}" alt="" />
+                {% endthumbnail %}
+                <div class="color-overlay"></div>
+                <a class="image-link" href="#">
+                    <div class="image-overlay">
+                        <span class="image-title">{{ slider.title }}</span>
+                        <a class="hover-like" href="{% url 'blog.views.single_article' slider.id %}"></a>
+                    </div>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        <div class="slider-arrows-container">
+            <div class="slider-arrow prev"></div>
+            <div class="slider-arrow next"></div>
+        </div>
+    </div>

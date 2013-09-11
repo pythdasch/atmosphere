@@ -34,8 +34,10 @@ def oneofeach():
         raise Exception('There is no articles for this query')
     return eachlist
 
-def aleatoires(length=3):
+def articles_aleatoires(length=3):
     all_articles = Article.objects.all()
+    if length > len(all_articles):
+        length = len(all_articles)
     random_articles = random.sample(set(all_articles), length)
     return random_articles
 

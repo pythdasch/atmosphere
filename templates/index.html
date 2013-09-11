@@ -59,7 +59,7 @@
                                         {% endthumbnail %}
                                         <h4 class="article-title"><a href="#">{{ article.title }}</a></h4>
                                         <div class="content-text">
-                                            {{ article.content|truncatewords:20 }}
+                                            {{ article.content|truncatewords_html:20 }}
                                         </div>
                                         <a href="{% url 'blog.views.single_article' article.slug %}" class="read-more-btn" title="Lire plus de l'article Lorem Ipsum">+</a>
                                     </article>

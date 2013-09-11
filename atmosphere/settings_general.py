@@ -56,7 +56,7 @@ MEDIA_ROOT = os.path.join(PROJ_DIR, 'media/')
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = os.path.join(PROJ_DIR, 'media/')
+MEDIA_URL = '/media/'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -216,3 +216,5 @@ FILEBROWSER_ADMIN_THUMBNAIL = ('fb_thumb')
 
 #compress
 COMPRESS_ENABLED = True
+
+DEFAULT_CONTENT_TYPE= 'text/html'

@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+/*  ==================================================
+	INSPIRATIONS
+	==================================================  */
+
+.inspirations-page .outside-gallery {
+    margin-bottom: 0;
+}
+
+.inspirations-page .outside-gallery .gallery-list {
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+.inspirations-page .outside-gallery .gallery-list .image-overlay {
+    width: 215px;
+    height: 134px;
+}
+
+.inspirations-page .outside-gallery .content-text {
+    margin-bottom: 0;
+    padding-bottom: 22px;
+}
+
+.inspirations-page .content-text::first-letter {
+    margin-left: 37px;
+}

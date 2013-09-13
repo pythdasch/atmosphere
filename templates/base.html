@@ -19,12 +19,17 @@
     <meta name="author" content="Therese Mace">
     {% endblock %}
     {% compress css %}
-<!--     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css"> -->
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/a-common.css">
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/b-header.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/a-common.css"> -->
+<!--     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/b-header.css">
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/b-footer.css">
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/c-home.css">
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/c-invite-du-13.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/c-invite-du-13.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/c-contact.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/c-oeil-panorama.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/c-gallerie.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/c-evocations.css"> -->
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/bootstrap.css">
     {% block css %}
     {% endblock %}
@@ -38,7 +43,6 @@
         {% include 'footer.html' %}
         {% compress js %}
         <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.min.js"></script>
-
         <script type="text/javascript" src="{{ STATIC_URL }}js/selectivizr-min.js"></script>
         <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.bxslider.min.js"></script>
         <script type="text/javascript" src="{{ STATIC_URL }}js/code.js"></script>

@@ -11,7 +11,11 @@ def single_article(request, article_slug):
 
 
 def single_category(request, category_slug):
+    categories = Category.actifs.all()
     category = get_object_or_404(Category, slug=category_slug)
+    last_article = category.article_set.order_by('created_at')[0]
     return render(request, 'blog/category.html', {
         'category': category,
+        'last_article': last_article,
+        'categories': categories,
         })

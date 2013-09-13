@@ -2,11 +2,24 @@
 {% load search_tags %}
 {% load i18n %}
 {% block content %}
-<h1>{% trans 'Résultat de recherche pour :'%} '{{ q }}'</h1>
-{% for p in results %}
-{% empty %}
-{% trans 'Aucun article ne correspond à votre recherche' %}
-{% endfor %}
+<div class="main evocations-page content-page">
+    <div class="l-100">
+        <div class="l-685">
+            <div class="head-presentation">
+                <h1 class="title">{% trans 'Résultat de recherche pour :'%} '{{ q }}'</h1>
+            </div>
+            <div class="results">
+                {% for p in results %}
+                {% empty %}
+                {% trans 'Aucun article ne correspond à votre recherche' %}
+                {% endfor %}
+            </div>
+        </div>
+        {% include 'sidebar.html'%}
+    </div>
+</div>
+
+
 <div class="cb">&nbsp;</div>
 {% pagination_links request paginator %}
 {% endblock %}

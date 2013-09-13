@@ -19,3 +19,10 @@ def gallery_tag():
     return {
     'galleries': galleries,
     }
+
+@register.inclusion_tag("tags/sidebar.html")
+def sidebar_tag():
+    categories = Category.actifs.all()
+    return {
+    'categories': categories,
+    }

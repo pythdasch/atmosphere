@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+/*  ==================================================
+	ÉVOCATIONS
+	==================================================  */
+
+.evocations-page .presentation-date {
+    font-size: 14px;
+}
+
+.content-text quote {
+    display: block;
+    margin: 32px 0 32px 20px;
+    padding-left: 18px;
+    font-family: 'Futura MD BTMedium';
+    font-size: 20px;
+    color: #444;
+    background: url(../images/pages/quote-border.jpg) repeat-y left center;
+}
+
+.content-text quote + *:first-letter {
+    margin-left: 37px;
+}
+
+.evocations-page .hp-gallery-containter .inner-wrapper,
+.evocations-page .hp-images-list {
+    width: 685px;
+}
+
+.evocations-page .hp-images-list-container {
+    width: 682px;
+    margin-bottom: 0;
+}
+
+.evocations-page .hp-images-list {
+    margin-right: -20px;
+    padding-left: 1px;
+}
+
+.evocations-page .hp-images-list li,
+.gallery-list li {
+    margin: 0 0 6px 5px;
+}
+
+.evocations-page .hp-images-list img {
+    max-width: 130px;
+}
+
+.evocations-page .image-overlay {
+    width: 130px;
+    height: 80px;
+    background: transparent;
+}
+
+.evocations-page .image-overlay .image-title {
+    float: left;
+    padding: 0 10px;
+    font-family: 'Futura BT Book';
+    font-size: 10px;
+    color: #fff;
+}
+
+.evocations-page .image-overlay .hover-like,
+.oeil-page .image-overlay .hover-like {
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+    padding: 0 4px 0 0;
+    font-family: 'Futura LT BTLight';
+    font-size: 10px;
+    line-height: 18px;
+    background: url(../images/pages/heart-icon-small.png) no-repeat center right;
+}

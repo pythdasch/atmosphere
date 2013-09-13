@@ -1,0 +1,246 @@
+@charset "UTF-8";
+
+/*  ==================================================
+	CONTACT
+	==================================================  */
+
+.contact-page {
+    margin-top: 45px;
+}
+
+.contact-visual {
+    margin-bottom: 40px;
+}
+
+.contact-content {
+    margin-bottom: 55px;
+}
+
+.contact-content .title {
+    margin-bottom: 40px;
+    font-family: 'Futura BT Book',sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: #444;
+}
+
+.contact-content-text {
+    font-family: 'Futura LT BTLight';
+    font-size: 14px;
+    line-height: 20px;
+    color: #444;
+}
+
+.contact-content-text p + p {
+    margin-top: 20px;
+}
+
+.contact-persons-container {
+    clear: both;
+    margin-bottom: 42px;
+    overflow: hidden;
+}
+
+.contact-persons-container .l-50 {
+    float: left;
+    position: relative;
+    width: 425px;
+}
+
+.contact-persons-container .l-50 + .l-50 {
+    margin-left: 100px;
+}
+
+.contact-persons-container .contact-visual img {
+    max-width: 405px;
+    border: 10px solid #bb313f;
+    -webkit-border-radius: 220px;
+    -moz-border-radius: 220px;
+    border-radius: 220px;
+}
+
+.contact-persons-container .l-50:hover .hover-container {
+    visibility: visible;
+    opacity: 0.99;
+    filter: alpha(opacity=99);
+}
+
+.contact-persons-container .hover-container {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 425px;
+    line-height: 425px;
+    opacity: 0.01;
+    filter: alpha(opacity=0.01);
+}
+
+.contact-persons-container .hover-info {
+    display: inline-block;
+    z-index: 2;
+    position: relative;
+    width: 425px;
+    text-align: center;
+    font-family: 'Futura BT Book',sans-serif;
+    line-height: 36px;
+    vertical-align: middle;
+    color: #fff;
+    *display: inline;
+    *zoom: 1;
+}
+
+.contact-persons-container .hover-container .color-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 425px;
+    height: 425px;
+    -webkit-border-radius: 220px;
+    -moz-border-radius: 220px;
+    border-radius: 220px;
+    background-color: rgb(187,49,63);
+    background-color: rgba(187,49,63,0.85);
+}
+
+.contact-persons-container .hover-info .contact-name {
+    margin-bottom: 4px;
+    font-size: 31px;
+}
+
+.contact-persons-container .hover-info address,
+.contact-persons-container .hover-info .contact-number {
+    font-size: 24px;
+}
+
+.contact-persons-container .hover-info address {
+    margin-bottom: 36px;
+}
+
+.contact-persons-container .hover-info .contact-number {
+    margin-bottom: 35px;
+}
+
+.contact-share-list li {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+.contact-share-list li + li {
+    margin-left: 22px;
+}
+
+.contact-share-list li a {
+    display: block;
+    position: relative;
+    width: 45px;
+    height: 46px;
+    text-indent: -9999px;
+    background-image: url(../images/pages/follow-logos-white.png);
+    background-repeat: no-repeat;
+}
+
+.contact-share-list .linkedin a {
+    background-position: top center;
+}
+
+.contact-share-list .viadeo a {
+    background-position: center;
+}
+
+.contact-share-list .google a {
+    background-position: bottom center;
+}
+
+/* -- Formulaire de contact -- */
+
+.contact-page .contact-form {
+    position: relative;
+    height: 775px;
+}
+
+.contact-page .contact-form:after {
+    content: url(../images/pages/contact-form-shadow.jpg);
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+}
+
+.contact-page .contact-form fieldset {
+    padding: 30px 0 30px;
+    text-align: center;
+    border: 2px solid #c3c4c6;
+}
+
+.contact-page .contact-form .title {
+    width: 660px;
+    margin-bottom: 29px;
+    padding-bottom: 24px;
+    border-bottom: 2px dotted #666;
+    font-family: 'Futura BT Book',sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: #b5303d;
+}
+
+.contact-page .contact-form .title,
+.contact-page .contact-form input,
+.contact-page .contact-form .btn {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+.contact-form .row {
+    position: relative;
+}
+
+.contact-form .row + .row {
+    position: relative;
+    margin-top: 48px;
+}
+
+.contact-page .contact-form label {
+    position: absolute;
+    top: 3px;
+    left: 78px;
+    width: 140px;
+    text-align: right;
+    font-family: 'Futura BT Book',sans-serif;
+    font-size: 29px;
+    font-weight: bold;
+    line-height: 36px;
+    color: #666;
+}
+
+.contact-page .contact-form input {
+    width: 463px;
+    height: 41px;
+    padding-left: 10px;
+    font-size: 24px;
+    background-color: #fff;
+}
+
+.contact-page .contact-form textarea {
+    width: 461px;
+    height: 180px;
+    max-height: 250px;
+    max-width: 461px;
+    border: 2px solid #bcb9bd;
+}
+
+.contact-form .btn-container {
+    margin-top: 35px;
+    padding: 7px;
+}
+
+.contact-form .btn {
+    width: 292px;
+    text-indent: 0;
+    font-size: 32px;
+    font-weight: bold;
+}

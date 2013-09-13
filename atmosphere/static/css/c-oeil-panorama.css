@@ -1,0 +1,196 @@
+@charset "UTF-8";
+
+/*  ==================================================
+	OEIL
+	==================================================  */
+
+.panorama-oeil-page .gallery-mosaic .min-logo {
+    background: url(../images/pages/logo-oeil-gallery.png) center center no-repeat;
+}
+
+.content-page .gallery-socials span + span {
+    margin-left: 29px;
+}
+
+.panorama-oeil-page .inner-gallery .gallery-list img {
+    max-width: 320px;
+}
+
+.panorama-oeil-page .inner-gallery .gallery-list .image-overlay,
+.panorama-oeil-page .outside-gallery .image-overlay {
+    background: transparent;
+}
+
+.panorama-oeil-page .inner-gallery .gallery-list .image-overlay {
+    width: 320px;
+    height: 215px;
+}
+
+.panorama-oeil-page .inner-gallery .image-overlay .hover-like {
+    bottom: 20px;
+    height: 35px;
+    margin-right: 15px;
+    padding: 0 40px 0 0;
+    font-family: 'Futura LT BTLight';
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 33px;
+    background: url(../images/pages/heart-icon-big.png) center right no-repeat;
+}
+
+.panorama-oeil-page .inner-gallery .image-title {
+    display: block;
+    margin: 6px 10px;
+    font-family: 'Futura BT Book';
+    font-size: 25px;
+}
+
+/*  Et ailleurs
+	==================================================  */
+
+.panorama-oeil-page .banner {
+    margin-bottom: 28px;
+    font-size: 24px;
+}
+
+.outside-artist-profile {
+    clear: both;
+    margin-bottom: 16px;
+    padding: 24px 20px;
+    border: 2px solid #c0c1c3;
+    overflow: hidden;
+}
+
+.outside-artist-profile .profile-details {
+    float: left;
+    padding-left: 90px;
+    background: url(../images/pages/logo-gallery.png) left center no-repeat;
+}
+
+.outside-artist-profile .profile-details .artist-name,
+.outside-artist-profile .profile-country {
+    font-family: 'Futura BT Book',sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 38px;
+}
+
+.outside-artist-profile .profile-details .artist-name {
+    color: #444;
+}
+
+.outside-artist-profile .profile-country {
+    color: #666;
+}
+
+.outside-artist-profile .profile-details .profile-profession,
+.outside-artist-profile .profile-details .profile-url a {
+    font-family: 'Futura LT BTLight';
+    font-size: 19px;
+    line-height: 44px;
+}
+
+.outside-artist-profile .profile-details .profile-profession {
+    color: #999;
+}
+
+.outside-artist-profile .profile-details .profile-url a {
+    color: #b5303d;
+}
+
+.outside-artist-profile .profile-details .profile-url a:hover {
+    text-decoration: underline;
+}
+
+/* -- Profile Gallery -- */
+
+.panorama-oeil-page .outside-gallery {
+    margin-bottom: 0;
+}
+
+.panorama-oeil-page .outside-gallery .gallery-mosaic-header {
+    height: 63px;
+    line-height: 63px;
+}
+
+.panorama-oeil-page .outside-gallery .min-logo.travel {
+    width: 55px;
+    margin-left: 12px;
+    padding: 0 23px 0 10px;
+    background: url(../images/pages/logo-travel.png) left center no-repeat;
+}
+
+.panorama-oeil-page .outside-gallery .gallery-mosaic-name {
+    padding-top: 12px;
+}
+
+.panorama-oeil-page .outside-gallery .gallery-list {
+    margin-bottom: 19px;
+    overflow: hidden;
+}
+
+.panorama-oeil-page .outside-gallery .image-overlay {
+    width: 215px;
+    height: 135px;
+}
+
+.panorama-oeil-page .outside-gallery .color-overlay {
+    height: 140px;
+}
+
+.panorama-oeil-page .outside-gallery .image-overlay .hover-like {
+    bottom: 11px;
+    width: 18px;
+    height: 17px;
+    margin-right: 10px;
+    padding-right: 12px;
+    font-size: 14px;
+    vertical-align: middle;
+    color: #fff;
+    background: url(../images/home/heart-icon.png) center right no-repeat;
+}
+
+.panorama-oeil-page .content-text {
+    margin-bottom: 25px;
+}
+
+.panorama-oeil-page .content-text:first-letter {
+    margin-left: 40px;
+}
+
+/*  ==================================================
+	PANORAMA
+	==================================================  */
+
+.header-panorama {
+	padding-bottom: 47px;
+}
+
+.panorama-visual {
+	position: relative;
+	height: 389px;
+	margin-bottom: 85px;
+	line-height: 389px;
+	background-image: url(../images/pages/panorama-bg.jpg);
+	background-size: cover;
+}
+
+.panorama-visual .title {
+	position: relative;
+	text-align: center;
+	font-family: 'Futura BT Book';
+	font-size: 62px;
+	color: #fff;
+	z-index: 2;
+}
+
+.panorama-visual .color-overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background-color: rgb(186, 49, 63);
+	background-color: rgba(186, 49, 63, 0.8);
+	z-index: 1;
+}

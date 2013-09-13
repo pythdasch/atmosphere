@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+/*  ==================================================
+	GALLERIE
+	==================================================  */
+
+.gallerie-page .hp-images-list-container {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.gallerie-page .hp-images-list {
+    position: relative;
+    margin: 0 -20px 0 0;
+    padding-left: 1px;
+}
+
+.gallerie-page .hp-images-list li {
+    margin: 0 0 6px 8px;
+}
+
+.gallerie-page .hp-images-list li img {
+    max-width: 172px;
+}
+
+.gallerie-page .month-gallery {
+    position: relative;
+    width: 35px;
+    height: 120px;
+    background-color: #999;
+}
+
+.gallerie-page .month-gallery .gallery-author {
+    display: block;
+    position: absolute;
+    top: 41px;
+    bottom: 0;
+    left: -41px;
+    width: 120px;
+    height: 35px;
+    text-align: center;
+    font-family: 'Futura BT Book', sans-serif;
+    font-size: 14px;
+    line-height: 35px;
+    white-space: nowrap;
+    color: #fff;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+}
+
+.gallerie-page .image-title {
+    display: block;
+    float: none;
+    text-align: center;
+}

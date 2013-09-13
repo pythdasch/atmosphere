@@ -1,16 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load i18n %}
-<h1>{{ category.name }}</h1>
-<div class="last-article">
-    {% for art in category.article_set.all %}
-        <div class="articles">
-            <img src="{{ art.image.url }}" alt="">
-            <h3>{{ art.title }}</h3>
-            <p>{{ art.content|safe|truncatewords:20 }}
-            <a href="{% url 'blog.views.single_article' art.slug %}">En savoir +</a>
-            </p>
+<div class="main evocations-page content-page">
+    <div class="l-100">
+        <div class="l-685">
+            <div class="head-presentation">
+                <h1 class="title">{{ category.name }}</h1>
+                <div class="presentation-content">
+                    <span class="presentation-title">{{ last_article.title }}</span>
+                    <span class="presentation-date">Le {{ last_article.created_at }}</span>
+                </div>
+            </div>
+
+            <div class="content-text">
+                {{ last_article.content|safe }}
+            </div>
         </div>
-    {% endfor %}
+
+        {% include "sidebar.html" %}
+
+
+    </div> <!-- end of 1-100 -->
 </div>
+
 {% endblock%}

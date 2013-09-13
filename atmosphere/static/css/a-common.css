@@ -188,7 +188,9 @@ button {
 /*  Transitions
 	==================================================  */
 
-a {
+a,
+.sidebar-list-container .months-list a,
+.sidebar-list-container .category-list a {
 	-webkit-transition: color 0.2s ease;
 	-moz-transition: color 0.2s ease;
 	-ms-transition: color 0.2s ease;
@@ -199,7 +201,6 @@ a {
 .main-nav li a,
 .show-arrow,
 .s-menu,
-.main-nav > li.show-arrow:after,
 .read-more-btn {
 	-webkit-transition: all 0.2s ease;
 	-moz-transition: all 0.2s ease;
@@ -208,11 +209,26 @@ a {
 	transition: all 0.2s ease;
 }
 
+.main-nav > li.show-arrow:after {
+	-webkit-transition: all 0.1s ease;
+	-moz-transition: all 0.1s ease;
+	-ms-transition: all 0.1s ease;
+	-o-transition: all 0.1s ease;
+	transition: all 0.1s ease;
+}
+
 a img,
 .copyright-container .top a,
 .footer-link,
 .lang-container a,
-.sidebar .follow-links-list a {
+.sidebar .follow-links-list a,
+.sidebar-newsletter .btn-submit,
+.contact-share-list li a,
+.contact-persons-container .hover-container,
+.home-page .btn,
+.contact-page .contact-form .btn,
+.sidebar-container .search-btn,
+.main-nav-container .s-menu a {
 	-webkit-transition: opacity 0.3s ease;
 	-moz-transition: opacity 0.3s ease;
 	-ms-transition: opacity 0.3s ease;
@@ -224,7 +240,13 @@ a:hover img,
 .footer-link:hover,
 .copyright-container .top a:hover,
 .lang-container a:hover,
-.sidebar .follow-links-list a:hover {
+.sidebar .follow-links-list a:hover,
+.sidebar-newsletter .btn-submit:hover,
+.contact-share-list li a:hover,
+.home-page .btn:hover,
+.contact-page .contact-form .btn:hover,
+.sidebar-container .search-btn:hover,
+.main-nav-container .s-menu a:hover {
 	opacity: 0.8;
 	filter:alpha(opacity=80);
 }
@@ -235,4 +257,331 @@ a:hover img,
 	-ms-transition: background-color 0.3s ease;
 	-o-transition: background-color 0.3s ease;
 	transition: background-color 0.3s ease;
+}
+
+/*  ==================================================
+	SIDEBAR
+	==================================================  */
+
+.l-260 {
+    float: left;
+    width: 260px;
+    margin-left: 9px;
+}
+
+.sidebar-container {
+    border: 2px solid #c0c1c3;
+}
+
+.sidebar-container .search-container fieldset {
+    position: relative;
+}
+
+.sidebar-container .search-container input {
+    width: 162px;
+    padding-right: 65px;
+}
+
+.sidebar-container .search-btn {
+    position: absolute;
+    right: 0;
+    width: 58px;
+    height: 46px;
+    padding: 0;
+    background: url(../images/pages/search-submit-btn.jpg) no-repeat left center;
+    border: 0;
+}
+
+/* -- Présentation -- */
+
+.sidebar .atmosphere-presentation {
+    width: 215px;
+    margin: 0 auto 15px auto;
+    border-bottom: 2px dotted #666;
+    text-align: center;
+}
+
+.sidebar-logo {
+    padding: 20px 0;
+}
+
+.atmosphere-presentation .content-text {
+	margin-bottom: 20px;
+}
+
+/* -- Suivez-nous -- */
+
+.sidebar .follow-links-container {
+    padding-bottom: 14px;
+    border-bottom: 2px solid #c0c1c3;
+    text-align: center;
+    font-family: 'Futura BT Book',sans-serif;
+    font-size: 15px;
+    line-height: 17px;
+    font-weight: bold;
+    color: #666;
+}
+
+.sidebar .follow-links-list {
+    margin-top: 14px;
+}
+
+.sidebar .follow-links-list li,
+.sidebar-logo img {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+}
+
+.sidebar .follow-links-list li + li {
+    margin-left: 23px;
+}
+
+.sidebar .follow-links-list a {
+    display: block;
+    width: 46px;
+    height: 46px;
+    background-image: url(../images/pages/follow-logos.png);
+    background-repeat: no-repeat;
+}
+
+.sidebar .follow-links-list .linkedin a {
+    background-position: top center;
+}
+
+.sidebar .follow-links-list .viadeo a {
+    background-position: center center;
+}
+
+.sidebar .follow-links-list .google a {
+    background-position: bottom center;
+}
+
+.sidebar-title {
+    font-size: 18px;
+}
+
+.sidebar-title,
+.sidebar-list-container .months-list a,
+.sidebar-list-container .category-list a {
+    font-family: 'Futura BT Book',sans-serif;
+    font-weight: bold;
+    color: #444;
+}
+
+/* -- Newsletter -- */
+
+.sidebar-newsletter,
+.search-container {
+    padding: 15px 9px;
+    border-bottom: 2px solid #c0c1c3;
+}
+
+.sidebar-container input {
+    float: left;
+    width: 179px;
+    height: 41px;
+    padding-left: 7px;
+    font-family: 'Futura BT Book',sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 43px;
+    outline: 1px solid #d9dadb;
+    color: #999;
+    background-color: #fff;
+    -webkit-font-smoothing: antialiased;
+}
+
+.sidebar-container .btn-submit {
+    width: 48px;
+    height: 47px;
+    background: url(../images/pages/nl-sidebar-submit.jpg);
+}
+
+/* -- Archives -- */
+
+.sidebar-list-container {
+    padding: 15px 30px 0 20px;
+    border-bottom: 2px solid #c0c1c3;
+}
+
+.sidebar-list-container .sidebar-title:after {
+    content: '';
+    display: inline-block;
+    height: 2px;
+    background-color: #444;
+}
+
+.sidebar-list-container .sidebar-title.archives:after {
+	margin-left: 16px;
+    width: 115px;
+}
+
+.sidebar-list-container .sidebar-title.categories:after {
+	margin-left: 6px;
+    width: 106px;
+}
+
+.sidebar-list-container .months-list,
+.sidebar-list-container .category-list {
+    margin: 8px 0 27px 88px;
+}
+
+.sidebar-list-container .months-list a,
+.sidebar-list-container .category-list a {
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.sidebar-list-container .months-list a:hover,
+.sidebar-list-container .category-list a:hover {
+    color: #cc4855;
+}
+
+/* -- Derniers articles -- */
+
+.sidebar .last-articles {
+    margin-top: 18px;
+    border-bottom: 2px solid #c0c1c3;
+}
+
+.sidebar .articles-list article {
+    clear: both;
+    overflow: hidden;
+}
+
+.sidebar .articles-list li {
+    position: relative;
+    border-right: 2px solid #c0c1c3;
+    border-left: 2px solid #c0c1c3;
+}
+
+.sidebar .articles-list li + li,
+.sidebar .last-articles {
+    border-top: 2px solid #c0c1c3;
+}
+
+.sidebar .excerpt-details-container,
+.sidebar .articles-list .link-container {
+    float: left;
+}
+
+.sidebar .excerpt-details-container {
+    width: 195px;
+    padding: 4px 13px 0px 13px;
+}
+
+.sidebar .article-title {
+	margin-bottom: 4px;
+    font-family: 'Futura Bt Book',sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 24px;
+    color: #444;
+}
+
+.sidebar .article-excerpt {
+    font-family: 'Futura BT Book',sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 15px;
+    color: #999;
+}
+
+.sidebar .link-container {
+    display: inline-block;
+    width: 31px;
+    height: 89px;
+    text-align: center;
+    line-height: 89px;
+    vertical-align: middle;
+}
+
+.sidebar .articles-list a {
+    display: inline-block;
+    width: 15px;
+    height: 17px;
+    background: url(../images/pages/readmore-icons.png) no-repeat top center;
+    *display: inline;
+    *zoom: 1;
+}
+
+.sidebar .articles-list li:hover a {
+    background: url(../images/pages/readmore-icons.png) no-repeat bottom center;
+}
+
+.sidebar .articles-list li:hover:before {
+    content: 'Lire cet article';
+    position: absolute;
+    top: 0;
+    right: 35px;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    font: 17px;
+    font-family: 'Futura BT Book',sans-serif;
+    font-weight: bold;
+    line-height: 89px;
+    color: #fff;
+    background: #964250;
+    background: -webkit-linear-gradient(top,#964250 0,#cb3544 1%,#972934 100%);
+    background: -o-linear-gradient(top,#964250 0,#cb3544 1%,#972934 100%);
+    background: -ms-linear-gradient(top,#964250 0,#cb3544 1%,#972934 100%);
+    background: linear-gradient(to bottom,#964250 0,#cb3544 1%,#972934 100%);
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/*  Mini Gallery / in Invite du 13 & Inspirations
+	==================================================  */
+
+.gallery-mosaic {
+	position: relative;
+	margin-bottom: 40px;
+	padding: 7px;
+	overflow: hidden;
+	border: 2px solid #c0c1c3;
+}
+
+.gallery-mosaic-header {
+	height: 85px;
+	line-height: 85px;
+}
+
+.gallery-mosaic .min-logo {
+	float: left;
+	padding: 0 30px 0 15px;
+	width: 55px;
+	height: 56px;
+	background: url(../images/pages/logo-gallery.png) center center no-repeat;
+}
+
+.gallery-mosaic-name {
+	float: left;
+	width: 440px;
+	padding-top: 20px;
+	font-family: 'Futura BT Book';
+	font-size: 21px;
+	color: #333;
+	font-weight: bold;
+	line-height: 1.2;
+}
+
+.gallery-subtitle {
+	font-size: 18px;
+	color: #666;
+}
+
+.gallery-mosaic .gallery-socials {
+	position: absolute;
+	right: 18px;
+	top: 0px;
+}
+
+.gallery-mosaic .gallery-list {
+	margin-left : -8px;
+}
+
+.gallery-mosaic .gallery-list li {
+	margin-left : 10px;
 }

@@ -1,0 +1,70 @@
+<aside class="l-260 sidebar">
+            <div class="sidebar-container">
+                <div class="search-container">
+                    {% load search_tags %}
+                    {% search_box request %}
+                </div>
+                <div class="atmosphere-presentation">
+                    <div class="sidebar-logo">
+                        <img src="images/common/logo-sidebar.png" alt="" />
+                    </div>
+                    <div class="content-text">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a quam sed orci sollicitudin lobortis. Praesent vel dolor at massa varius vehicula at quis erat. Nam placerat odio odio, nec dignissim diam cursus et.
+                        </p>
+                    </div>
+                </div>
+                <div class="follow-links-container">
+                    Suivez nous sur les <br />réseaux sociaux :
+                    <ul class="follow-links-list">
+                        <li class="linkedin">
+                            <a href="#"><span class="display">Linkedin</span></a>
+                        </li>
+                        <li class="viadeo">
+                            <a href="#"><span class="display">Viadeo</span></a>
+                        </li>
+                        <li class="google">
+                            <a href="#"><span class="display">Google +</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sidebar-newsletter">
+                    <form action="#" method="post" class="atmosphere-form">
+                        <fieldset>
+                            <input type="text" placeholder="Subscribe to the newsletter" />
+                            <button class="btn-submit"><span class="display">Envoyer</span></button>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="sidebar-list-container">
+                    <h3 class="sidebar-title archives">Archives</h3>
+                    <ul class="months-list">
+                        <li><a href="#">juin 2013</a></li>
+                        <li><a href="#">juillet 2013</a></li>
+                    </ul>
+                    <h3 class="sidebar-title categories">Catégories</h3>
+                    <ul class="category-list">
+                        {% for category in categories %}
+                        <li><a href="{% url 'blog.views.single_category' category.slug %}">{{ category.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="last-articles">
+                <ul class="articles-list">
+                    <?php for($i = 0; $i < 6; $i++ ) { ?>
+                    <li>
+                        <article>
+                            <div class="excerpt-details-container">
+                                <h4 class="article-title">Lorem ipsum</h4>
+                                <p class="article-excerpt">Nulla id sapien dui. Pellentesque habitant morbi tristique senectus ..</p>
+                            </div>
+                            <div class="link-container">
+                                <a href="#"><span class="display">Lire</span></a>
+                            </div>
+                        </article>
+                    </li>
+                <?php }; ?>
+                </ul>
+            </div>
+        </aside>

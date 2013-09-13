@@ -29,7 +29,7 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     (r'^grappelli/', include('grappelli.urls')),
-    (r'^galleries/', include('gallery.urls')),
+    (r'^galeries/', include('gallery.urls')),
     (r'^newsletter/', include('newsletter.urls')),
     url(r'^admin/', include(admin.site.urls)),
     (r'^static/(?P<path>.*)$', 'django.views.static.serve',

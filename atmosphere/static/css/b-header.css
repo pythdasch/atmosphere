@@ -25,11 +25,11 @@
     -moz-border-radius: 0 0 8px 8px;
     border-radius: 0 0 8px 8px;
     line-height: 19px;
-    background: #a53240;
-    background: -webkit-linear-gradient(left,# 0,#a53240 100%);
-    background: -o-linear-gradient(left,#a53240 0,#dc495d 100%);
-    background: -ms-linear-gradient(left,#a53240 0,#dc495d 100%);
-    background: linear-gradient(to right,#a53240 0,#dc495d 100%);
+    background: #dc495d;
+    background: -webkit-linear-gradient(top,  #dc495d 0%,#a53240 100%);
+    background: -o-linear-gradient(top,  #dc495d 0%,#a53240 100%);
+    background: -ms-linear-gradient(top,  #dc495d 0%,#a53240 100%);
+    background: linear-gradient(to bottom,  #dc495d 0%,#a53240 100%);
     -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.75);
     -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.75);
     box-shadow: 0 1px 1px rgba(0,0,0,0.75);
@@ -84,13 +84,13 @@
 .main-nav:after {
     content: url(../images/common/nav-bullet.png);
     position: relative;
-    top: -2px;
+    top: -5px;
     padding-right: 20px;
     vertical-align: middle;
 }
 
 .main-nav:after {
-    top: 7px;
+    top: 2px;
 }
 
 .main-nav > li:before {
@@ -119,8 +119,12 @@
     position: relative;
     bottom: -8px;
     left: 30%;
-    margin-left: -36px;
+    margin-left: -37px;
     opacity: 0;
+}
+
+.is_ie10 .main-nav > li.show-arrow:after {
+    bottom: -29px;
 }
 
 .lt_ie9 .main-nav > li.show-arrow:after {

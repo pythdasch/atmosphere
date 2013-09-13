@@ -1,7 +1,10 @@
 # -*- coding:utf-8 -*-
 from django.contrib import admin
-from blog.models import Article, Category, Contact, Metakeys
-from modeltranslation.admin import TranslationAdmin
+from blog.models import Article, Category, Contact, Metakeys, ArticleImages
+from modeltranslation.admin import TranslationAdmin, TranslationTabularInline
+
+class ImageInline(TranslationTabularInline):
+    model = ArticleImages
 
 
 class ArticleAdmin(admin.ModelAdmin):
@@ -13,18 +16,17 @@ class ArticleAdmin(admin.ModelAdmin):
     search_fields = [u'title', u'content', u'meta_keywords', u'meta_description']
     # sets up slug to be generated from product title
     prepopulated_fields = {u'slug': (u'title',)}
+    inlines = [ImageInline,]
+    # class Media:
+    #     js = (
+    #         '/static/js/jquery-1.9.1.js',
+    #         'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js',
+    #         '/static/grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js',
+    #         '/static/js/textarea.js',
+    #         'filebrowser/js/TinyMCEAdmin.js',
 
-    class Media:
-        js = (
-            '/static/grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js',
-            '/static/js/jquery-1.9.1.js',
-            '/static/js/textarea.js',
-            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js',
-            'filebrowser/js/TinyMCEAdmin.js',
-
-        )
-        css = {'screen': ('modeltranslation/css/tabbed_translation_fields.css',),}
-
+    #     )
+    #     css = {'screen': ('modeltranslation/css/tabbed_translation_fields.css',),}
 
 
 class MyTranslatedArticleAdmin(ArticleAdmin, TranslationAdmin):
@@ -32,7 +34,6 @@ class MyTranslatedArticleAdmin(ArticleAdmin, TranslationAdmin):
         field = super(MyTranslatedArticleAdmin,
         self).formfield_for_dbfield(db_field, **kwargs)
         self.patch_translation_field(db_field, field, **kwargs)
-        # override the TinyMCE language settings for this field's widget
         return field
 
 admin.site.register(Article, MyTranslatedArticleAdmin)

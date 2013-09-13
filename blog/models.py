@@ -111,6 +111,11 @@ class Article(models.Model):
     def __unicode__(self):
         return self.title
 
+class ArticleImages(models.Model):
+    name = models.CharField(max_length=255)
+    image = models.ImageField(upload_to='article/images/')
+    article = models.ForeignKey(Article)
+
 
 class Contact(models.Model):
     name = models.CharField(max_length=255)

@@ -30,9 +30,13 @@
                 <div class="hp-about-container">
                     <h2 class="middle-title">Edito</h2>
                     <div class="content-text">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis suscipit tortor. Nulla sed urna eget risus mollis mattis. Curabitur cursus feugiat libero pellentesque consequat. Proin eget auctor mi. Proin quis risus ante. Fusce est mauris, tincidunt eget ipsum et, rutrum consequat augue. Sed eleifend egestas lorem, vitae ornare augue. Fusce sed elit ac justo vehicula luctus. Mauris urna quam, tincidunt id sodales vel, sagittis semper enim.
-                        </p>
+                        <h2>Architecture et design : les vivre…  </h2>
+                        <h4>Partager une sensibilité, une perception, un instant, une curiosité … </h4>
+                        <p>…puis évoquer et laisser parler des gens attachants et qui ont une telle densité qu’ils pourraient bien faire la Une de l’actualité…</p>
+                        <p>Publier des carnets de voyages, les nôtres, mais les leurs aussi… <strong>du beau à nos yeux…</strong></p>
+                        <p>Parler de projets architecturaux, de produits et d’événements… <strong>tout ce que nos regards ont saisi…</strong></p>
+                        <p>Ouvrir la porte à nos <strong>correspondants du monde entier</strong>, s’ouvrir à leurs œuvres, leurs réalités, leurs visions.</p>
+                        <p><strong>Lire le monde avec des photographes</strong> français et internationaux…</p>
                         <div class="btn-container"><a href="{% url 'atmosphere.views.contact' %}" class="btn">Contactez-nous</a></div>
                     </div>
                 </div>
@@ -59,7 +63,7 @@
                                         {% endthumbnail %}
                                         <h4 class="article-title"><a href="#">{{ article.title }}</a></h4>
                                         <div class="content-text">
-                                            {{ article.content|truncatewords_html:20 }}
+                                            {{ article.content|safe|truncatewords_html:20 }}
                                         </div>
                                         <a href="{% url 'blog.views.single_article' article.slug %}" class="read-more-btn" title="Lire plus de l'article Lorem Ipsum">+</a>
                                     </article>
@@ -67,6 +71,7 @@
                                 {% endfor %}
                             </ul>
                         </li>
+                        {% comment %}
                         <li>
                             <ul>
                                 <?php for($i = 0; $i < 12; $i++ ) { ?>
@@ -87,6 +92,7 @@
                                 <?php }; ?>
                             </ul>
                         </li>
+                        {% endcomment %}
                     </ul>
                     <div class="slider-arrow-container">
                         <div class="slider-arrow prev"></div>

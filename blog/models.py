@@ -114,7 +114,7 @@ class Article(models.Model):
 class ArticleImages(models.Model):
     name = models.CharField(max_length=255)
     image = models.ImageField(upload_to='article/images/')
-    article = models.ForeignKey(Article)
+    article = models.ForeignKey(Article, related_name="article_photos")
 
 
 class Contact(models.Model):

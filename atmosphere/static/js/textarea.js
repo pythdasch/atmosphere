@@ -25,10 +25,10 @@ tinyMCE.init({
     // see http://www.tinymce.com/wiki.php/Configuration
 
     // Init
-    mode: 'exact',
+    mode: 'textareas',
     elements : "id_content_fr,id_content_en",
     theme: 'advanced',
-    skin: 'grappelli',
+    skin: 'default',
 
     // General
     accessibility_warnings: false,
@@ -145,4 +145,4 @@ tinyMCE.init({
 
 });
 
-tinyMCE.triggerSave()
+

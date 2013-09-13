@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load thumbnail %}
 {% load i18n %}
 <div class="main evocations-page content-page">
     <div class="l-100">
         <div class="l-685">
             <div class="head-presentation">
-                <h1 class="title">{{ article.categories.name }}</h1>
+                <h1 class="title">{{ article.categories.all.0 }}</h1>
                 <div class="presentation-content">
                     <span class="presentation-title">{{ article.title }}</span>
                     <span class="presentation-date">Le {{ article.created_at }}</span>
@@ -15,7 +16,39 @@
             <div class="content-text">
                 {{ article.content|safe }}
             </div>
+            <div class="head-presentation">
+                <h1 class="title">{% trans "En images..." %}</h1>
+            </div>
+        <div class="hp-gallery-containter">
+                <div class="inner-wrapper">
+                    <div class="hp-images-list-container">
+                        <ul class="hp-images-list">
+                            {% for image in article.article_photos.all %}
+                            <li>
+                                {% if image.image|is_portrait %}
+                                    {% thumbnail image.image "180x120" crop="center" as img %}
+                                    <img src="{{ img.url }}" alt="" />
+                                    {% endthumbnail %}
+                                {% else %}
+                                {% thumbnail image.image "180x120" as img %}
+                                    <img src="{{ img.url }}" alt="" />
+                                    {% endthumbnail %}
+                                {% endif %}
+                                <div class="color-overlay"></div>
+                                <a class="image-link" href="#">
+                                    <div class="image-overlay">
+                                        <span class="image-title">— {{ image.name }}</span>
+                                        <a class="hover-like" href="{{ image.url }}">5</a>
+                                    </div>
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
+
 
         {% load sidebar_tag %}
         {% sidebar_box request %}

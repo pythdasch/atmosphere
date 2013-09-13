@@ -2,7 +2,7 @@
 from django.shortcuts import render, get_object_or_404
 from blog.models import Article, Category, last_articles, oneofeach
 from newsletter.models import Newsletter
-from blog.forms import ContactForm
+from blog.models import Contact
 from outils.mail_utils import contact_email
 from gallery.models import Gallery, first_photos
 
@@ -26,16 +26,12 @@ def index(request):
 
 def contact(request):
     if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            contact = form.save()
-            contact_email(contact)
-            return render(request, 'contact_success.html')
-    else:
-        form = ContactForm()
-    return render(request, 'contact.html', {
-        'form': form,
-        })
+        data = request.POST
+        contact = Contact(name=data['name'], email=data["email"], subject=data["subject"], message=data["message"])
+        contact = contact.save()
+        contact_email(contact)
+        return render(request, 'contact_success.html')
+    return render(request, 'contact.html')
 
 def custom404(request):
     return render(request, '404.html')

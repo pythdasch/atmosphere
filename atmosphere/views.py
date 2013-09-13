@@ -7,12 +7,6 @@ from outils.mail_utils import contact_email
 from gallery.models import Gallery, first_photos
 
 
-def coming_soon(request):
-    news = get_object_or_404(Newsletter, name="main")
-    return render(request, 'coming_soon.html', {
-        'newsletter': news,
-        })
-
 def index(request):
     gallery = Gallery.objects.order_by('-created_at')[0]
     gallery_photos = first_photos(gallery, 12)

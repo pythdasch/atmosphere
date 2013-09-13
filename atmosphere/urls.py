@@ -14,8 +14,7 @@ js_info_dict = {
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', 'atmosphere.views.coming_soon', name='index'),
-    url(r'^test/$', 'atmosphere.views.index',),
+    url(r'^$', 'atmosphere.views.index', name='index'),
     url(r'^contact/$', 'atmosphere.views.contact',),
     url(r'^blog/', include('blog.urls')),
     url(r'^support/', include('support.urls')),

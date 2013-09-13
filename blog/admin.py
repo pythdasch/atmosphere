@@ -24,9 +24,9 @@ class ArticleAdmin(admin.ModelAdmin):
     #         '/static/grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js',
     #         '/static/js/textarea.js',
     #         'filebrowser/js/TinyMCEAdmin.js',
-
     #     )
     #     css = {'screen': ('modeltranslation/css/tabbed_translation_fields.css',),}
+
 
 
 class MyTranslatedArticleAdmin(ArticleAdmin, TranslationAdmin):

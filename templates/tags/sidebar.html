@@ -64,7 +64,7 @@
                         <article>
                             <div class="excerpt-details-container">
                                 <h4 class="article-title">{{ article.title }}</h4>
-                                <p class="article-excerpt">{{ article.content|safe|truncatewords_html:10 }}</p>
+                                <p class="article-excerpt">{{ article.content|safe|truncatechars:30 }}</p>
                             </div>
                             <div class="link-container">
                                 <a href="{% url 'blog.views.single_article' article.slug %}"><span class="display">Lire</span></a>

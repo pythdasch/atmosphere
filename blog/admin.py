@@ -19,9 +19,7 @@ class ArticleAdmin(admin.ModelAdmin):
             '/static/grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js',
             '/static/js/jquery-1.9.1.js',
             '/static/js/textarea.js',
-            'modeltranslation/js/force_jquery.js',
             'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js',
-            'modeltranslation/js/tabbed_translation_fields.js',
             'filebrowser/js/TinyMCEAdmin.js',
 
         )

@@ -1,7 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>{{ article.title }}</h1>
-<div id="content">
-    {{ article.content|safe }}
+{% load i18n %}
+<div class="main evocations-page content-page">
+    <div class="l-100">
+        <div class="l-685">
+            <div class="head-presentation">
+                <h1 class="title">{{ article.categories.name }}</h1>
+                <div class="presentation-content">
+                    <span class="presentation-title">{{ article.title }}</span>
+                    <span class="presentation-date">Le {{ article.created_at }}</span>
+                </div>
+            </div>
+
+            <div class="content-text">
+                {{ article.content|safe }}
+            </div>
+        </div>
+
+        {% load sidebar_tag %}
+        {% sidebar_box request %}
+    </div> <!-- end of 1-100 -->
 </div>
-{% endblock %}
+
+{% endblock%}

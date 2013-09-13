@@ -1,8 +1,14 @@
 <aside class="l-260 sidebar">
             <div class="sidebar-container">
                 <div class="search-container">
-                    {% load search_tags %}
-                    {% search_box request %}
+                    {% load i18n %}
+                    <form class="atmosphere-form" id="search" action="{% url 'search_results' %}" method="GET">
+                        <fieldset>
+                            {% csrf_token %}
+                            {{ form.q }}
+                            <button class="btn search-btn">{% trans 'Rechercher'%}</button>
+                        </fieldset>
+                    </form>
                 </div>
                 <div class="atmosphere-presentation">
                     <div class="sidebar-logo">
@@ -31,6 +37,7 @@
                 <div class="sidebar-newsletter">
                     <form action="#" method="post" class="atmosphere-form">
                         <fieldset>
+                            {% csrf_token %}
                             <input type="text" placeholder="Subscribe to the newsletter" />
                             <button class="btn-submit"><span class="display">Envoyer</span></button>
                         </fieldset>
@@ -52,19 +59,19 @@
             </div>
             <div class="last-articles">
                 <ul class="articles-list">
-                    <?php for($i = 0; $i < 6; $i++ ) { ?>
+                    {% for article in last_articles %}
                     <li>
                         <article>
                             <div class="excerpt-details-container">
-                                <h4 class="article-title">Lorem ipsum</h4>
-                                <p class="article-excerpt">Nulla id sapien dui. Pellentesque habitant morbi tristique senectus ..</p>
+                                <h4 class="article-title">{{ article.title }}</h4>
+                                <p class="article-excerpt">{{ article.content|safe|truncatewords_html:10 }}</p>
                             </div>
                             <div class="link-container">
-                                <a href="#"><span class="display">Lire</span></a>
+                                <a href="{% url 'blog.views.single_article' article.slug %}"><span class="display">Lire</span></a>
                             </div>
                         </article>
                     </li>
-                <?php }; ?>
+                {% endfor %}
                 </ul>
             </div>
         </aside>

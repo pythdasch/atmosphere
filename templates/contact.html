@@ -1,13 +1,122 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% block content %}
+<div class="main contact-page content-page">
+    <div class="l-100">
 
-<form method="post" action="{% url 'atmosphere.views.contact' %}">
-    {% csrf_token %}
-    {{ form }}
-    <br/>
-    <div style="text-align:right">
-        <button type="submit" class="btn btn-primary btn-large btn-index" type="button" style="margin-right:4px;">{% trans "Envoyer" %}</button>
-    </div>
-</form>
+        <div class="contact-visual">
+            <img src="images/pages/contact-visual.jpg" alt="Contactez-nous" />
+        </div>
+
+        <div class="contact-content">
+            <h1 class="title">Qui sommes-nous</h1>
+            <div class="contact-content-text">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus fermentum
+                    ullamcorper gravida. Donec consequat varius ornare. Integer a arcu orci. Proin
+                    convallis diam a quam porta vulputate. Quisque odio ipsum, dignissim nec purus
+                    eu, pharetra hendrerit metus. Vivamus eget commodo diam. Integer blandit eros nisi,
+                    sed mollis lorem dapibus dignissim. Proin feugiat mauris et blandit pharetra.
+                    Aliquam adipiscing convallis vulputate. Ut sit amet risus ut magna tristique
+                    pellentesque. Quisque id nunc id metus tristique euismod id ut felis. Nullam
+                    euismod varius eros in viverra. Pellentesque habitant morbi tristique senectus
+                    et netus et malesuada fames ac turpis egestas. Etiam ac enim in dui cursus interdum
+                    et vel nulla. Vivamus id orci dapibus, viverra orci ac, venenatis diam.
+                </p>
+                <p>
+                    Nunc feugiat gravida nulla, quis congue sapien elementum et. Fusce ut ultricies mi.
+                    Phasellus eu tempor est. In egestas egestas lorem at pretium. Etiam venenatis ipsum
+                    at lectus lobortis ornare. In nec est sed tortor ornare blandit vitae vel felis. In
+                    adipiscing quam metus, vitae scelerisque sapien pellentesque vel. Etiam eget felis
+                    suscipit, accumsan lorem et, tempus nibh. Nulla fringilla blandit felis, ut dapibus
+                    massa placerat cursus. Aliquam a pretium sapien. Integer adipiscing mattis erat sit
+                    amet egestas.
+                </p>
+                <p>
+                    Sed viverra velit sem, ut blandit leo vehicula sed. Curabitur adipiscing ante
+                    nunc. Ut dignissim ultrices odio, sed ornare ligula sagittis quis. Maecenas id
+                    mauris nibh. Nulla sed egestas ipsum, quis pellentesque nibh. Vivamus vehicula,
+                    eros sed dapibus suscipit, massa ante ullamcorper dolor, et porta ligula eros eget
+                    turpis. Nullam imperdiet mattis vestibulum. Duis ut rutrum lectus. Proin porta
+                    sodales sagittis. Mauris suscipit iaculis dignissim. Aliquam tincidunt vitae nisl
+                    imperdiet lacinia.
+                </p>
+            </div>
+        </div>
+
+        <div class="contact-persons-container">
+            <div class="l-50 contact-person">
+                <div class="contact-visual">
+                    <img src="images/pages/contact-person-1.jpg" alt="Thérèse Hauff Macé" />
+                    <div class="hover-container">
+                        <div class="hover-info">
+                            <div class="contact-name">Thérèse Hauff-Macé</div>
+                            <address>
+                                2 rue Cournot <br />
+                                75015 Paris
+                            </address>
+                            <div class="contact-number">+33 (0)6 60 48 13 28</div>
+                            <ul class="contact-share-list">
+                                <li class="linkedin"><a href="#">Linkedin</a></li>
+                                <li class="viadeo"><a href="#">Viadeo</a></li>
+                                <li class="google"><a href="#">Google +</a></li>
+                            </ul>
+                        </div>
+                        <div class="color-overlay"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="l-50 contact-person">
+                <div class="contact-visual">
+                    <img src="images/pages/contact-person-1.jpg" alt="Thérèse Hauff Macé" />
+                    <div class="hover-container">
+                        <div class="hover-info">
+                            <div class="contact-name">Thérèse Hauff-Macé</div>
+                            <address>
+                                2 rue Cournot <br />
+                                75015 Paris
+                            </address>
+                            <div class="contact-number">+33 (0)6 60 48 13 28</div>
+                            <ul class="contact-share-list">
+                                <li class="linkedin"><a href="#">Linkedin</a></li>
+                                <li class="viadeo"><a href="#">Viadeo</a></li>
+                                <li class="google"><a href="#">Google +</a></li>
+                            </ul>
+                        </div>
+                        <div class="color-overlay"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <form method="post" action="{% url 'atmosphere.views.contact' %}" class="atmosphere-form contact-form">
+            <fieldset>
+                {% csrf_token %}
+                <h2 class="title">Envoyez-moi un message</h2>
+                <div class="row">
+                    <label for="name">Nom :</label>
+                    <input id="name" type="text" />
+                </div>
+                <div class="row">
+                    <label for="mail">Mail :</label>
+                    <input id="mail" type="text" />
+                </div>
+                <div class="row">
+                    <label for="subject">Sujet :</label>
+                    <input id="subject" type="text" />
+                </div>
+                <div class="row">
+                    <label for="textarea">Message :</label>
+                    <textarea id="textarea"></textarea>
+                </div>
+                <div class="btn-container">
+                    <button type="submit" class="btn">Envoyer</button>
+                </div>
+            </fieldset>
+        </form>
+
+    </div> <!-- end of 1-100 -->
+</div>
 {% endblock %}

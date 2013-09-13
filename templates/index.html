@@ -61,9 +61,9 @@
                                         {% thumbnail article.image "218x166" as img %}
                                         <a class="article-visual-link" href="{% url 'blog.views.single_article' article.slug%}"><img src="{{ img.url }}" alt="" /></a>
                                         {% endthumbnail %}
-                                        <h4 class="article-title"><a href="#">{{ article.title }}</a></h4>
+                                        <h4 class="article-title"><a href="{% url 'blog.views.single_article' article.slug%}">{{ article.title }}</a></h4>
                                         <div class="content-text">
-                                            {{ article.content|safe|truncatechars:10 }}
+                                            {{ article.content|safe|truncatechars:50 }}
                                         </div>
                                         <a href="{% url 'blog.views.single_article' article.slug %}" class="read-more-btn" title="Lire plus de l'article Lorem Ipsum">+</a>
                                     </article>

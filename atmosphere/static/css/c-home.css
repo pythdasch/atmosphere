@@ -257,13 +257,15 @@
 }
 
 .hp-article-list .article-visual-link {
+    overflow: hidden;
     display: block;
     margin-bottom: 5px;
     text-align: center;
 }
 
 .hp-article-list .article-visual-link img {
-    width: 100%;
+    width: auto;
+    max-height: 166px;
 }
 
 .hp-article-list .article-title,

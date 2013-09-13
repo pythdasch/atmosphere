@@ -10,30 +10,28 @@ import re
 
 def subscribe(request, object_id):
     news = get_object_or_404(Newsletter, pk=object_id)
-    if request.is_ajax():
-        if request.method == 'POST':
-            data = request.POST
-            error = False
-            if not re.match(r"^[A-Za-z0-9\.\+_-]+@[A-Za-z0-9\._-]+\.[a-zA-Z]*$", data['email']):
-                error = "incorrect"
-            already_sub = Subscriber.objects.filter(email=data['email'])
-            if already_sub:
-                error = "already"
-            if not error:
-                if request.LANGUAGE_CODE == 'en':
-                    form = Subscriber(email=data['email'], language="en")
-                    form.save()
-                    subscribe_mail(request.POST['email'], news, language="en")
-                    return HttpResponse(simplejson.dumps('inscri'))
-                else:
-                    form = Subscriber(email=data['email'], language="fr")
-                    form.save()
-                    subscribe_mail(request.POST['email'], news, language="fr")
-                    return HttpResponse(simplejson.dumps('inscri'))
+    if request.method == 'POST':
+        import ipdb;ipdb.set_trace()
+        data = request.POST
+        error = False
+        if not re.match(r"^[A-Za-z0-9\.\+_-]+@[A-Za-z0-9\._-]+\.[a-zA-Z]*$", data['email']):
+            error = "incorrect"
+        already_sub = Subscriber.objects.filter(email=data['email'])
+        if already_sub:
+            error = "already"
+        if not error:
+            if request.LANGUAGE_CODE == 'en':
+                form = Subscriber(email=data['email'], language="en")
+                form.save()
+                subscribe_mail(request.POST['email'], news, language="en")
+                return HttpResponse(simplejson.dumps('inscri'))
             else:
-                return HttpResponse(simplejson.dumps(error))
-    else:
-        form = SubscriptionForm()
+                form = Subscriber(email=data['email'], language="fr")
+                form.save()
+                subscribe_mail(request.POST['email'], news, language="fr")
+                return HttpResponse(simplejson.dumps('inscri'))
+        else:
+            return HttpResponse(simplejson.dumps(error))
     return render(request, 'newsletter/subscribe.html', {
         'newsletter': news,
         'form': form,

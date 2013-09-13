@@ -28,6 +28,9 @@ def posts(search_text):
     # iterate through keywords
     for word in words:
         posts = posts.filter(Q(title__icontains=word) |
+            Q(title_fr__icontains=word) |
+            Q(title_en__icontains=word) |
+            Q(content_en_icontains=word) |
             Q(content__icontains=word) |
             Q(content_fr__iexact=word))
         results['posts'] = posts

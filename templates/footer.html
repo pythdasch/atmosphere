@@ -1,14 +1,8 @@
 <footer class="main-footer">
     {% load articles_tag %}
     {% footer_slider request %}
-    <ul class="partners-list">
-        <li><a href="#"><img src="images/footer/warner-logo.png" alt="Warner Bros" /></a></li>
-        <li><a href="#"><img src="images/footer/virgin-mobile.png" alt="Virgin Mobile" /></a></li>
-        <li><a href="#"><img src="images/footer/ebokers.png" alt="Ebokers" /></a></li>
-        <li><a href="#"><img src="images/footer/clubmed.png" alt="ClubMed !" /></a></li>
-        <li><a href="#"><img src="images/footer/boulanger.png" alt="Boulanger" /></a></li>
-    </ul>
-
+    {% load partenaire_tag %}
+    {% footer_partenaire request %}
     <div class="footer-nav-container">
         <div class="l-100 inner-wrapper">
             <div class="about-side">
@@ -23,16 +17,16 @@
                         <div class="subnotice">Couverture média</div>
                     </li>
                     <li>
-                        <a href="#" class="footer-link">Contact</a>
+                        <a href="{% url 'atmosphere.views.contact' %}" class="footer-link">Contact</a>
                         <div class="subnotice">Feedback</div>
                     </li>
                 </ul>
             </div>
             <div class="newsletter-side">
                 <div class="footer-title">Newsletter</div>
-                    <form methdo="post" action="" class="atmosphere-form">
+                    <form methdod="post" action="" class="atmosphere-form" id="footer_newsletter">
                         <fieldset>
-                            <input type="text" placeholder="Abonnez-vous à la newsletter" />
+                            <input type="text" placeholder="Abonnez-vous à la newsletter" class="id_email" />
                             <button type="submit" class="btn-submit"></button>
                         </fieldset>
                     </form>
@@ -41,7 +35,7 @@
         </div>
         <div class="copyright-container">
             <div class="inner-wrapper">
-                <div class="footer-logo"><a href="#" title="Retour à l'accueil"><img src="images/footer/logo-footer.png" alt="" /></a></div>
+                <div class="footer-logo"><a href="#" title="Retour à l'accueil"><img src="{{ STATIC_URL }}images/footer/logo-footer.png" alt="" /></a></div>
                 <div class="copyright-middle">
                     ©13 Atmosphère. All rights reserved. <br />
                     Produit par Draft Agency - 2013

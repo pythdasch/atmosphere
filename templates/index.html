@@ -33,7 +33,7 @@
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis suscipit tortor. Nulla sed urna eget risus mollis mattis. Curabitur cursus feugiat libero pellentesque consequat. Proin eget auctor mi. Proin quis risus ante. Fusce est mauris, tincidunt eget ipsum et, rutrum consequat augue. Sed eleifend egestas lorem, vitae ornare augue. Fusce sed elit ac justo vehicula luctus. Mauris urna quam, tincidunt id sodales vel, sagittis semper enim.
                         </p>
-                        <div class="btn-container"><a href="#" class="btn">Contactez-nous</a></div>
+                        <div class="btn-container"><a href="{% url 'atmosphere.views.contact' %}" class="btn">Contactez-nous</a></div>
                     </div>
                 </div>
                 {% subscribe_news request %}
@@ -55,7 +55,7 @@
                                             <span class="article-category">{{ article.cateogory }}</span>
                                         </header>
                                         {% thumbnail article.image "218x166" as img %}
-                                        <a class="article-visual-link" href="#"><img src="{{ img.url }}" alt="" /></a>
+                                        <a class="article-visual-link" href="{% url 'blog.views.single_article' article.slug%}"><img src="{{ img.url }}" alt="" /></a>
                                         {% endthumbnail %}
                                         <h4 class="article-title"><a href="#">{{ article.title }}</a></h4>
                                         <div class="content-text">

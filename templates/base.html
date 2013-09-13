@@ -38,13 +38,15 @@
         {% include 'footer.html' %}
         {% compress js %}
         <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.min.js"></script>
+
         <script type="text/javascript" src="{{ STATIC_URL }}js/selectivizr-min.js"></script>
         <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.bxslider.min.js"></script>
         <script type="text/javascript" src="{{ STATIC_URL }}js/code.js"></script>
         <script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="{{ STATIC_URL }}js/newsletter.js"></script>
         <script language="javascript">var STATIC_URL = "{{ STATIC_URL|escapejs }}";</script>
         <script type="text/javascript" src="{{ STATIC_URL }}js/form.js"></script>
+        {% block script_compress %}
+        {% endblock %}
     {% endcompress %}
         <script type="text/javascript" src="{{ STATIC_URL }}js/ga_def.js"></script>
         {% block script %}

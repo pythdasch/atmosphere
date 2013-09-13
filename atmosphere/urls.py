@@ -21,6 +21,7 @@ urlpatterns = patterns('',
     url(r'^support/', include('support.urls')),
     url(r'^admin/filebrowser/', include(site.urls)),
     (r'^search/', include('search.urls')),
+    (r'^localeurl/', include('localeurl.urls')),
     # url(r'^atmosphere/', include('atmosphere.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

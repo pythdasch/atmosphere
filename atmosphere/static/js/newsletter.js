@@ -38,13 +38,23 @@ $(document).ajaxSend(function(event, xhr, settings) {
     $(document).ready(function(){
           $("#form_subscribe").submit(function(e){
             e.preventDefault();
+            console.log('index')
+            subscribe_newsletter();
+            });
+          $('#footer_newsletter').submit(function(e){
+            e.preventDefault();
+            console.log('footer');
+            subscribe_newsletter();
+          });
+
+    function subscribe_newsletter(){
             var $inputs = $(this).children('input');
             var values = {};
             var url = $(this).attr('action');
             $inputs.each(function(i,el) {
               values[el.name] = $(el).val();
             });
-            values['email'] = $('#id_email').val();
+            values['email'] = $('.id_email').val();
             $('body').prepend('<div id="loader"><img src="'+STATIC_URL+'img/loading.gif" alt="" /></div>');
             $.ajax({
                 data: values,
@@ -69,6 +79,6 @@ $(document).ajaxSend(function(event, xhr, settings) {
                     }
                 },
             });
-     });
+    }
     });
 })();

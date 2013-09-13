@@ -1,0 +1,7 @@
+<form methdod="post" action="{% url 'newsletter.views.subscribe' 1 %}" class="atmosphere-form" id="footer_newsletter">
+    <fieldset>
+        {% csrf_token %}
+        <input type="text" placeholder="Abonnez-vous à la newsletter" />
+        <button type="submit" class="btn-submit"></button>
+    </fieldset>
+</form>

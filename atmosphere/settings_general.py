@@ -116,6 +116,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'localeurl.middleware.LocaleURLMiddleware'
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
@@ -137,6 +138,7 @@ INSTALLED_APPS = (
     'blog',
     'atmosphere',
     'newsletter',
+    'general_config',
     'pynliner',
     'multiupload',
     'sorl.thumbnail',
@@ -144,6 +146,7 @@ INSTALLED_APPS = (
     'grappelli',
     'grappelli_modeltranslation',
     'grappelli.dashboard',
+    'localeurl',
     'filebrowser',
     'compressor',
     'support',

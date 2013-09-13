@@ -4,7 +4,7 @@
     <h2 class="middle-title">Abonnez-vous <br /> à la newsletter</h2>
     <form class="atmosphere-form" method="POST" action="{% url 'newsletter.views.subscribe' newsletter.id %}" id="form_subscribe">
         <fieldset>
-            <input type="text" id="id_email" />
+            <input type="text" class="id_email" />
             {% csrf_token %}
             <div class="btn-submit-container"><button type="submit" class="submit-btn" id="submit_subscribe">Envoyer</button></div>
         </fieldset>

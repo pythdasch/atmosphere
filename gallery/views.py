@@ -7,3 +7,9 @@ def single_gallery(request, gallery_slug):
     return render(request, 'gallery/single.html',{
         'gallery': gallery,
         })
+
+def index_gallery(request):
+    galleries = Gallery.objects.order_by('-created_at')[:10]
+    return render(request, 'gallery/index_gallery.html', {
+        'galleries': galleries,
+        })

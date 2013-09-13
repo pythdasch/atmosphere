@@ -2,7 +2,7 @@ from django.conf.urls.defaults import *
 
 
 urlpatterns = patterns('',
-    url(r'^subscribe/(?P<object_id>\d+)/$', 'newsletter.views.subscribe', \
+    url(r'^subscribe/$', 'newsletter.views.subscribe', \
         name='subscriber_view'),
     url(r'^sub_success/(?P<object_id>\d+)/$', 'newsletter.views.sub_success'),
     url(r'^unsubscribe/(?P<object_id>\d+)/(?P<subscriber_id>\d+)$', 'newsletter.views.unsubscribe'),

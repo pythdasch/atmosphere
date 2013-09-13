@@ -7,10 +7,10 @@
                 <img src="{{ img.url }}" alt="" />
                 {% endthumbnail %}
                 <div class="color-overlay"></div>
-                <a class="image-link" href="#">
+                <a class="image-link" href="{% url 'blog.views.single_article' slider.slug %}">
                     <div class="image-overlay">
                         <span class="image-title">{{ slider.title }}</span>
-                        <a class="hover-like" href="{% url 'blog.views.single_article' slider.id %}"></a>
+                        <a class="hover-like" href="{% url 'blog.views.single_article' slider.slug %}"></a>
                     </div>
                 </a>
             </li>

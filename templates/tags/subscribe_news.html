@@ -2,9 +2,9 @@
 {% include 'tag_html/modal.html' %}
 <div class="hp-newsletter">
     <h2 class="middle-title">Abonnez-vous <br /> à la newsletter</h2>
-    <form class="atmosphere-form" method="POST" action="{% url 'newsletter.views.subscribe' newsletter.id %}" id="form_subscribe">
+    <form class="atmosphere-form" method="POST" action="{% url 'newsletter.views.subscribe' %}">
         <fieldset>
-            <input type="text" class="id_email" />
+            <input type="text" name="email" />
             {% csrf_token %}
             <div class="btn-submit-container"><button type="submit" class="submit-btn" id="submit_subscribe">Envoyer</button></div>
         </fieldset>

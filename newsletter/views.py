@@ -8,10 +8,9 @@ from outils.mail_utils import subscribe_mail
 import re
 
 
-def subscribe(request, object_id):
-    news = get_object_or_404(Newsletter, pk=object_id)
+def subscribe(request):
+    news = get_object_or_404(Newsletter, name="main")
     if request.method == 'POST':
-        import ipdb;ipdb.set_trace()
         data = request.POST
         error = False
         if not re.match(r"^[A-Za-z0-9\.\+_-]+@[A-Za-z0-9\._-]+\.[a-zA-Z]*$", data['email']):

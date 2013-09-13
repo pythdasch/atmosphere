@@ -24,9 +24,9 @@
             </div>
             <div class="newsletter-side">
                 <div class="footer-title">Newsletter</div>
-                    <form methdod="post" action="" class="atmosphere-form" id="footer_newsletter">
+                    <form methdod="POST" action="{% url 'newsletter.views.subscribe' %}" class="atmosphere-form" id="footer_newsletter">
                         <fieldset>
-                            <input type="text" placeholder="Abonnez-vous à la newsletter" class="id_email" />
+                            <input type="text" name="email" placeholder="Abonnez-vous à la newsletter" class="id_email" />
                             <button type="submit" class="btn-submit"></button>
                         </fieldset>
                     </form>

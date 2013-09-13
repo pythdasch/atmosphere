@@ -223,5 +223,5 @@ COMPRESS_ENABLED = False
 DEFAULT_CONTENT_TYPE= 'text/html'
 
 LOCALE_INDEPENDENT_PATHS = (
-    r'^/static/$',
+    r'^static/$',
 )

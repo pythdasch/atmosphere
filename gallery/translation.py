@@ -10,3 +10,5 @@ translator.register(Gallery, GalleryTranslationOptions)
 
 class AuthorTranslationOptions(TranslationOptions):
     fields = ('name', 'biography')
+
+translator.register(Author, AuthorTranslationOptions)

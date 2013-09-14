@@ -10,7 +10,7 @@
                     <ul class="slides-list">
                         {% for article in slider %}
                             {% thumbnail article.image "932x418" as img %}
-                        <li><a href="#"><img src="{{ img.url }}" alt="" /></a></li>
+                        <li><a href="{{ img.url }}"><img src="{{ img.url }}" alt="" /></a></li>
                         {% endthumbnail %}
                         {% endfor %}
                     </ul>
@@ -113,7 +113,7 @@
                             <img src="{{ img.url }}" alt="" />
                             {% endthumbnail %}
                             <div class="color-overlay"></div>
-                            <a class="image-link" href="#">
+                            <a class="image-link" href="{{ image.image.url }}">
                                 <div class="image-overlay">
                                     <span class="image-title">{{ image.title }}</span>
                                     <a class="hover-like" href="#"></a>

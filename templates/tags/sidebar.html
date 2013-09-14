@@ -1,3 +1,4 @@
+{% load i18n %}
 <aside class="l-260 sidebar">
             <div class="sidebar-container">
                 <div class="search-container">
@@ -16,23 +17,23 @@
                     </div>
                     <div class="content-text">
                         <p>
-                            Partager une sensibilité, une perception, un instant, une curiosité …
+                            {% blocktrans %}Partager une sensibilité, une perception, un instant, une curiosité …
 …puis évoquer et laisser parler des gens attachants et qui ont une telle densité qu’ils pourraient bien faire la Une de l’actualité…
 Publier des carnets de voyages, les nôtres, mais les leurs aussi… du beau à nos yeux…
 Parler de projets architecturaux, de produits et d’événements… tout ce que nos regards ont saisi…
 Ouvrir la porte à nos correspondants du monde entier, s’ouvrir à leurs œuvres, leurs réalités, leurs visions.
-Lire le monde avec des photographes français et internationaux…
+Lire le monde avec des photographes français et internationaux…{% endblocktrans %}
                         </p>
                     </div>
                 </div>
                 <div class="follow-links-container">
-                    Suivez nous sur les <br />réseaux sociaux :
+                    {% blocktrans %}Suivez nous sur les <br />réseaux sociaux :{% endblocktrans %}
                     <ul class="follow-links-list">
                         <li class="linkedin">
-                            <a href="#"><span class="display">Linkedin</span></a>
+                            <a href="#"><span class="display">{% trans "Linkedin" %}</span></a>
                         </li>
                         <li class="viadeo">
-                            <a href="#"><span class="display">Viadeo</span></a>
+                            <a href="#"><span class="display">{% trans "Viadeo" %}</span></a>
                         </li>
                         <li class="google">
                             <a href="#"><span class="display">Google +</span></a>
@@ -40,21 +41,21 @@ Lire le monde avec des photographes français et internationaux…
                     </ul>
                 </div>
                 <div class="sidebar-newsletter">
-                    <form action="#" method="post" class="atmosphere-form">
+                    <form action="{% url 'newsletter.views.subscribe' %}" method="post" class="atmosphere-form">
                         <fieldset>
                             {% csrf_token %}
                             <input type="text" placeholder="Subscribe to the newsletter" />
-                            <button class="btn-submit"><span class="display">Envoyer</span></button>
+                            <button class="btn-submit"><span class="display">{% trans "Envoyer" %}</span></button>
                         </fieldset>
                     </form>
                 </div>
                 <div class="sidebar-list-container">
-                    <h3 class="sidebar-title archives">Archives</h3>
+                    <h3 class="sidebar-title archives">{% trans "Archives" %}</h3>
                     <ul class="months-list">
                         <li><a href="#">juin 2013</a></li>
                         <li><a href="#">juillet 2013</a></li>
                     </ul>
-                    <h3 class="sidebar-title categories">Catégories</h3>
+                    <h3 class="sidebar-title categories">{% trans "Catégories" %}</h3>
                     <ul class="category-list">
                         {% for category in categories %}
                         <li><a href="{% url 'blog.views.single_category' category.slug %}">{{ category.name }}</a></li>

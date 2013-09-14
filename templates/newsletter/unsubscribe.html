@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% block content %}
+<div class="main">
 <h2>{% trans "Se désabonner de la newsletter 13Atmosphere ?" %}</h2>
 {% if error %}
         <p>{{ error|escape }}</p>
@@ -10,4 +11,5 @@
             <input type="hidden" name="unsub" value="yes">
             <input type="submit" value="{% trans 'Se désabonner' %}" class="btn btn-success">
         </form>
+</div>
 {% endblock %}

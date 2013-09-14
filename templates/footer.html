@@ -24,8 +24,10 @@
             </div>
             <div class="newsletter-side">
                 <div class="footer-title">Newsletter</div>
-                    <form methdod="POST" action="{% url 'newsletter.views.subscribe' %}" class="atmosphere-form" id="footer_newsletter">
+
+                    <form action="{% url 'newsletter.views.subscribe' %}" method="POST" class="atmosphere-form" id="footer_newsletter">
                         <fieldset>
+                            {% csrf_token %}
                             <input type="text" name="email" placeholder="Abonnez-vous à la newsletter" class="id_email" />
                             <button type="submit" class="btn-submit"></button>
                         </fieldset>

@@ -22,8 +22,8 @@
                     <a href="{% url 'atmosphere.views.index' %}">Home</a>
                     <ul class="s-menu">
                         <div class="wrapper">
-                            <li><a href="#">Édito</a></li>
-                            <li><a href="#">Je m'abonne à la newsletter</a></li>
+                            <li><a href="{% url 'atmosphere.views.contact' %}">Édito</a></li>
+                            <li><a href="{% url 'newsletter.views.subscribe' %}">Je m'abonne à la newsletter</a></li>
                         </div>
                     </ul>
                 </li>

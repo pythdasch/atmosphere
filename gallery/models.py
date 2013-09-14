@@ -19,6 +19,10 @@ class Gallery(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to='gallery/', blank=True, null=True)
     author = models.ForeignKey(Author)
+    meta_keywords = meta_keywords = models.CharField("Meta Keywords", max_length=255,
+    help_text='Comma-delimited set of SEO keywords for meta tag', blank=True, null=True)
+    meta_description = models.CharField("Meta Description", max_length=255,
+    help_text='Content for description meta tag', blank=True, null=True)
 
     def all_galleries(self, length=20):
         return self.objects.order_by('created_at')[:length]

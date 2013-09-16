@@ -11,7 +11,7 @@ def index(request):
     gallery = Gallery.objects.order_by('-created_at')[0]
     gallery_photos = first_photos(gallery, 12)
     return render(request, 'index.html', {
-        'gallery ': gallery,
+        'gallery': gallery,
         'gallery_photos': gallery_photos,
         'oneofeach': oneofeach(),
         'last_articles': last_articles(20),

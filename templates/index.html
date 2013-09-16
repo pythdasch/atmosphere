@@ -65,7 +65,7 @@
                                         <div class="content-text">
                                             {{ article.content|safe|truncatechars:50 }}
                                         </div>
-                                        <a href="{% url 'blog.views.single_article' article.slug %}" class="read-more-btn" title="Lire plus de l'article Lorem Ipsum">+</a>
+                                        <a href="{% url 'blog.views.single_article' article.slug %}" class="read-more-btn" title="Lire plus de l'article {{ article.title }}">+</a>
                                     </article>
                                 </li>
                                 {% endfor %}
@@ -101,7 +101,6 @@
                 </div>
             </div>
         </div>
-
         <div class="hp-gallery-containter">
             <div class="banner"><h3 class="banner-title">Galerie</h3></div>
             <div class="inner-wrapper">
@@ -115,17 +114,23 @@
                             <div class="color-overlay"></div>
                             <a class="image-link" href="{{ image.image.url }}">
                                 <div class="image-overlay">
-                                    <span class="image-title">{{ image.title }}</span>
+                                    <span class="image-title">{{ image.image.title }}</span>
                                 </div>
                             </a>
                         </li>
                         {% endfor %}
                     </ul>
                     <footer>
+                        {% if gallery %}
                         <div class="gallery-details">
-                            <div class="gallery-avatar"><img src="{{ gallery.author.image.url }}" alt="" /></div><span class="gallery-author">{{ gallery.author.name }} -</span>
+                            <div class="gallery-avatar">
+                                {% thumbnail gallery.author.image "56x52" crop="center" as img%}
+                                <img src="{{ img.url }}" alt="{{ gallery.author.name }}" />
+                                {% endthumbnail%}
+                            </div><span class="gallery-author">{{ gallery.author.name }} -</span>
                             <span class="gallery-title"> {{ gallery.name }}</span>
                         </div>
+                        {% endif %}
                     </footer>
                 </div>
             </div>

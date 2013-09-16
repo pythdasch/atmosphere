@@ -153,6 +153,7 @@ INSTALLED_APPS = (
     'support',
     'tagging',
     'search',
+    'outils',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',

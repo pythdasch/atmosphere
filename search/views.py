@@ -1,13 +1,19 @@
+# -*- coding:utf-8 -*-
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from search import posts, store
 from atmosphere.settings_general import POST_PER_PAGE
-
+from outils.textutils import encode
+import sys
 
 def results(request, template_name="search/results.html"):
     # get current search phrase
     q = request.GET.get('q', '')
+    reload(sys)
+    sys.setdefaultencoding("latin-1")
+    q = encode(str(q))
+
     # get current page number. Set to 1 is missing or invalid
     try:
         page = int(request.GET.get('page', 1))

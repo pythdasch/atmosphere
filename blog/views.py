@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*-
 from django.shortcuts import render, get_object_or_404
 from models import Article, Category
+import datetime
 
 
 def single_article(request, article_slug):
@@ -18,4 +19,13 @@ def single_category(request, category_slug):
         'category': category,
         'last_article': last_article,
         'categories': categories,
+        })
+
+
+def archive_view(request, year, month):
+    date_month = datetime.date(year=int(year), month=int(month), day=1).strftime('%B')
+    articles = Article.objects.filter(pub_date__month=month, pub_date__year=year)
+    return render(request, 'blog/archives.html',{
+        'articles': articles,
+        'month': date_month,
         })

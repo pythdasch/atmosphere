@@ -3,7 +3,7 @@
         <ul class="slides-list">
             {% for slider in slider_article %}
             <li>
-                {% thumbnail slider.image "180x120" as img %}
+                {% thumbnail slider.image "180x120" crop="center" as img %}
                 <img src="{{ img.url }}" alt="" />
                 {% endthumbnail %}
                 <div class="color-overlay"></div>

@@ -58,7 +58,7 @@
                                             Posté le <span class="article-date">{{ article.created_at }}</span>
                                             <span class="article-category">{{ article.cateogory }}</span>
                                         </header>
-                                        {% thumbnail article.image "218x166" as img %}
+                                        {% thumbnail article.image "218x166" crop="center" as img %}
                                         <a class="article-visual-link" href="{% url 'blog.views.single_article' article.slug%}"><img src="{{ img.url }}" alt="" /></a>
                                         {% endthumbnail %}
                                         <h4 class="article-title"><a href="{% url 'blog.views.single_article' article.slug%}">{{ article.title }}</a></h4>
@@ -109,14 +109,13 @@
                     <ul class="hp-images-list">
                         {% for image in gallery_photos %}
                         <li>
-                            {% thumbnail image.image "200x100" as img %}
+                            {% thumbnail image.image "200x100" crop="center" as img %}
                             <img src="{{ img.url }}" alt="" />
                             {% endthumbnail %}
                             <div class="color-overlay"></div>
                             <a class="image-link" href="{{ image.image.url }}">
                                 <div class="image-overlay">
                                     <span class="image-title">{{ image.title }}</span>
-                                    <a class="hover-like" href="#"></a>
                                 </div>
                             </a>
                         </li>

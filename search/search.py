@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 from models import SearchTerm
 from blog.models import Article
 from django.db.models import Q
@@ -30,7 +31,7 @@ def posts(search_text):
         posts = posts.filter(Q(title__icontains=word) |
             Q(title_fr__icontains=word) |
             Q(title_en__icontains=word) |
-            Q(content_en_icontains=word) |
+            Q(content_en__icontains=word) |
             Q(content__icontains=word) |
             Q(content_fr__iexact=word))
         results['posts'] = posts

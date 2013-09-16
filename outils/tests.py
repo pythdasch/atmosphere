@@ -1,16 +1,15 @@
-"""
-This file demonstrates writing tests using the unittest module. These will pass
-when you run "manage.py test".
-
-Replace this with more appropriate tests for your application.
-"""
-
+from outils.dateutils import convert_to_list_month
 from django.test import TestCase
+import datetime
 
 
-class SimpleTest(TestCase):
-    def test_basic_addition(self):
+class DateutilsTest(TestCase):
+    def test_convert_to_list_month(self):
         """
-        Tests that 1 + 1 always equals 2.
+        Test function to render a list of months
         """
-        self.assertEqual(1 + 1, 2)
+        start_date = datetime.date(year=2013, month=9, day=3)
+        stop_date = datetime.date(year=2014, month=2, day=5)
+        # solution = [('1', 'September'),('2', 'October')('3', 'November'),('4', 'December')('5', 'January'),('6', 'February')]
+        answer = convert_to_list_month(start_date, stop_date)
+        self.assertEqual(solution, 'd')

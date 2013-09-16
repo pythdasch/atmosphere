@@ -1,4 +1,5 @@
 {% load i18n %}
+{% load static %}
 <aside class="l-260 sidebar">
             <div class="sidebar-container">
                 <div class="search-container">
@@ -13,7 +14,7 @@
                 </div>
                 <div class="atmosphere-presentation">
                     <div class="sidebar-logo">
-                        <img src="{{ STATIC_URL }}images/common/logo-sidebar.png" alt="" />
+                        <img src="{% get_static_prefix %}images/common/logo-sidebar.png" alt="" />
                     </div>
                     <div class="content-text">
                         <p>
@@ -52,8 +53,9 @@ Lire le monde avec des photographes français et internationaux…{% endblocktra
                 <div class="sidebar-list-container">
                     <h3 class="sidebar-title archives">{% trans "Archives" %}</h3>
                     <ul class="months-list">
-                        <li><a href="#">juin 2013</a></li>
-                        <li><a href="#">juillet 2013</a></li>
+                        {% for date in archives %}
+                        <li><a href="{% url 'blog.views.archive_view' year=2013 month=date.0 %}">{{ date.1 }}</a></li>
+                        {% endfor %}
                     </ul>
                     <h3 class="sidebar-title categories">{% trans "Catégories" %}</h3>
                     <ul class="category-list">

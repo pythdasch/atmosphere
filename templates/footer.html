@@ -1,20 +1,21 @@
 <footer class="main-footer">
     {% load articles_tag %}
+    {% load i18n %}
     {% footer_slider request %}
     {% load partenaire_tag %}
     {% footer_partenaire request %}
     <div class="footer-nav-container">
         <div class="l-100 inner-wrapper">
             <div class="about-side">
-                <div class="footer-title">À propos</div>
+                <div class="footer-title">{% trans "À propos" %}</div>
                 <ul class="footer-list">
                     <li>
-                        <a href="#" class="footer-link">Publicité</a>
-                        <div class="subnotice">Votre maque sur ce blog</div>
+                        <a href="#" class="footer-link">{% trans "Publicité" %}</a>
+                        <div class="subnotice">{% trans "Votre marque sur ce blog" %}</div>
                     </li>
                     <li>
-                        <a href="#" class="footer-link">Presse</a>
-                        <div class="subnotice">Couverture média</div>
+                        <a href="#" class="footer-link">{% trans "Presse" %}</a>
+                        <div class="subnotice">{% trans "Couverture média" %}</div>
                     </li>
                     <li>
                         <a href="{% url 'atmosphere.views.contact' %}" class="footer-link">Contact</a>

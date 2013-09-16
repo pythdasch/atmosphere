@@ -22,13 +22,13 @@
                     <a href="{% url 'atmosphere.views.index' %}">Home</a>
                     <ul class="s-menu">
                         <div class="wrapper">
-                            <li><a href="{% url 'atmosphere.views.contact' %}">Édito</a></li>
-                            <li><a href="{% url 'newsletter.views.subscribe' %}">Je m'abonne à la newsletter</a></li>
+                            <li><a href="{% url 'atmosphere.views.contact' %}">{% trans "Édito" %}</a></li>
+                            <li><a href="{% url 'newsletter.views.subscribe' %}">{% trans "Je m'abonne à la newsletter" %}</a></li>
                         </div>
                     </ul>
                 </li>
                 {% category_nav request %}
-                <li><a href="{% url 'gallery.views.index_gallery' %}">Galeries</a> </li>
+                <li><a href="{% url 'gallery.views.index_gallery' %}">{% trans "Galeries" %}</a> </li>
             </ul>
         </nav>
     </header>

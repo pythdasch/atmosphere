@@ -1,0 +1,176 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-09-16 19:09+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: atmosphere/settings_general.py:27
+msgid "Français"
+msgstr ""
+
+#: atmosphere/settings_general.py:28
+msgid "Anglais"
+msgstr ""
+
+#: build/lib.linux-i686-2.7/atmosphere/settings_general.py:26
+msgid "French"
+msgstr ""
+
+#: build/lib.linux-i686-2.7/atmosphere/settings_general.py:27
+msgid "English"
+msgstr ""
+
+#: templates/404.html:5
+msgid "La page demandée n'existe pas. Veuillez essayer autre chose."
+msgstr ""
+
+#: templates/500.html:3
+msgid ""
+"Le serveur rencontre une erreur interne. Veuillez nous excuser de la gêne "
+"occasionnée"
+msgstr ""
+
+#: templates/500.html:4
+msgid "Nous faisons notre possible pour que le site soit opérationnel"
+msgstr ""
+
+#: templates/500.html:5
+msgid "Merci de votre compréhension"
+msgstr ""
+
+#: templates/article.html:20
+msgid "En images..."
+msgstr ""
+
+#: templates/coming_soon.html:8
+msgid "Le blog de l'architecture !"
+msgstr ""
+
+#: templates/coming_soon.html:26
+msgid "Changer"
+msgstr ""
+
+#: templates/coming_soon.html:30
+msgid "Notre site sera mis en ligne dans"
+msgstr ""
+
+#: templates/coming_soon.html:36
+msgid "jours"
+msgstr ""
+
+#: templates/coming_soon.html:42
+msgid "heures"
+msgstr ""
+
+#: templates/coming_soon.html:48
+msgid "minutes"
+msgstr ""
+
+#: templates/coming_soon.html:54
+msgid "secondes"
+msgstr ""
+
+#: templates/coming_soon.html:59
+msgid "Soyez le premier au courant !"
+msgstr ""
+
+#: templates/contact_success.html:5
+msgid "merci de nous avoir contacté"
+msgstr ""
+
+#: templates/blog/archives.html:9
+msgid "Articles du mois de"
+msgstr ""
+
+#: templates/newsletter/sub_success.html:5
+msgid "Vous venez de souscrire à la newsletter"
+msgstr ""
+
+#: templates/newsletter/subscribe.html:12
+msgid "S'abonner à 'la Newsletter"
+msgstr ""
+
+#: templates/newsletter/unsub_success.html:5
+msgid " Vous avez bien été désabonné de la newsletter "
+msgstr ""
+
+#: templates/newsletter/unsubscribe.html:5
+msgid "Se désabonner de la newsletter 13Atmosphere ?"
+msgstr ""
+
+#: templates/newsletter/unsubscribe.html:12
+msgid "Se désabonner"
+msgstr ""
+
+#: templates/search/results.html:10
+msgid "Résultat de recherche pour :"
+msgstr ""
+
+#: templates/search/results.html:33
+msgid "Aucun article ne correspond à votre recherche"
+msgstr ""
+
+#: templates/tags/pagination_links.html:8
+msgid "Previous"
+msgstr ""
+
+#: templates/tags/pagination_links.html:13
+#: templates/tags/pagination_links.html:16
+msgid "Next"
+msgstr ""
+
+#: templates/tags/sidebar.html:11
+msgid "Rechercher"
+msgstr ""
+
+#: templates/tags/sidebar.html:21
+msgid ""
+"Partager une sensibilité, une perception, un instant, une curiosité …\n"
+"…puis évoquer et laisser parler des gens attachants et qui ont une telle "
+"densité qu’ils pourraient bien faire la Une de l’actualité…\n"
+"Publier des carnets de voyages, les nôtres, mais les leurs aussi… du beau à "
+"nos yeux…\n"
+"Parler de projets architecturaux, de produits et d’événements… tout ce que "
+"nos regards ont saisi…\n"
+"Ouvrir la porte à nos correspondants du monde entier, s’ouvrir à leurs "
+"œuvres, leurs réalités, leurs visions.\n"
+"Lire le monde avec des photographes français et internationaux…"
+msgstr ""
+
+#: templates/tags/sidebar.html:31
+msgid "Suivez nous sur les <br />réseaux sociaux :"
+msgstr ""
+
+#: templates/tags/sidebar.html:34
+msgid "Linkedin"
+msgstr ""
+
+#: templates/tags/sidebar.html:37
+msgid "Viadeo"
+msgstr ""
+
+#: templates/tags/sidebar.html:49
+msgid "Envoyer"
+msgstr ""
+
+#: templates/tags/sidebar.html:54
+msgid "Archives"
+msgstr ""
+
+#: templates/tags/sidebar.html:60
+msgid "Catégories"
+msgstr ""

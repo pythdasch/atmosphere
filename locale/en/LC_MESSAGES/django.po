@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-27 14:21+0200\n"
+"POT-Creation-Date: 2013-09-16 19:18+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: atmosphere/settings_general.py:26
+#: atmosphere/settings_general.py:27
 msgid "Français"
 msgstr "French"
 
-#: atmosphere/settings_general.py:27
+#: atmosphere/settings_general.py:28
 #, fuzzy
 msgid "Anglais"
 msgstr "English"
@@ -38,19 +38,23 @@ msgstr ""
 msgid "La page demandée n'existe pas. Veuillez essayer autre chose."
 msgstr "Url does not match. Please try another one."
 
-#: templates/500.html:4
+#: templates/500.html:3
 msgid ""
 "Le serveur rencontre une erreur interne. Veuillez nous excuser de la gêne "
 "occasionnée"
-msgstr ""
+msgstr "The server has a problem, Please, forgive us for the lost"
+
+#: templates/500.html:4
+msgid "Nous faisons notre possible pour que le site soit opérationnel"
+msgstr "We do our possible to make it work"
 
 #: templates/500.html:5
-msgid "Nous faisons notre possible pour que le site soit opérationnel"
-msgstr ""
-
-#: templates/500.html:6
 msgid "Merci de votre compréhension"
-msgstr ""
+msgstr "Thank you to understand"
+
+#: templates/article.html:20
+msgid "En images..."
+msgstr "In images..."
 
 #: templates/coming_soon.html:8
 msgid "Le blog de l'architecture !"
@@ -84,41 +88,188 @@ msgstr "seconds"
 msgid "Soyez le premier au courant !"
 msgstr "To be the first informed please register here"
 
-#: templates/contact.html:10
+#: templates/contact.html:11
+msgid "Qui sommes-nous"
+msgstr "Who are we"
+
+#: templates/contact.html:14
+msgid ""
+"\n"
+"                        <p><strong>Partager une sensibilité, une perception, "
+"un instant, une curiosité … </strong></p>\n"
+"                        <p>…puis évoquer et laisser parler des gens "
+"attachants et qui ont une telle densité qu’ils pourraient bien faire la Une "
+"de l’actualité…</p>\n"
+"                        <p>Publier des carnets de voyages, les nôtres, mais "
+"les leurs aussi… <strong>du beau à nos yeux…</strong></p>\n"
+"                        <p>Parler de projets architecturaux, de produits et "
+"d’événements… <strong>tout ce que nos regards ont saisi…</strong></p>\n"
+"                        <p>Ouvrir la porte à nos <strong>correspondants du "
+"monde entier</strong>, s’ouvrir à leurs œuvres, leurs réalités, leurs "
+"visions.</p>\n"
+"                        <p><strong>Lire le monde avec des photographes</"
+"strong> français et internationaux…</p>\n"
+"                "
+msgstr ""
+
+#: templates/contact.html:77
+msgid "Envoyez-moi un message"
+msgstr "Send me a message"
+
+#: templates/contact.html:79
+msgid "Nom :"
+msgstr "Name :"
+
+#: templates/contact.html:83
+msgid "Mail :"
+msgstr "E-mail :"
+
+#: templates/contact.html:87
+msgid "Sujet :"
+msgstr "Subject :"
+
+#: templates/contact.html:91
+msgid "Message :"
+msgstr "Message :"
+
+#: templates/contact.html:95 templates/tags/sidebar.html:49
+#: templates/tags/subscribe_news.html:8
 msgid "Envoyer"
 msgstr "Send"
 
-#: templates/header.html:8
-msgid "Accueil"
-msgstr "Home"
+#: templates/contact_success.html:5
+msgid "merci de nous avoir contacté"
+msgstr "Thank you to have contact us"
 
-#: templates/header.html:11
-msgid "Dossiers / reportages"
-msgstr "Doc / highlights"
+#: templates/footer.html:10
+msgid "À propos"
+msgstr "About"
 
-#: templates/header.html:19
-msgid "Artistes & photographes"
-msgstr "Artists & photographies"
+#: templates/footer.html:13
+msgid "Publicité"
+msgstr "Publicity"
 
-#: templates/newsletter/sub_success.html:4
+#: templates/footer.html:14
+msgid "Votre marque sur ce blog"
+msgstr "Your brand on our website"
+
+#: templates/footer.html:17
+msgid "Presse"
+msgstr "Presse"
+
+#: templates/footer.html:18
+msgid "Couverture média"
+msgstr "Media cover"
+
+#: templates/header.html:25
+msgid "Édito"
+msgstr "Edito"
+
+#: templates/header.html:26
+#, fuzzy
+msgid "Je m'abonne à la newsletter"
+msgstr "Register to the newsletter"
+
+#: templates/header.html:31
+msgid "Galeries"
+msgstr "Gallery"
+
+#: templates/blog/archives.html:9
+msgid "Articles du mois de"
+msgstr "Article from the month of "
+
+#: templates/blog/archives.html:34
+msgid "Pas d'article pour cette période"
+msgstr "No articles for this date"
+
+#: templates/newsletter/sub_success.html:5
 msgid "Vous venez de souscrire à la newsletter"
-msgstr ""
+msgstr "You just subscribed at the 13atmosphere newsletter"
 
-#: templates/newsletter/subscribe.html:12 templates/tags/subscribe_news.html:9
+#: templates/newsletter/subscribe.html:12
 msgid "S'abonner à 'la Newsletter"
 msgstr "Register to the newsletter"
 
-#: templates/newsletter/unsub_success.html:4
+#: templates/newsletter/unsub_success.html:5
 msgid " Vous avez bien été désabonné de la newsletter "
 msgstr "You just unsubscribe to the newsletter"
 
-#: templates/newsletter/unsubscribe.html:4
+#: templates/newsletter/unsubscribe.html:5
 msgid "Se désabonner de la newsletter 13Atmosphere ?"
 msgstr "Unsubscribe from 13Atmosphere Newsletter ?"
 
-#: templates/newsletter/unsubscribe.html:11
+#: templates/newsletter/unsubscribe.html:12
 msgid "Se désabonner"
 msgstr "Unsubscribe"
+
+#: templates/search/results.html:10
+msgid "Résultat de recherche pour :"
+msgstr "Results for the search of :"
+
+#: templates/search/results.html:33
+msgid "Aucun article ne correspond à votre recherche"
+msgstr "No articles matching your query"
+
+#: templates/tags/pagination_links.html:8
+msgid "Previous"
+msgstr ""
+
+#: templates/tags/pagination_links.html:13
+#: templates/tags/pagination_links.html:16
+msgid "Next"
+msgstr ""
+
+#: templates/tags/sidebar.html:11
+msgid "Rechercher"
+msgstr "Search"
+
+#: templates/tags/sidebar.html:21
+msgid ""
+"Partager une sensibilité, une perception, un instant, une curiosité …\n"
+"…puis évoquer et laisser parler des gens attachants et qui ont une telle "
+"densité qu’ils pourraient bien faire la Une de l’actualité…\n"
+"Publier des carnets de voyages, les nôtres, mais les leurs aussi… du beau à "
+"nos yeux…\n"
+"Parler de projets architecturaux, de produits et d’événements… tout ce que "
+"nos regards ont saisi…\n"
+"Ouvrir la porte à nos correspondants du monde entier, s’ouvrir à leurs "
+"œuvres, leurs réalités, leurs visions.\n"
+"Lire le monde avec des photographes français et internationaux…"
+msgstr ""
+
+#: templates/tags/sidebar.html:31
+msgid "Suivez nous sur les <br />réseaux sociaux :"
+msgstr "Follow us on social networks"
+
+#: templates/tags/sidebar.html:34
+msgid "Linkedin"
+msgstr "Linkedin"
+
+#: templates/tags/sidebar.html:37
+msgid "Viadeo"
+msgstr "Viadeo"
+
+#: templates/tags/sidebar.html:54
+msgid "Archives"
+msgstr "Archives"
+
+#: templates/tags/sidebar.html:60
+msgid "Catégories"
+msgstr "Categories"
+
+#: templates/tags/subscribe_news.html:3
+#, fuzzy
+msgid "Abonnez-vous <br /> à la newsletter"
+msgstr "Register to the newsletter"
+
+#~ msgid "Accueil"
+#~ msgstr "Home"
+
+#~ msgid "Dossiers / reportages"
+#~ msgstr "Doc / highlights"
+
+#~ msgid "Artistes & photographes"
+#~ msgstr "Artists & photographies"
 
 #~ msgid "Vous venez de vous inscrire à la newsletter 13Atmosphere"
 #~ msgstr "You just subscribed at the 13atmosphere newsletter"

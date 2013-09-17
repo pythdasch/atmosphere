@@ -154,6 +154,7 @@ INSTALLED_APPS = (
     'tagging',
     'search',
     'outils',
+    'monthdelta',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',

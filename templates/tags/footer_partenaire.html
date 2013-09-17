@@ -2,7 +2,7 @@
     <ul class="partners-list">
         {% for partenaire in partenaires %}
         <li><a href="{{ partenaire.lien }}">
-            {% thumbnail partenaire.logo "146x70" crop="center" as img %}
+            {% thumbnail partenaire.logo "146x70" as img %}
             <img src="{{ img.url }}" alt="{{ partenaire.name }}" />
             {% endthumbnail %}
         </a></li>

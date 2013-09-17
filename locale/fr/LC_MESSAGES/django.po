@@ -1,0 +1,128 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-08-26 13:58+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: atmosphere/settings_general.py:26
+msgid "French"
+msgstr ""
+
+#: atmosphere/settings_general.py:27
+msgid "English"
+msgstr ""
+
+#: templates/coming_soon.html:8
+msgid "Le blog de l'architecture !"
+msgstr ""
+
+#: templates/coming_soon.html:26
+msgid "Changer"
+msgstr ""
+
+#: templates/coming_soon.html:30
+msgid "Notre site sera mis en ligne dans"
+msgstr ""
+
+#: templates/coming_soon.html:36
+msgid "jours"
+msgstr ""
+
+#: templates/coming_soon.html:42
+msgid "heures"
+msgstr ""
+
+#: templates/coming_soon.html:48
+msgid "minutes"
+msgstr ""
+
+#: templates/coming_soon.html:54
+msgid "secondes"
+msgstr ""
+
+#: templates/coming_soon.html:59
+msgid "Soyez le premier au courant !"
+msgstr ""
+
+#: templates/contact.html:10
+msgid "Envoyer"
+msgstr ""
+
+#: templates/header.html:8
+msgid "Accueil"
+msgstr ""
+
+#: templates/header.html:11
+msgid "Dossiers / reportages"
+msgstr ""
+
+#: templates/header.html:19
+msgid "Artistes & photographes"
+msgstr ""
+
+#: templates/admin/login.html:27
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/admin/login.html:44
+msgid "Username"
+msgstr ""
+
+#: templates/admin/login.html:48
+msgid "Password"
+msgstr ""
+
+#: templates/admin/login.html:56
+msgid "Forgotten your password or username?"
+msgstr ""
+
+#: templates/admin/login.html:60
+msgid "Log in"
+msgstr ""
+
+#: templates/mail/subscribe_mail.html:2
+msgid "Vous venez de vous inscrire à la newsletter 13Atmosphere"
+msgstr ""
+
+#: templates/mail/subscribe_mail.html:5
+msgid "La newsletter c'est tous les articles publié dans le mois"
+msgstr ""
+
+#: templates/mail/subscribe_mail.html:9
+msgid "Se désinscrire ?"
+msgstr ""
+
+#: templates/newsletter/sub_success.html:4
+msgid "Vous venez de souscrire à la newsletter"
+msgstr ""
+
+#: templates/newsletter/subscribe.html:12 templates/tags/subscribe_news.html:9
+msgid "S'abonner à 'la Newsletter"
+msgstr ""
+
+#: templates/newsletter/unsub_success.html:4
+msgid " Vous avez bien été désabonné de la newsletter "
+msgstr ""
+
+#: templates/newsletter/unsubscribe.html:4
+msgid "Se désabonner de la newsletter 13Atmosphere ?"
+msgstr ""
+
+#: templates/newsletter/unsubscribe.html:11
+msgid "Se désabonner"
+msgstr ""

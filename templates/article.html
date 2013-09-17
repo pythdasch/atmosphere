@@ -21,9 +21,11 @@
             <div class="content-text">
                 {{ article.content|safe }}
             </div>
+            {% if article.article_photos.all|length > 0 %}
             <div class="head-presentation">
                 <h1 class="title">{% trans "En images..." %}</h1>
             </div>
+
         <div class="hp-gallery-containter">
                 <div class="inner-wrapper">
                     <div class="hp-images-list-container">
@@ -40,7 +42,7 @@
                                     {% endthumbnail %}
                                 {% endif %}
                                 <div class="color-overlay"></div>
-                                <a class="image-link" href="{{ image.url }} ">
+                                <a class="image-link" href="{{ image.image.url }} ">
                                     <div class="image-overlay">
                                         <span class="image-title">— {{ image.name }}</span>
                                     </div>
@@ -51,7 +53,9 @@
                     </div>
                 </div>
             </div>
+            {% endif %}
         </div>
+
 
 
         {% load sidebar_tag %}

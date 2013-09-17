@@ -3,6 +3,7 @@ Django==1.5.1
 Fabric==1.7.0
 Jinja2==2.7.1
 MarkupSafe==0.18
+MonthDelta==1.0b
 Pillow==2.1.0
 Pygments==1.6
 South==0.8.1

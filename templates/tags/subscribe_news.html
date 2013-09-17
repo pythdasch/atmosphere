@@ -1,11 +1,11 @@
 {% load i18n %}
 <div class="hp-newsletter">
-    <h2 class="middle-title">Abonnez-vous <br /> à la newsletter</h2>
+    <h2 class="middle-title">{% blocktrans %}Abonnez-vous <br /> à la newsletter{% endblocktrans %}</h2>
     <form class="atmosphere-form" method="POST" action="{% url 'newsletter.views.subscribe' %}">
         <fieldset>
             <input type="text" name="email" />
             {% csrf_token %}
-            <div class="btn-submit-container"><button type="submit" class="submit-btn" id="submit_subscribe">Envoyer</button></div>
+            <div class="btn-submit-container"><button type="submit" class="submit-btn" id="submit_subscribe">{% trans "Envoyer" %}</button></div>
         </fieldset>
     </form>
 </div>

@@ -8,15 +8,17 @@
         </div>
 
         <div class="contact-content">
-            <h1 class="title">Qui sommes-nous</h1>
+            <h1 class="title">{% trans "Qui sommes-nous" %}</h1>
             <div class="contact-content-text">
-                <h2>Architecture et design : les vivre…  </h2>
+                <h2>{% trans "Architecture et design : les vivre… %} </h2>
+                {% blocktrans %}
                         <p><strong>Partager une sensibilité, une perception, un instant, une curiosité … </strong></p>
                         <p>…puis évoquer et laisser parler des gens attachants et qui ont une telle densité qu’ils pourraient bien faire la Une de l’actualité…</p>
                         <p>Publier des carnets de voyages, les nôtres, mais les leurs aussi… <strong>du beau à nos yeux…</strong></p>
                         <p>Parler de projets architecturaux, de produits et d’événements… <strong>tout ce que nos regards ont saisi…</strong></p>
                         <p>Ouvrir la porte à nos <strong>correspondants du monde entier</strong>, s’ouvrir à leurs œuvres, leurs réalités, leurs visions.</p>
                         <p><strong>Lire le monde avec des photographes</strong> français et internationaux…</p>
+                {% endblocktrans %}
             </div>
         </div>
 
@@ -72,25 +74,25 @@
         <form method="POST" action="{% url 'atmosphere.views.contact' %}" class="atmosphere-form contact-form">
             <fieldset>
                 {% csrf_token %}
-                <h2 class="title">Envoyez-moi un message</h2>
+                <h2 class="title">{% trans "Envoyez-moi un message" %}</h2>
                 <div class="row">
-                    <label for="name">Nom :</label>
+                    <label for="name">{% trans "Nom :" %}</label>
                     <input id="name" type="text" name="name" />
                 </div>
                 <div class="row">
-                    <label for="mail">Mail :</label>
+                    <label for="mail">{% trans "Mail :" %}</label>
                     <input id="mail" type="text" name="email"/>
                 </div>
                 <div class="row">
-                    <label for="subject">Sujet :</label>
+                    <label for="subject">{% trans "Sujet :" %}</label>
                     <input id="subject" type="text" name="subject"/>
                 </div>
                 <div class="row">
-                    <label for="textarea">Message :</label>
+                    <label for="textarea">{% trans "Message :" %}</label>
                     <textarea id="textarea" name="message"></textarea>
                 </div>
                 <div class="btn-container">
-                    <button type="submit" class="btn">Envoyer</button>
+                    <button type="submit" class="btn">{% trans "Envoyer" %}</button>
                 </div>
             </fieldset>
         </form>

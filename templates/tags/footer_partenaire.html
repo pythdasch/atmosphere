@@ -1,7 +1,10 @@
+{% load thumbnail %}
     <ul class="partners-list">
         {% for partenaire in partenaires %}
         <li><a href="{{ partenaire.lien }}">
-            <img src="{{ partenaire.logo.url }}" alt="{{ partenaire.name }}" />
+            {% thumbnail partenaire.logo "146x70" crop="center" as img %}
+            <img src="{{ img.url }}" alt="{{ partenaire.name }}" />
+            {% endthumbnail %}
         </a></li>
         {% endfor %}
     </ul>

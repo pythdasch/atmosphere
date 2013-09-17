@@ -17,15 +17,15 @@ class ArticleAdmin(admin.ModelAdmin):
     # sets up slug to be generated from product title
     prepopulated_fields = {u'slug': (u'title',)}
     inlines = [ImageInline,]
-    # class Media:
-    #     js = (
-    #         '/static/js/jquery-1.9.1.js',
-    #         'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js',
-    #         '/static/grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js',
-    #         '/static/js/textarea.js',
-    #         'filebrowser/js/TinyMCEAdmin.js',
-    #     )
-    #     css = {'screen': ('modeltranslation/css/tabbed_translation_fields.css',),}
+    class Media:
+        js = (
+            '/static/js/jquery-1.9.1.js',
+            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js',
+            '/static/grappelli/tinymce/jscripts/tiny_mce/tiny_mce.js',
+            '/static/js/textarea.js',
+            'filebrowser/js/TinyMCEAdmin.js',
+        )
+        css = {'screen': ('modeltranslation/css/tabbed_translation_fields.css',),}
 
 
 

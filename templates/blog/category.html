@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load thumbnail %}
 {% load i18n %}
 <div class="main evocations-page content-page">
     <div class="l-100">
@@ -14,6 +15,42 @@
 
             <div class="content-text">
                 {{ last_article.content|safe }}
+            </div>
+        </div>
+        <div class="l-685">
+            <div class="hp-articles-container">
+                <div class="banner"><h3 class="banner-title">{% trans "Articles de " %} {{ category.name }}</h3></div>
+                <div class="inner-wrapper">
+                    <ul class="hp-article-list l-100 clear">
+                        <li>
+                            <ul>
+                                {% if articles|length > 0 %}
+                                {% for article in articles %}
+                                <li>
+                                    <article>
+                                        <header class="article-header">
+                                            Posté le <span class="article-date">{{ article.created_at }}</span>
+                                            <span class="article-category">{{ article.cateogory }}</span>
+                                        </header>
+                                        {% thumbnail article.image "218x166" crop="center" as img %}
+                                        <a class="article-visual-link" href="{% url 'blog.views.single_article' article.slug%}"><img src="{{ img.url }}" alt="" /></a>
+                                        {% endthumbnail %}
+                                        <h4 class="article-title"><a href="{% url 'blog.views.single_article' article.slug%}">{{ article.title }}</a></h4>
+                                        <div class="content-text">
+                                            {{ article.content|safe|truncatechars:50 }}
+                                        </div>
+                                        <a href="{% url 'blog.views.single_article' article.slug %}" class="read-more-btn" title="Lire plus de l'article Lorem Ipsum">+</a>
+                                    </article>
+                                </li>
+                                {% endfor %}
+                                {% else %}
+                                <p>{% trans "Pas d'article pour cette période" %}</p>
+                                {% endif %}
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
         </div>
 

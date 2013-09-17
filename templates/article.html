@@ -1,4 +1,9 @@
 {% extends 'base.html' %}
+{% block meta %}
+    <meta name="description" content="{{ article.meta_description }}">
+    <meta name="keywords" content="{{ article.meta_keywords }}">
+    <meta name="author" content="Therese Mace">
+{% endblock %}
 {% block content %}
 {% load thumbnail %}
 {% load i18n %}

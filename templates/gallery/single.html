@@ -16,7 +16,7 @@
             </div>
 
             <div class="content-text">
-                {{ gallery.author.biography }}
+                {{ gallery.author.biography|safe }}
             </div>
         </div>
         {% load sidebar_tag %}

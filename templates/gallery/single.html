@@ -1,15 +1,17 @@
 {% extends 'base.html' %}
+{% load i18n %}
 {% load thumbnail %}
 {% block content %}
 <div class="main content-page">
     <div class="l-100">
         <div class="l-685">
             <div class="head-presentation">
-                <h1 class="title">{{ gallery.author.name }}</h1>
+                <h1 class="title">{% trans "biographie" %}</h1>
                 <div class="presentation-content">
                     {% thumbnail gallery.author.image "100x100" crop="center" as img %}
                     <img src="{{ img.url }}">
                     {% endthumbnail %}
+                    <span class="presentation-title">{{ gallery.author.name }}</span>
                 </div>
             </div>
 

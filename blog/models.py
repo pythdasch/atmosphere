@@ -91,7 +91,7 @@ class Article(models.Model):
     slug = models.SlugField(unique=True, max_length=50, help_text="Cet élèment n'est pas à modifier. Il permet de passer de page en page.")
     content = models.TextField()
     author = models.ForeignKey(User, help_text="Veuillez choisir votre auteur")
-    image = models.ImageField(upload_to='article/image/', blank=True, null=True)
+    image = models.ImageField(upload_to='article/image/', blank=True, null=True, help_text="Photo de couverture")
     meta_keywords = meta_keywords = models.CharField("Meta Keywords", max_length=255,
     help_text='Comma-delimited set of SEO keywords for meta tag')
     meta_description = models.CharField("Meta Description", max_length=255,

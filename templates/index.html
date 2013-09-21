@@ -10,8 +10,9 @@
                     <ul class="slides-list">
                         {% for article in slider %}
                             {% thumbnail article.image "932x418" as img %}
-                        <li><a href="{{ img.url }}"><img src="{{ img.url }}" alt="" /></a></li>
+                        <li><a href="{% url 'blog.views.single_article' article.slug %}"><img src="{{ img.url }}" alt="" /></a></li>
                         {% endthumbnail %}
+                        <p>{{ article.title }}</p>
                         {% endfor %}
                     </ul>
                     <div class="slider-arrows-container">
@@ -25,7 +26,6 @@
                     <li><a href="#"></a></li>
                 </ul>
             </div> <!-- end of slider -->
-
             <div class="l-100 clear aboutNnl-container">
                 <div class="hp-about-container">
                     <h2 class="middle-title">Edito</h2>
@@ -71,33 +71,7 @@
                                 {% endfor %}
                             </ul>
                         </li>
-                        {% comment %}
-                        <li>
-                            <ul>
-                                <?php for($i = 0; $i < 12; $i++ ) { ?>
-                                <li>
-                                    <article>
-                                        <header class="article-header">
-                                            Posté le <span class="article-date">21.02.13</span>
-                                            <span class="article-category">Architecture</span>
-                                        </header>
-                                        <a class="article-visual-link" href="#"><img src="{{ STATIC_URL }}img/home/article-visual.jpg" alt="" /></a>
-                                        <h4 class="article-title"><a href="#">Lorem Ipsum sit amet dolor</a></h4>
-                                        <div class="content-text">
-                                            Integer metus leo, pharetra eget comodo eget, eleifend pellentesque orci. Quisque eget augue purus, at consectelur velit. Morbi iaculis est nec dui luctus congus.
-                                        </div>
-                                        <a href="#" class="read-more-btn" title="Lire plus de l'article Lorem Ipsum">+</a>
-                                    </article>
-                                </li>
-                                <?php }; ?>
-                            </ul>
-                        </li>
-                        {% endcomment %}
                     </ul>
-                    <div class="slider-arrow-container">
-                        <div class="slider-arrow prev"></div>
-                        <div class="slider-arrow next"></div>
-                    </div>
                 </div>
             </div>
         </div>

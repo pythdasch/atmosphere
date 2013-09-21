@@ -26,3 +26,7 @@ def convert_to_list_month(start_date, stop_date):
         month = add_month(start_date, i)
         months_choices.append((month.month, datetime.date(start_date.year, month.month, 1).strftime('%B')))
     return months_choices
+
+def french_month(number_month):
+    list_month = ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre','Decembre']
+    return list_month[number_month - 1]

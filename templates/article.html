@@ -7,7 +7,8 @@
 {% block content %}
 {% load thumbnail %}
 {% load i18n %}
-<div class="main evocations-page content-page">
+<div class="main content-page">
+    {% if article %}
     <div class="l-100">
         <div class="l-685">
             <div class="head-presentation">
@@ -26,41 +27,41 @@
                 <h1 class="title">{% trans "En images..." %}</h1>
             </div>
 
-        <div class="hp-gallery-containter">
-                <div class="inner-wrapper">
-                    <div class="hp-images-list-container">
-                        <ul class="hp-images-list">
-                            {% for image in article.article_photos.all %}
-                            <li>
-                                {% if image.image|is_portrait %}
-                                    {% thumbnail image.image "180x120" crop="center" as img %}
-                                    <img src="{{ img.url }}" alt="" />
-                                    {% endthumbnail %}
-                                {% else %}
-                                {% thumbnail image.image "180x120" as img %}
-                                    <img src="{{ img.url }}" alt="" />
-                                    {% endthumbnail %}
-                                {% endif %}
-                                <div class="color-overlay"></div>
-                                <a class="image-link" href="{{ image.image.url }} ">
-                                    <div class="image-overlay">
-                                        <span class="image-title">— {{ image.name }}</span>
-                                    </div>
-                                </a>
-                            </li>
-                            {% endfor %}
-                        </ul>
+            <div class="hp-gallery-containter">
+                    <div class="inner-wrapper">
+                        <div class="hp-images-list-container">
+                            <ul class="hp-images-list">
+                                {% for image in article.article_photos.all %}
+                                <li>
+                                    {% if image.image|is_portrait %}
+                                        {% thumbnail image.image "180x120" crop="center" as img %}
+                                        <img src="{{ img.url }}" alt="" />
+                                        {% endthumbnail %}
+                                    {% else %}
+                                    {% thumbnail image.image "180x120" as img %}
+                                        <img src="{{ img.url }}" alt="" />
+                                        {% endthumbnail %}
+                                    {% endif %}
+                                    <div class="color-overlay"></div>
+                                    <a class="image-link" href="{{ image.image.url }} ">
+                                        <div class="image-overlay">
+                                            <span class="image-title">— {{ image.name }}</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
             {% endif %}
-        </div>
-
-
-
-        {% load sidebar_tag %}
+                {% load sidebar_tag %}
         {% sidebar_box request %}
+        </div>
     </div> <!-- end of 1-100 -->
+    {% else %}
+<p>{% trans "Pas d'article pour le moment" %}</p>
+{% endif %}
 </div>
 
 {% endblock%}

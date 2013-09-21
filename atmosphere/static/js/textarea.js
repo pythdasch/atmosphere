@@ -28,7 +28,7 @@ tinyMCE.init({
     mode: 'exact',
     elements : "#id_content_fr, #id_content_en",
     theme: 'advanced',
-    skin: 'default',
+    skin: 'grappelli',
 
     // General
     accessibility_warnings: false,
@@ -38,7 +38,7 @@ tinyMCE.init({
     keep_styles: false,
     language: 'en',
     object_resizing: false,
-    plugins: 'advimage,advlink,fullscreen,paste,media,searchreplace,grappelli,template',
+    plugins: 'advimage,advlink,fullscreen,paste,media,searchreplace,grappelli,template,preview',
     // directionality : "rtl",
 
     // Callbacks
@@ -66,7 +66,7 @@ tinyMCE.init({
     width: 758,
     height: 300,
     indentation: '10px',
-
+    autosave_interval: "20s",
     // Content CSS
     // customize your content ...
     // content_css : "css/example.css",
@@ -76,13 +76,15 @@ tinyMCE.init({
     theme_advanced_toolbar_align: 'left',
     theme_advanced_statusbar_location: 'bottom',
     theme_advanced_buttons1: 'formatselect,styleselect,|,bold,italic,underline,|,bullist,numlist,blockquote,|,undo,redo,|,link,unlink,|,image,|,fullscreen,|,grappelli_adv',
-    theme_advanced_buttons2: 'search,|,pasteword,template,media,charmap,|,code,|,table,cleanup,grappelli_documentstructure',
+    theme_advanced_buttons2: 'preview,search,|,pasteword,template,media,charmap,|,code,|,table,cleanup,grappelli_documentstructure',
     theme_advanced_buttons3: '',
     theme_advanced_path: false,
     theme_advanced_blockformats: 'p,h1,h2,h3,h4,pre',
     theme_advanced_resizing: true,
     theme_advanced_resize_horizontal: false,
     theme_advanced_resizing_use_cookie: true,
+    plugin_preview_width : "500",
+    plugin_preview_height : "600",
 
     // Templates
     // see http://www.tinymce.com/wiki.php/Plugin:template

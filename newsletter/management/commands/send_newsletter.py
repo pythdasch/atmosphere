@@ -5,7 +5,8 @@ from blog.models import Article
 from newsletter.models import Subscriber, Newsletter
 from django.core import mail
 import datetime
-from atmosphere.settings import SITE_URL
+from atmosphere.settings import SITE_URL, SENDER_EMAIL
+from outils.dateutils import french_month
 
 
 class Command(BaseCommand):
@@ -19,21 +20,37 @@ class Command(BaseCommand):
         news = Newsletter.objects.get(name='main')
         emails = []
         for sub in Subscriber.objects.all():
-            subject = u'[13Atmosphere] Newsletter du  %s' % now
-            message_html = UnicodeSafePynliner().from_string(render_to_string(
-                    'newsletter/mail_newsletter.html', {
-                    'last_articles': last_articles,
-                    'len_articles': len_articles,
-                    'SITE_URL': SITE_URL,
-                    'news_id': news.id,
-                    'subscriber': sub,
-            }
-            )).run()
-            from_ = u'david-scheck@gmail.fr'
-            # to_ = [teacher.email]
-            to_ = [sub.email]
+            if sub.language == 'en':
+                month = now.strftime('%B')
+                subject = u'[13Atmosphere] Newsletter %s' % month
+                message_html = UnicodeSafePynliner().from_string(render_to_string(
+                        'newsletter/mail_newsletter_en.html', {
+                        'last_articles': last_articles,
+                        'len_articles': len_articles,
+                        'SITE_URL': SITE_URL,
+                        'news_id': news.id,
+                        'subscriber': sub,
+                }
+                )).run()
+                from_ = SENDER_EMAIL
+                to_ = [sub.email]
+
+            else:
+                month = french_month(now.month)
+                subject = u'[13Atmosphere] Newsletter %s' % month
+                message_html = UnicodeSafePynliner().from_string(render_to_string(
+                        'newsletter/mail_newsletter.html', {
+                        'last_articles': last_articles,
+                        'len_articles': len_articles,
+                        'SITE_URL': SITE_URL,
+                        'news_id': news.id,
+                        'subscriber': sub,
+                }
+                )).run()
+                from_ = SENDER_EMAIL
+                to_ = [sub.email]
             email = mail.EmailMultiAlternatives(
-                    subject, message_html, from_, to_)
+                        subject, message_html, from_, to_)
             email.content_subtype = 'html'
             emails.append(email)
         connection = mail.get_connection()

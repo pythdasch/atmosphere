@@ -6,7 +6,6 @@
                     {% load i18n %}
                     <form class="atmosphere-form" id="search" action="{% url 'search_results' %}" method="GET">
                         <fieldset>
-                            {% csrf_token %}
                             {{ form.q }}
                             <button class="btn search-btn">{% trans 'Rechercher'%}</button>
                         </fieldset>

@@ -13,15 +13,9 @@
                             </li>
                             {% for image in gallery.images %}
                             <li>
-                                {% if image.image|is_portrait %}
                                     {% thumbnail image.image "180x120" crop="center" as img %}
                                     <img src="{{ img.url }}" alt="" />
                                     {% endthumbnail %}
-                                {% else %}
-                                {% thumbnail image.image "180x120" as img %}
-                                    <img src="{{ img.url }}" alt="" />
-                                    {% endthumbnail %}
-                                {% endif %}
 
                                 <div class="color-overlay"></div>
                                 <a class="image-link fancybox" rel="group" href="{{ image.image.url }}">

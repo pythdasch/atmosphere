@@ -7,7 +7,7 @@ register = template.Library()
 
 @register.inclusion_tag("tags/category_nav.html")
 def category_nav(request):
-    categories = Category.actifs.order_by('-created_at')
+    categories = Category.actifs.order_by('created_at')
     return {
     'categories': categories,
     }

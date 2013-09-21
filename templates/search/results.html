@@ -35,15 +35,14 @@
                             </ul>
                         </li>
                     </ul>
+                    <div class="cb">&nbsp;</div>
+            {% pagination_links request paginator %}
+
 
             </div>
-        </div>
         {% load sidebar_tag %}
         {% sidebar_box request %}
+        </div>
     </div>
-</div>
+            {% endblock %}
 
-
-<div class="cb">&nbsp;</div>
-{% pagination_links request paginator %}
-{% endblock %}

@@ -15,7 +15,7 @@
                 <h1 class="title">{{ article.categories.all.0 }}</h1>
                 <div class="presentation-content">
                     <span class="presentation-title">{{ article.title }}</span>
-                    <span class="presentation-date">Le {{ article.created_at }}</span>
+                    <span class="presentation-date">Le {{ article.pub_date }}</span>
                 </div>
             </div>
 
@@ -28,24 +28,22 @@
             </div>
 
             <div class="hp-gallery-containter">
-                    <div class="inner-wrapper">
-                            <ul class="hp-images-list">
-                                {% for image in article.article_photos.all %}
-                                <li>
-                                        {% thumbnail image.image "180x120" crop="center" as img %}
-                                        <img src="{{ img.url }}" alt="" />
-                                        {% endthumbnail %}
-                                    <div class="color-overlay"></div>
-                                    <a class="image-link fancybox" rel="group" href="{{ image.image.url }}">
-                                        <div class="image-overlay">
-                                            <span class="image-title">— {{ image.name }}</span>
-                                        </div>
-                                    </a>
-                                </li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                </div>
+                <ul class="hp-images-list">
+                    {% for image in article.article_photos.all %}
+                    <li>
+                            {% thumbnail image.image "180x120" crop="center" as img %}
+                            <img src="{{ img.url }}" alt="" />
+                            {% endthumbnail %}
+                        <div class="color-overlay"></div>
+                        <a class="image-link fancybox" rel="group" href="{{ image.image.url }}">
+                            <div class="image-overlay">
+                                <span class="image-title">— {{ image.name }}</span>
+                            </div>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
             {% endif %}
         </div>
         {% load sidebar_tag %}

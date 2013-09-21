@@ -9,7 +9,8 @@
                         {% for gallery in galleries %}
                         <ul class="hp-images-list">
                             <li class="month-gallery">
-                                <span class="gallery-author">{{ gallery.author.name }}</span>
+                                <a href="{% url 'gallery.views.single_gallery' gallery.slug %}">
+                                <span class="gallery-author">{{ gallery.author.name }}</span></a>
                             </li>
                             {% for image in gallery.images %}
                             <li>

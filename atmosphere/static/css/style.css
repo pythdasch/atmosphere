@@ -1,12 +1,21 @@
-@charset "UTF-8";
 
-@import url("a-common.css");
-@import url("b-header.css");
-@import url("b-footer.css");
-@import url("c-home.css");
-@import url("c-invite-du-13.css");
-@import url("c-inspirations.css");
-@import url("c-evocations.css");
-@import url("c-gallerie.css");
-@import url("c-oeil-panorama.css");
-@import url("c-contact.css");
+.errorlist {
+    color:red;
+    margin-left:50px;
+    margin:20px;
+}
+
+/* -- Newsletter -- */
+
+.hp-newsletter-sub {
+    width:500px;
+    margin: 0 auto;
+}
+.hp-newsletter-sub label {
+    margin:5px;
+    font-weight:bold;
+}
+.hp-newsletter-sub input {
+    border-radius:5px;
+    cursor:pointer;
+}

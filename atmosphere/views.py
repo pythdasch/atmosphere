@@ -5,17 +5,18 @@ from newsletter.models import Newsletter
 from blog.models import Contact
 from outils.mail_utils import contact_email
 from gallery.models import Gallery, first_photos
-
+from general_config.models import MainSlider
 
 def index(request):
     gallery = Gallery.objects.order_by('-created_at')[0]
     gallery_photos = first_photos(gallery, 12)
+    slider = MainSlider.objects.all()[:10]
     return render(request, 'index.html', {
         'gallery': gallery,
         'gallery_photos': gallery_photos,
         'oneofeach': oneofeach(),
         'last_articles': last_articles(20),
-        'slider': last_articles(3),
+        'slider': slider,
         })
 
 def contact(request):

@@ -13,7 +13,7 @@ class Author(models.Model):
 
 
 class Gallery(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField("thème", max_length=255)
     slug = models.SlugField(unique=True, max_length=50, help_text="Cet élèment n'est pas à modifier. Il permet de passer de page en page.")
     description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
@@ -47,7 +47,7 @@ class Image(models.Model):
     """ Simple model for image file metadata """
     name = models.CharField(max_length=255)
     image = models.ImageField(upload_to='images/')
-    thumbnail = models.ImageField(upload_to='images/thumbnail/', blank=True, null=True)
+    thumbnail = models.ImageField(upload_to='images/thumbnail/', blank=True, null=True, help_text="ne sert qu'à avoir le bon format à afficher")
     gallery = models.ForeignKey(Gallery, related_name="photos")
 
     def imagemAdmin(self):

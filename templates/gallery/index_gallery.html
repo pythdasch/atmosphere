@@ -7,6 +7,7 @@
                 <div class="inner-wrapper">
                     <div class="hp-images-list-container">
                         {% for gallery in galleries %}
+                        {% if forloop.counter < 5 %}
                         <ul class="hp-images-list">
                             <li class="month-gallery">
                                 <a href="{% url 'gallery.views.single_gallery' gallery.slug %}">
@@ -27,7 +28,30 @@
                             </li>
                             {% endfor %}
                         </ul>
+                        {% else %}
+                        <ul class="hp-images-list">
+                            <li class="month-gallery">
+                                <a href="{% url 'gallery.views.single_gallery' gallery.slug %}">
+                                <span class="gallery-author">{{ gallery.name }}</span></a>
+                            </li>
+                            {% for image in gallery.images %}
+                            <li>
+                                    {% thumbnail image.image "180x120" crop="center" as img %}
+                                    <img src="{{ img.url }}" alt="" />
+                                    {% endthumbnail %}
+
+                                <div class="color-overlay"></div>
+                                <a class="image-link fancybox" rel="group" href="{{ image.image.url }}">
+                                    <div class="image-overlay">
+                                        <span class="image-title">{{ image.name }}</span>
+                                    </div>
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
                         {% endfor %}
+
                     </div>
                 </div>
             </div>

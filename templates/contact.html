@@ -8,7 +8,7 @@
         </div>
 
         <div class="contact-content">
-            <h1 class="title">{% trans "Qui sommes-nous" %}</h1>
+            <h1 class="title">{% trans "Edito" %}</h1>
             <div class="contact-content-text">
                 <h2>{% trans "Architecture et design : les vivre…" %} </h2>
                 {% blocktrans %}
@@ -28,12 +28,8 @@
                     <img src="{{ STATIC_URL }}images/pages/portrait-therese.jpg" alt="Thérèse Hauff Macé" />
                     <div class="hover-container">
                         <div class="hover-info">
-                            <div class="contact-name">Thérèse Hauff-Macé</div>
-                            <address>
-                                2 rue Cournot <br />
-                                75015 Paris
-                            </address>
-                            <div class="contact-number">+33 (0)6 60 48 13 28</div>
+                            <div class="contact-name">Thérèse Macé</div>
+                            <div class="contact-number"><a style="color:white;" href="mailto:therese@13atmosphere.com">therese@13atmosphere.com</a></div>
 <!--                             <ul class="contact-share-list">
                                 <li class="linkedin"><a href="#">Linkedin</a></li>
                                 <li class="viadeo"><a href="#">Viadeo</a></li>
@@ -52,8 +48,7 @@
                         <div class="hover-info">
                             <div class="contact-name">Marine Henry</div>
                             <address>
-                                2 rue Cournot <br />
-                                75015 Paris
+                                <a style="color:white;" href="mailto:marine@13atmosphere.com">marine@13atmosphere.com</a>
                             </address>
 <!--                             <div class="contact-number">+33 (0)6 60 48 13 28</div>
                             <ul class="contact-share-list">
@@ -74,7 +69,7 @@
         <form method="POST" action="{% url 'atmosphere.views.contact' %}" class="atmosphere-form contact-form">
             <fieldset>
                 {% csrf_token %}
-                <h2 class="title">{% trans "Envoyez-moi un message" %}</h2>
+                <h2 class="title">{% trans "Nous contacter" %}</h2>
                 <div class="row">
                     <label for="name">{% trans "Nom :" %}</label>
                     <input id="name" type="text" name="name" />

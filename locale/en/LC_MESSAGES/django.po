@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-16 19:18+0200\n"
+"POT-Creation-Date: 2013-09-21 23:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,55 +42,33 @@ msgstr "Url does not match. Please try another one."
 msgid ""
 "Le serveur rencontre une erreur interne. Veuillez nous excuser de la gêne "
 "occasionnée"
-msgstr "The server has a problem, Please, forgive us for the lost"
+msgstr "The server has a problem, Please, forgive us for the inconvenience"
 
 #: templates/500.html:4
 msgid "Nous faisons notre possible pour que le site soit opérationnel"
-msgstr "We do our possible to make it work"
+msgstr "We do our best to make it work"
 
 #: templates/500.html:5
 msgid "Merci de votre compréhension"
-msgstr "Thank you to understand"
+msgstr "Thank you for your understanding"
 
-#: templates/article.html:20
+#: templates/article.html:27
 msgid "En images..."
 msgstr "In images..."
 
-#: templates/coming_soon.html:8
-msgid "Le blog de l'architecture !"
-msgstr "The Architecture Blog"
-
-#: templates/coming_soon.html:26
-msgid "Changer"
-msgstr "Switch"
-
-#: templates/coming_soon.html:30
-msgid "Notre site sera mis en ligne dans"
-msgstr "We will be on line in "
-
-#: templates/coming_soon.html:36
-msgid "jours"
-msgstr "days"
-
-#: templates/coming_soon.html:42
-msgid "heures"
-msgstr "hours"
-
-#: templates/coming_soon.html:48
-msgid "minutes"
-msgstr "minutes"
-
-#: templates/coming_soon.html:54
-msgid "secondes"
-msgstr "seconds"
-
-#: templates/coming_soon.html:59
-msgid "Soyez le premier au courant !"
-msgstr "To be the first informed please register here"
+#: templates/article.html:53
+#, fuzzy
+msgid "Pas d'article pour le moment"
+msgstr "No articles for the moment"
 
 #: templates/contact.html:11
-msgid "Qui sommes-nous"
-msgstr "Who are we"
+#, fuzzy
+msgid "Edito"
+msgstr "Edito"
+
+#: templates/contact.html:13
+msgid "Architecture et design : les vivre…"
+msgstr ""
 
 #: templates/contact.html:14
 msgid ""
@@ -112,34 +90,35 @@ msgid ""
 "                "
 msgstr ""
 
-#: templates/contact.html:77
-msgid "Envoyez-moi un message"
-msgstr "Send me a message"
+#: templates/contact.html:72
+msgid "Nous contacter"
+msgstr "Contact us"
 
-#: templates/contact.html:79
+#: templates/contact.html:74
 msgid "Nom :"
 msgstr "Name :"
 
-#: templates/contact.html:83
+#: templates/contact.html:78
 msgid "Mail :"
 msgstr "E-mail :"
 
-#: templates/contact.html:87
+#: templates/contact.html:82
 msgid "Sujet :"
 msgstr "Subject :"
 
-#: templates/contact.html:91
+#: templates/contact.html:86
 msgid "Message :"
 msgstr "Message :"
 
-#: templates/contact.html:95 templates/tags/sidebar.html:49
+#: templates/contact.html:90 templates/tags/sidebar.html:48
 #: templates/tags/subscribe_news.html:8
 msgid "Envoyer"
 msgstr "Send"
 
 #: templates/contact_success.html:5
-msgid "merci de nous avoir contacté"
-msgstr "Thank you to have contact us"
+#, fuzzy
+msgid "Merci de nous avoir contacté"
+msgstr "Thank you to have contacted us"
 
 #: templates/footer.html:10
 msgid "À propos"
@@ -171,20 +150,35 @@ msgid "Je m'abonne à la newsletter"
 msgstr "Register to the newsletter"
 
 #: templates/header.html:31
-msgid "Galeries"
+#, fuzzy
+msgid "Galerie"
 msgstr "Gallery"
 
 #: templates/blog/archives.html:9
 msgid "Articles du mois de"
 msgstr "Article from the month of "
 
-#: templates/blog/archives.html:34
+#: templates/blog/archives.html:34 templates/blog/category.html:49
 msgid "Pas d'article pour cette période"
 msgstr "No articles for this date"
 
+#: templates/blog/category.html:24
+#, fuzzy
+msgid "Articles "
+msgstr "Articles "
+
+#: templates/gallery/single.html:9
+msgid "biographie"
+msgstr "biography"
+
 #: templates/newsletter/sub_success.html:5
 msgid "Vous venez de souscrire à la newsletter"
-msgstr "You just subscribed at the 13atmosphere newsletter"
+msgstr "Congratulation ! You just subscribed at the 13atmosphere newsletter"
+
+#: templates/newsletter/subscribe.html:5
+#, fuzzy
+msgid "Souscrire à la newsletter"
+msgstr "Congratulation ! You just subscribed at the 13atmosphere newsletter"
 
 #: templates/newsletter/subscribe.html:12
 msgid "S'abonner à 'la Newsletter"
@@ -192,7 +186,7 @@ msgstr "Register to the newsletter"
 
 #: templates/newsletter/unsub_success.html:5
 msgid " Vous avez bien été désabonné de la newsletter "
-msgstr "You just unsubscribe to the newsletter"
+msgstr "Sorry, You just unsubscribed from the newsletter"
 
 #: templates/newsletter/unsubscribe.html:5
 msgid "Se désabonner de la newsletter 13Atmosphere ?"
@@ -204,11 +198,11 @@ msgstr "Unsubscribe"
 
 #: templates/search/results.html:10
 msgid "Résultat de recherche pour :"
-msgstr "Results for the search of :"
+msgstr "Search results :"
 
 #: templates/search/results.html:33
 msgid "Aucun article ne correspond à votre recherche"
-msgstr "No articles matching your query"
+msgstr "No articles matching"
 
 #: templates/tags/pagination_links.html:8
 msgid "Previous"
@@ -219,11 +213,11 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: templates/tags/sidebar.html:11
+#: templates/tags/sidebar.html:10
 msgid "Rechercher"
 msgstr "Search"
 
-#: templates/tags/sidebar.html:21
+#: templates/tags/sidebar.html:20
 msgid ""
 "Partager une sensibilité, une perception, un instant, une curiosité …\n"
 "…puis évoquer et laisser parler des gens attachants et qui ont une telle "
@@ -237,23 +231,23 @@ msgid ""
 "Lire le monde avec des photographes français et internationaux…"
 msgstr ""
 
-#: templates/tags/sidebar.html:31
+#: templates/tags/sidebar.html:30
 msgid "Suivez nous sur les <br />réseaux sociaux :"
 msgstr "Follow us on social networks"
 
-#: templates/tags/sidebar.html:34
+#: templates/tags/sidebar.html:33
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: templates/tags/sidebar.html:37
+#: templates/tags/sidebar.html:36
 msgid "Viadeo"
 msgstr "Viadeo"
 
-#: templates/tags/sidebar.html:54
+#: templates/tags/sidebar.html:53
 msgid "Archives"
 msgstr "Archives"
 
-#: templates/tags/sidebar.html:60
+#: templates/tags/sidebar.html:59
 msgid "Catégories"
 msgstr "Categories"
 
@@ -261,6 +255,36 @@ msgstr "Categories"
 #, fuzzy
 msgid "Abonnez-vous <br /> à la newsletter"
 msgstr "Register to the newsletter"
+
+#~ msgid "Le blog de l'architecture !"
+#~ msgstr "The Architecture Blog"
+
+#~ msgid "Changer"
+#~ msgstr "Switch"
+
+#~ msgid "Notre site sera mis en ligne dans"
+#~ msgstr "We will be on line in "
+
+#~ msgid "jours"
+#~ msgstr "days"
+
+#~ msgid "heures"
+#~ msgstr "hours"
+
+#~ msgid "minutes"
+#~ msgstr "minutes"
+
+#~ msgid "secondes"
+#~ msgstr "seconds"
+
+#~ msgid "Soyez le premier au courant !"
+#~ msgstr "To be the first informed please register here"
+
+#~ msgid "Qui sommes-nous"
+#~ msgstr "Who are we"
+
+#~ msgid "Envoyez-moi un message"
+#~ msgstr "Send me a message"
 
 #~ msgid "Accueil"
 #~ msgstr "Home"

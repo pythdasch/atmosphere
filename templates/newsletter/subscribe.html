@@ -6,10 +6,12 @@
 {% if error %}
         <p>{{ error|escape }}</p>
     {% endif %}
-<form action="{% url 'newsletter.views.subscribe' %}" method="POST" id="form_subscribe">
+<div class="hp-newsletter-sub">
+    <form action="{% url 'newsletter.views.subscribe' %}" method="POST" id="form_subscribe" class="atmosphere-form">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="{% trans "S'abonner à 'la Newsletter" %}" class="btn btn-success" id="submit_subscribe">
-</form>
+    </form>
+    </div>
 </div>
 {% endblock %}

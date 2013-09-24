@@ -11,7 +11,7 @@ def single_gallery(request, gallery_slug):
 def index_gallery(request):
     galleries = Gallery.objects.order_by('-created_at')[:10]
     for gallery in galleries:
-        gallery.images = gallery.photos.all()[:5]
+        gallery.images = gallery.photos.all()[:10]
     return render(request, 'gallery/index_gallery.html', {
         'galleries': galleries,
         })

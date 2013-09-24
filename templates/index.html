@@ -5,14 +5,15 @@
 {% block content %}
     <div class="l-100">
         <div class="main home-page">
+            {% if slider %}
             <div class="main-slider-container">
                 <div class="slides-container">
                     <ul class="slides-list">
-                        {% for article in slider %}
-                            {% thumbnail article.image "932x418" as img %}
-                        <li><a href="{% url 'blog.views.single_article' article.slug %}"><img src="{{ img.url }}" alt="" /></a></li>
+                        {% for slid in slider %}
+                        {% thumbnail slid.image "900x400" crop="center" as img%}
+                        <li><a href="{% url 'blog.views.single_article' slid.article.slug %}">
+                            <img src="{{ img.url }}" alt="" /></a></li>
                         {% endthumbnail %}
-                        <p>{{ article.title }}</p>
                         {% endfor %}
                     </ul>
                     <div class="slider-arrows-container">
@@ -26,10 +27,12 @@
                     <li><a href="#"></a></li>
                 </ul>
             </div> <!-- end of slider -->
+            {% endif %}
             <div class="l-100 clear aboutNnl-container">
                 <div class="hp-about-container">
                     <h2 class="middle-title">Edito</h2>
                     <div class="content-text">
+                        {% blocktrans %}
                         <h2>Architecture et design : les vivre…  </h2>
                         <h4>Partager une sensibilité, une perception, un instant, une curiosité … </h4>
                         <p>…puis évoquer et laisser parler des gens attachants et qui ont une telle densité qu’ils pourraient bien faire la Une de l’actualité…</p>
@@ -37,7 +40,8 @@
                         <p>Parler de projets architecturaux, de produits et d’événements… <strong>tout ce que nos regards ont saisi…</strong></p>
                         <p>Ouvrir la porte à nos <strong>correspondants du monde entier</strong>, s’ouvrir à leurs œuvres, leurs réalités, leurs visions.</p>
                         <p><strong>Lire le monde avec des photographes</strong> français et internationaux…</p>
-                        <div class="btn-container"><a href="{% url 'atmosphere.views.contact' %}" class="btn">Contactez-nous</a></div>
+                        {% endblocktrans %}
+                        <div class="btn-container"><a href="{% url 'atmosphere.views.contact' %}" class="btn">{% trans "Contactez-nous" %}</a></div>
                     </div>
                 </div>
                 {% subscribe_news request %}
@@ -46,7 +50,7 @@
 
         <div class="l-100">
             <div class="hp-articles-container">
-                <div class="banner"><h3 class="banner-title">Derniers articles publiés</h3></div>
+                <div class="banner"><h3 class="banner-title">{% trans "Derniers articles publiés" %}</h3></div>
                 <div class="inner-wrapper">
                     <ul class="hp-article-list l-100 clear">
                         <li>
@@ -76,7 +80,7 @@
             </div>
         </div>
         <div class="hp-gallery-containter">
-            <div class="banner"><h3 class="banner-title">Galerie</h3></div>
+            <div class="banner"><h3 class="banner-title">{% trans "Galerie" %}</h3></div>
             <div class="inner-wrapper">
                 <div class="hp-images-list-container">
                     <ul class="hp-images-list">
@@ -98,11 +102,12 @@
                         {% if gallery %}
                         <div class="gallery-details">
                             <div class="gallery-avatar">
+                                <a href="{% url 'gallery.views.index_gallery' %}">
                                 {% thumbnail gallery.author.image "56x52" crop="center" as img%}
                                 <img src="{{ img.url }}" alt="{{ gallery.author.name }}" />
                                 {% endthumbnail%}
                             </div><span class="gallery-author">{{ gallery.author.name }} -</span>
-                            <span class="gallery-title"> {{ gallery.name }}</span>
+                            <span class="gallery-title"> {{ gallery.name }}</span></a>
                         </div>
                         {% endif %}
                     </footer>

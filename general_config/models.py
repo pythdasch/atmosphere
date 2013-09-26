@@ -1,5 +1,5 @@
 from django.db import models
-from blog.models import Article
+from gallery.models import Gallery
 # Create your models here.
 
 class Partenaire(models.Model):
@@ -15,7 +15,7 @@ class Partenaire(models.Model):
 class MainSlider(models.Model):
     name = models.CharField(max_length=100)
     image = models.ImageField(upload_to="slider/")
-    article = models.ForeignKey(Article)
+    article = models.ForeignKey(Gallery)
 
     def __unicode__(self):
         return "image : " + self.name

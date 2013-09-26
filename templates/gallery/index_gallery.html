@@ -10,7 +10,7 @@
                         <ul class="hp-images-list">
                             <li class="month-gallery">
                                 <a href="{% url 'gallery.views.single_gallery' gallery.slug %}">
-                                <span class="gallery-author">{{ gallery.author.name }}</span></a>
+                                <span class="gallery-author red">{{ gallery.author.name }}</span></a>
                             </li>
                             {% for image in gallery.images_first %}
                             <li>

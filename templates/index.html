@@ -10,9 +10,9 @@
                 <div class="slides-container">
                     <ul class="slides-list">
                         {% for slid in slider %}
-                        {% thumbnail slid.image "900x400" crop="center" as img%}
-                        <li><a href="{% url 'blog.views.single_article' slid.article.slug %}">
-                            <img src="{{ img.url }}" alt="" /></a></li>
+                        {% thumbnail slid.image "950x400" crop="center" as img%}
+                        <li><a href="{% url 'gallery.views.single_gallery' slid.article.slug %}">
+                            <img src="{{ img.url }}" alt="" title="{{ gallery.name }} : {{ gallery.description|truncatewords:100}}"/></a></li>
                         {% endthumbnail %}
                         {% endfor %}
                     </ul>
@@ -90,7 +90,7 @@
                             <img src="{{ img.url }}" alt="" />
                             {% endthumbnail %}
                             <div class="color-overlay"></div>
-                            <a class="image-link" href="{{ image.image.url }}">
+                            <a class="image-link" href="{% url 'gallery.views.single_gallery' gallery.slug %}">
                                 <div class="image-overlay">
                                     <span class="image-title">{{ image.image.title }}</span>
                                 </div>

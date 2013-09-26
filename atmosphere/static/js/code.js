@@ -11,12 +11,13 @@ $(document).ready(function(){
 
 
 	$('.main-slider-container .slides-list').bxSlider({
-	  infiniteLoop: false,
+	  infiniteLoop: true,
 	  nextSelector: '.main-slider-container .slider-arrows.next',
 	  prevSelector: '.main-slider-container .slider-arrows.prev',
 	  nextText: '<span class="display">Suivant</span>',
 	  prevText: '<span class="display">Prédédent</span>',
-	  captions: false
+	  captions: true,
+	  auto: true,
 	});
 
 

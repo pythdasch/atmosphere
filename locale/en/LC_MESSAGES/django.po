@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-21 23:11+0200\n"
+"POT-Creation-Date: 2013-09-26 16:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -149,23 +149,62 @@ msgstr "Edito"
 msgid "Je m'abonne à la newsletter"
 msgstr "Register to the newsletter"
 
-#: templates/header.html:31
+#: templates/header.html:31 templates/index.html:83
 #, fuzzy
 msgid "Galerie"
 msgstr "Gallery"
+
+#: templates/index.html:35
+msgid ""
+"\n"
+"                        <h2>Architecture et design : les vivre…  </h2>\n"
+"                        <h4>Partager une sensibilité, une perception, un "
+"instant, une curiosité … </h4>\n"
+"                        <p>…puis évoquer et laisser parler des gens "
+"attachants et qui ont une telle densité qu’ils pourraient bien faire la Une "
+"de l’actualité…</p>\n"
+"                        <p>Publier des carnets de voyages, les nôtres, mais "
+"les leurs aussi… <strong>du beau à nos yeux…</strong></p>\n"
+"                        <p>Parler de projets architecturaux, de produits et "
+"d’événements… <strong>tout ce que nos regards ont saisi…</strong></p>\n"
+"                        <p>Ouvrir la porte à nos <strong>correspondants du "
+"monde entier</strong>, s’ouvrir à leurs œuvres, leurs réalités, leurs "
+"visions.</p>\n"
+"                        <p><strong>Lire le monde avec des photographes</"
+"strong> français et internationaux…</p>\n"
+"                        "
+msgstr ""
+
+#: templates/index.html:44
+msgid "Contactez-nous"
+msgstr ""
+
+#: templates/index.html:53
+msgid "Derniers articles publiés"
+msgstr "Last published articles"
 
 #: templates/blog/archives.html:9
 msgid "Articles du mois de"
 msgstr "Article from the month of "
 
-#: templates/blog/archives.html:34 templates/blog/category.html:49
+#: templates/blog/archives.html:34
 msgid "Pas d'article pour cette période"
 msgstr "No articles for this date"
 
 #: templates/blog/category.html:24
 #, fuzzy
+msgid "En images"
+msgstr "In images..."
+
+#: templates/blog/category.html:42
+#, fuzzy
 msgid "Articles "
 msgstr "Articles "
+
+#: templates/blog/category.html:67
+#, fuzzy
+msgid "Pas d'autres articles dans cette catégorie"
+msgstr "No articles for this date"
 
 #: templates/gallery/single.html:9
 msgid "biographie"
@@ -180,7 +219,7 @@ msgstr "Congratulation ! You just subscribed at the 13atmosphere newsletter"
 msgid "Souscrire à la newsletter"
 msgstr "Congratulation ! You just subscribed at the 13atmosphere newsletter"
 
-#: templates/newsletter/subscribe.html:12
+#: templates/newsletter/subscribe.html:13
 msgid "S'abonner à 'la Newsletter"
 msgstr "Register to the newsletter"
 

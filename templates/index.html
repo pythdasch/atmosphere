@@ -12,7 +12,7 @@
                         {% for slid in slider %}
                         {% thumbnail slid.image "950x400" crop="center" as img%}
                         <li><a href="{% url 'gallery.views.single_gallery' slid.article.slug %}">
-                            <img src="{{ img.url }}" alt="" title="{{ slid.article.name }} : {{ slid.article.description|truncatewords:20 }}"/></a></li>
+                            <img src="{{ img.url }}" alt="" title="{{ slid.article.name }} : {{ slid.article.description|truncatewords:10 }}"/></a></li>
                         {% endthumbnail %}
                         {% endfor %}
                     </ul>

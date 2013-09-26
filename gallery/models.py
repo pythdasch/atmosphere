@@ -49,6 +49,7 @@ class Image(models.Model):
     image = models.ImageField(upload_to='images/')
     thumbnail = models.ImageField(upload_to='images/thumbnail/', blank=True, null=True, help_text="ne sert qu'à avoir le bon format à afficher")
     gallery = models.ForeignKey(Gallery, related_name="photos")
+    pub_date = models.DateTimeField(auto_now_add=True)
 
     def imagemAdmin(self):
         from sorl.thumbnail import get_thumbnail

@@ -3,9 +3,11 @@ from outils.mail_utils import UnicodeSafePynliner
 from django.template.loader import render_to_string
 from blog.models import Article
 from newsletter.models import Subscriber, Newsletter
+from general_config.models import Edito, SocialNetwork
 from django.core import mail
 import datetime
 from atmosphere.settings import SITE_URL, SENDER_EMAIL
+from atmosphere.settings_general import STATIC_URL
 from outils.dateutils import french_month
 
 
@@ -14,9 +16,13 @@ class Command(BaseCommand):
     help = ''
 
     def handle(self, *args, **options):
+        linked = SocialNetwork.objects.get(name='linkedin')
+        viadeo = SocialNetwork.objects.get(name="viadeo")
+        google = SocialNetwork.objects.get(name="google")
         now = datetime.datetime.now()
         last_articles = Article.objects.order_by('-pub_date')[:5]
         len_articles = len(last_articles)
+        edito = Edito.objects.order_by('-created_at')[0]
         news = Newsletter.objects.get(name='main')
         emails = []
         for sub in Subscriber.objects.all():
@@ -24,9 +30,14 @@ class Command(BaseCommand):
                 month = now.strftime('%B')
                 subject = u'[13Atmosphere] Newsletter %s' % month
                 message_html = UnicodeSafePynliner().from_string(render_to_string(
-                        'newsletter/mail_newsletter_en.html', {
+                        'newsletter/nl.html', {
+                        'month': month,
+                        'edito': edito,
+                        'linked':linked,
+                        'viadeo': viadeo,
+                        'google': google,
                         'last_articles': last_articles,
-                        'len_articles': len_articles,
+                        'STATIC_URL': STATIC_URL,
                         'SITE_URL': SITE_URL,
                         'news_id': news.id,
                         'subscriber': sub,
@@ -39,7 +50,8 @@ class Command(BaseCommand):
                 month = french_month(now.month)
                 subject = u'[13Atmosphere] Newsletter %s' % month
                 message_html = UnicodeSafePynliner().from_string(render_to_string(
-                        'newsletter/mail_newsletter.html', {
+                        'newsletter/nl.html', {
+                        'month':month,
                         'last_articles': last_articles,
                         'len_articles': len_articles,
                         'SITE_URL': SITE_URL,

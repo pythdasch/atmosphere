@@ -23,7 +23,6 @@ def index(request):
 
 def contact(request):
     edito = Edito.objects.order_by('-created_at')[0]
-    print edito.texte
     if request.method == 'POST':
         data = request.POST
         contact = Contact(name=data['name'], email=data["email"], subject=data["subject"], message=data["message"])

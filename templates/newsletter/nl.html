@@ -1,0 +1,116 @@
+{% load thumbnail %}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Atmosphere13 Newsletter</title>
+	</head>
+	<body>
+
+		<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" bgcolor="#fff">
+			<tr>
+				<td align="center" valign="top">
+
+
+					<table border="0" cellpadding="0" cellspacing="0" width="596">
+						<tr>
+							<td width="596" height="1525" style="border: 2px solid #c0c1c3">
+								<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+									<!-- HEADER  -->
+									<tr>
+										<td style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #a23e48; text-align: right; padding: 8px 10px 0 0;">
+											{{ month }}
+										</td>
+									</tr>
+									<tr>
+										<td align="center" width="182" height="108"><a href="#" target="_blank"><img src="{{ SITE_URL }}{{ STATIC_URL }}newsletter/images/logo.jpg" border="0" alt="Atmosphere 13"></a></td>
+									</tr>
+									<!-- END HEADER  -->
+									<tr>
+										<td valign="top" style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #fff;
+										line-height: 20px; background: #cf4855; padding: 25px">
+											{{ edito.texte|safe }}
+										</td>
+									</tr>
+									<tr>
+										<td width="596" height="23" border="0" cellpadding="0" cellspacing="0">
+											<img src="{{ SITE_URL }}{{ STATIC_URL }}newsletter/images/before-text.jpg" alt="" border="0" width="596" height="23">
+										</td>
+									</tr>
+									<tr>
+										<td colspan="4" align="center" valign="top">
+											<table border="0" cellpadding="0" cellspacing="0" width="573" style="margin-top: -4px;">
+												<tr>
+													<td colspan="4">
+														<!-- CONTENT  -->
+														<table border="0" cellpadding="0" cellspacing="0" width="573" style="border: 2px solid #c0c1c3; border-top: 0;">
+															<tr>
+																	<td colspan="2" align="center" style="font-family: Arial, Helvetica, sans-serif; font-size: 22px; color: #444444; font-weight: bold; padding: 25px 0;">Articles publiés récemment</td>
+																</tr>
+                                                                <tr>
+																<!-- ARTICLES LIST -->
+																<td colspan="2" align="center">
+																	{% for article in last_articles %}
+																	<table border="0" cellpadding="0" cellspacing="0" width="540" style="border: 2px solid #bdc1c4; margin-bottom: 15px;">
+
+																		<tr>
+																			<td style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #666666; font-weight: bold; padding: 7px 50px 0 15px;">
+																				Posté le <span style="color: #972934;">{{ article.pub_date }}</span>
+																			</td>
+																			<td style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #972934; font-weight: bold; padding-top: 7px;">
+																				{{ article.categories.all.0.name }}
+																			</td>
+																		</tr>
+																		<tr>
+																			<td style="border: 15px solid #fff;">
+																				{% thumbnail article.image "218x115" crop="center" as img %}
+                															<img src="" alt="">
+																				<img src="{{ SITE_URL }}{{ img.url }}" alt="" style="border: 1px solid #cbcccd;">
+																				{% endthumbnail %}
+																			</td>
+																			<td>
+																				<span style="font-family: Arial, Helvetica, sans-serif; font-size: 15px; color: #666666; font-weight: bold; text-transform: uppercase;">{{ article.title }}</span>
+																				<p style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #666666;">
+																					{{ article.content|safe|truncatewords_html:60 }}
+																				</p>
+																		</td></tr>
+																		<tr>
+																			<td colspan="2" align="right" width="143" height="23">
+																				<a href="{% url 'blog.views.single_article' article.slug %}" target="_blank" style="display: block; height: 23px;"><img src="{{ SITE_URL}}{{ STATIC_URL }}newsletter/images/lire-article.jpg" border="0" alt="Lire l'article"></a>
+																			</td>
+																		</tr>
+																	</table>
+																	{% endfor %}
+																	<!-- FIN ARTICLE LIST  -->
+																</td>
+															</tr>
+														</table>
+													</td>
+												</tr>
+												<tr>
+													<!-- RESEAUX SOCIAUX  -->
+													<td width="268" height="81"><img src="{{ SITE_URL}}{{ STATIC_URL }}newsletter/images/follow-text.jpg"></td>
+													<td width="65" height="81"><a href="{{ linked.url }}" target="_blank"><img src="{{ SITE_URL}}{{ STATIC_URL }}newsletter/images/linkedin.jpg" border="0" alt="Linkedin"></a></td>
+													<td width="65" height="81"><a href="{{ viadeo.url}}" target="_blank"><img src="{{ SITE_URL }}{{ STATIC_URL }}newsletter/images/viadeo.jpg" border="0" alt="Viadeo"></a></td>
+													<td width="268" height="81"><a href="{{ google.url }}" target="_blank"><img src="{{ SITE_URL }}{{ STATIC_URL }}newsletter/images/google.jpg" border="0" alt="Google"></a></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<!-- LIEN DÉSINSCRIPTION  -->
+										<td align="center" style="font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #3c3c3c; padding-bottom: 15px;">Pour se désinscrire de la newsletter, <a href="{{ SITE_URL }}{% url 'newsletter.views.unsubscribe' news_id subscriber.id %}" target="_blank" style="color: #3c3c3c; text-decoration: underline">cliquez ici.</a></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+
+
+
+
+
+
+	</body>
+</html>

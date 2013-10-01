@@ -31,6 +31,7 @@ LANGUAGES = (
 MODELTRANSLATION_TRANSLATION_FILES = (
     'blog.translation',
     'gallery.translation',
+    'general_config.translation',
 )
 
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'fr'

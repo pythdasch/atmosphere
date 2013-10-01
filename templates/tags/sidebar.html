@@ -17,12 +17,7 @@
                     </div>
                     <div class="content-text">
                         <p>
-                            {% blocktrans %}Partager une sensibilité, une perception, un instant, une curiosité …
-…puis évoquer et laisser parler des gens attachants et qui ont une telle densité qu’ils pourraient bien faire la Une de l’actualité…
-Publier des carnets de voyages, les nôtres, mais les leurs aussi… du beau à nos yeux…
-Parler de projets architecturaux, de produits et d’événements… tout ce que nos regards ont saisi…
-Ouvrir la porte à nos correspondants du monde entier, s’ouvrir à leurs œuvres, leurs réalités, leurs visions.
-Lire le monde avec des photographes français et internationaux…{% endblocktrans %}
+                            {{ edito.texte|safe }}
                         </p>
                     </div>
                 </div>
@@ -30,13 +25,13 @@ Lire le monde avec des photographes français et internationaux…{% endblocktra
                     {% blocktrans %}Suivez nous sur les <br />réseaux sociaux :{% endblocktrans %}
                     <ul class="follow-links-list">
                         <li class="linkedin">
-                            <a href="#"><span class="display">{% trans "Linkedin" %}</span></a>
+                            <a href="{{ linked.url }}"><span class="display">{% trans "Linkedin" %}</span></a>
                         </li>
                         <li class="viadeo">
-                            <a href="#"><span class="display">{% trans "Viadeo" %}</span></a>
+                            <a href="{{ viadeo.url }}"><span class="display">{% trans "Viadeo" %}</span></a>
                         </li>
                         <li class="google">
-                            <a href="#"><span class="display">Google +</span></a>
+                            <a href="{{ google.url }}"><span class="display">Google +</span></a>
                         </li>
                     </ul>
                 </div>

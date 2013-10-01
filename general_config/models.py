@@ -19,3 +19,15 @@ class MainSlider(models.Model):
 
     def __unicode__(self):
         return "image : " + self.name
+
+
+class Edito(models.Model):
+    texte = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+class SocialNetwork(models.Model):
+    name = models.CharField(max_length=255)
+    url = models.URLField()
+
+    def __unicode__(self):
+        return self.name

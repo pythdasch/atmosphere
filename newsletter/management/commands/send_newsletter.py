@@ -25,7 +25,8 @@ class Command(BaseCommand):
         edito = Edito.objects.order_by('-created_at')[0]
         news = Newsletter.objects.get(name='main')
         emails = []
-        for sub in Subscriber.objects.all():
+        subscribers = Subscriber.objects.all()
+        for sub in subscribers:
             if sub.language == 'en':
                 month = now.strftime('%B')
                 subject = u'[13Atmosphere] Newsletter %s' % month

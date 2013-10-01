@@ -10,15 +10,7 @@
         <div class="contact-content">
             <h1 class="title">{% trans "Edito" %}</h1>
             <div class="contact-content-text">
-                <h2>{% trans "Architecture et design : les vivre…" %} </h2>
-                {% blocktrans %}
-                        <p><strong>Partager une sensibilité, une perception, un instant, une curiosité … </strong></p>
-                        <p>…puis évoquer et laisser parler des gens attachants et qui ont une telle densité qu’ils pourraient bien faire la Une de l’actualité…</p>
-                        <p>Publier des carnets de voyages, les nôtres, mais les leurs aussi… <strong>du beau à nos yeux…</strong></p>
-                        <p>Parler de projets architecturaux, de produits et d’événements… <strong>tout ce que nos regards ont saisi…</strong></p>
-                        <p>Ouvrir la porte à nos <strong>correspondants du monde entier</strong>, s’ouvrir à leurs œuvres, leurs réalités, leurs visions.</p>
-                        <p><strong>Lire le monde avec des photographes</strong> français et internationaux…</p>
-                {% endblocktrans %}
+                {{ edito.texte|safe }}
             </div>
         </div>
 
@@ -30,11 +22,6 @@
                         <div class="hover-info">
                             <div class="contact-name">Thérèse Macé</div>
                             <div class="contact-number"><a style="color:white;" href="mailto:therese@13atmosphere.com">therese@13atmosphere.com</a></div>
-<!--                             <ul class="contact-share-list">
-                                <li class="linkedin"><a href="#">Linkedin</a></li>
-                                <li class="viadeo"><a href="#">Viadeo</a></li>
-                                <li class="google"><a href="#">Google +</a></li>
-                            </ul> -->
                         </div>
                         <div class="color-overlay"></div>
                     </div>
@@ -50,12 +37,6 @@
                             <address>
                                 <a style="color:white;" href="mailto:marine@13atmosphere.com">marine@13atmosphere.com</a>
                             </address>
-<!--                             <div class="contact-number">+33 (0)6 60 48 13 28</div>
-                            <ul class="contact-share-list">
-                                <li class="linkedin"><a href="#">Linkedin</a></li>
-                                <li class="viadeo"><a href="#">Viadeo</a></li>
-                                <li class="google"><a href="#">Google +</a></li>
-                            </ul> -->
                         </div>
                         <div class="color-overlay"></div>
                     </div>

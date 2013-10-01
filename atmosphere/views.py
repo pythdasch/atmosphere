@@ -22,13 +22,16 @@ def index(request):
         })
 
 def contact(request):
+    edito = Edito.objects.order_by('-created_at')[0]
     if request.method == 'POST':
         data = request.POST
         contact = Contact(name=data['name'], email=data["email"], subject=data["subject"], message=data["message"])
         contact = contact.save()
         contact_email(contact)
         return render(request, 'contact_success.html')
-    return render(request, 'contact.html')
+    return render(request, 'contact.html',{
+        'edito': edito,
+        })
 
 def custom404(request):
     return render(request, '404.html')

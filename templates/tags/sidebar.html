@@ -17,7 +17,7 @@
                     </div>
                     <div class="content-text">
                         <p>
-                            {{ edito.texte|safe }}
+                            {{ edito.texte|safe|truncatewords_html:10 }}
                         </p>
                     </div>
                 </div>
